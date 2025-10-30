@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { links, linkStyles } from '@/constants';
-import { link } from 'fs';
 
 export default function MenuDesktop({
   isOpen,
