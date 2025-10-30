@@ -1,0 +1,21 @@
+{
+  "typescript.tsserver.enableTracing": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.accessibilitySupport": "off",
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["tw\\(([^)]*)\\)", "(?:')([^']*)(?:')"],
+    ["tw\\(([^)]*)\\)", "(?:\")([^\"]*)(?:\")"],
+    ["tw\\(([^)]*)\\)", "(?:`)([^`]*)(?:`)"],
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.wordWrap": "on",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
