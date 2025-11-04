@@ -15,7 +15,7 @@ export default function Works() {
         </p>
       </div>
       <div className="mt-6 grid gap-8 md:grid-cols-2">
-        {projects.map(({ id, name, description, img }) => (
+        {projects.map(({ id, name, description, img, techStack }) => (
           <div
             key={id}
             className="overflow-hidden rounded-lg border-2 border-gray-200"
@@ -30,29 +30,17 @@ export default function Works() {
               />
             </div>
             <div className="flex flex-col gap-4 p-4">
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 <h3 className="text-lg font-semibold">{name}</h3>
                 <p className="text-sm">{description}</p>
               </div>
-              <div>
+              <div className="flex flex-col gap-3">
                 <h4 className="font-bold">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
-                  {[
-                    { name: 'React', logo: 'react', color: '333333' },
-                    { name: 'Next.js', logo: 'next.js', color: '333333' },
-                    { name: 'TypeScript', logo: 'typescript', color: '333333' },
-                    {
-                      name: 'Tailwind CSS',
-                      logo: 'tailwindcss',
-                      color: '06B6D4',
-                    },
-                    { name: 'NestJS', logo: 'nestjs', color: '333333' },
-                    { name: 'MySQL', logo: 'mysql', color: '333333' },
-                    { name: 'Prisma', logo: 'prisma', color: '333333' },
-                  ].map(({ name, logo, color }) => (
+                  {techStack.map(({ name, logo }) => (
                     <img
                       key={name}
-                      src={`https://img.shields.io/badge/${encodeURIComponent(name)}-${color}?style=flat&logo=${encodeURIComponent(
+                      src={`https://img.shields.io/badge/${encodeURIComponent(name)}-000000?style=flat&logo=${encodeURIComponent(
                         logo
                       )}&labelColor=white&color=white&logoColor=black`}
                       alt={`${name} badge`}

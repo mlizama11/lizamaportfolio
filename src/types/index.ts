@@ -3,9 +3,15 @@ export type Link = {
   label: string;
 };
 
+export type TechStackItem = {
+  name: string;
+  logo: string;
+};
+
 export type Project = {
   id: number;
   name: string;
   description: string;
   img: string;
+  techStack: Array<TechStackItem>;
 };
