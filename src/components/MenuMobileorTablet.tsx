@@ -1,5 +1,6 @@
 'use client';
 
+import React, { FunctionComponent } from 'react';
 import {
   Popover,
   PopoverContent,
@@ -9,24 +10,23 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { FiPlus } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { links, linkStyles } from '@/constants';
+import { links } from '@/constants';
+import { NextLink } from './NextLink';
 
-export default function MenuMobileorTablet({
-  isOpen,
-  setIsOpen,
-}: {
+export const MenuMobileorTablet: FunctionComponent<{
   isOpen: boolean;
   setIsOpen: (value: boolean | ((prev: boolean) => boolean)) => void;
-}) {
+}> = ({ isOpen, setIsOpen }) => {
   return (
     <nav>
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button
+            variant="ghost"
+            size="sm"
             aria-expanded={isOpen}
             className={cn(
-              'bg-gray-200 max-[700px]:border max-[700px]:border-gray-200',
+              'cursor-pointer bg-gray-200 max-[700px]:border max-[700px]:border-gray-200',
               { 'bg-white': isOpen }
             )}
             onClick={() => setIsOpen?.((prevState: boolean) => !prevState)}
@@ -52,18 +52,13 @@ export default function MenuMobileorTablet({
         <PopoverContent className="w-auto p-0" align="center">
           <div className="flex flex-col items-center justify-center gap-2 rounded-md bg-white p-4">
             {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                className={linkStyles}
-                href={href}
-                onClick={() => setIsOpen(false)}
-              >
+              <NextLink key={href} href={href} onClick={() => setIsOpen(false)}>
                 {label}
-              </Link>
+              </NextLink>
             ))}
           </div>
         </PopoverContent>
       </Popover>
     </nav>
   );
-}
+};

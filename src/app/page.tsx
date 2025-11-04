@@ -1,22 +1,14 @@
 import React from 'react';
 import Intro from '@/components/Intro';
 import About from '@/components/About';
+import Works from '@/components/Works';
 
 export default function Home() {
   return (
     <main className="flex grow flex-col gap-20 px-4">
       <Intro />
       <About />
-      <section id="works">
-        <div className="flex flex-col gap-4">
-          <h2 className="text-3xl font-bold">Projects</h2>
-          <p className="text-lg">
-            Here are some of the projects I have worked on recently. Each
-            project reflects my dedication to quality and my passion for web
-            development.
-          </p>
-        </div>
-      </section>
+      <Works />
       <section id="experience">
         <div className="flex flex-col gap-4">
           <h2 className="text-3xl font-bold">Experience</h2>

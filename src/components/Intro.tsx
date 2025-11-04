@@ -4,13 +4,14 @@ import Image from 'next/image';
 import { PiCopyLight, PiLinkedinLogoThin, PiMapPin } from 'react-icons/pi';
 import { Separator } from '@/components/ui/separator';
 import { useState } from 'react';
+import { Button } from './ui/button';
 
 export default function Intro() {
   const [copied, setCopied] = useState(false);
 
   return (
     <section id="home">
-      <div className="flex justify-between">
+      <div className="flex items-center justify-between">
         <div className="flex gap-4">
           <Image
             className="h-[122px] w-[122px] rounded-lg border-none object-cover"
@@ -44,9 +45,11 @@ export default function Intro() {
       </div>
       <div>
         <Separator className="my-6" />
-        <div className="flex justify-between">
-          <div
-            className="flex cursor-pointer items-center gap-2 text-sm"
+        <div className="flex items-center justify-between">
+          <Button
+            variant="ghost"
+            size="icon-lg"
+            className="w-fit cursor-pointer px-2 hover:bg-none"
             onClick={async () => {
               await navigator.clipboard.writeText('mlizamaoliger@gmail.com');
               setCopied(true);
@@ -55,18 +58,21 @@ export default function Intro() {
           >
             <PiCopyLight size={14} />
             <p>{copied ? 'Copied!' : 'mlizamaoliger@gmail.com'}</p>
-          </div>
-          <div
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon-lg"
+            className="w-fit cursor-pointer px-2 hover:bg-none"
             onClick={() => {
               window.open(
                 'https://www.linkedin.com/in/mauriciolizama/',
                 '_blank'
               );
             }}
-            className="flex cursor-pointer items-center text-sm hover:text-blue-900"
           >
-            <PiLinkedinLogoThin size={18} /> <span>LinkedIn</span>
-          </div>
+            <PiLinkedinLogoThin className="shrink-0" size={24} />{' '}
+            <span>LinkedIn</span>
+          </Button>
         </div>
       </div>
     </section>

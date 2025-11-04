@@ -1,19 +1,17 @@
 'use client';
 
+import React, { FunctionComponent } from 'react';
 import { motion } from 'framer-motion';
 import { FiPlus } from 'react-icons/fi';
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { links, linkStyles } from '@/constants';
+import { links } from '@/constants';
+import { NextLink } from './NextLink';
 
-export default function MenuDesktop({
-  isOpen,
-  setIsOpen,
-}: {
+export const MenuDesktop: FunctionComponent<{
   isOpen: boolean;
   setIsOpen: (value: boolean | ((prev: boolean) => boolean)) => void;
-}) {
+}> = ({ isOpen, setIsOpen }) => {
   return (
     <motion.nav
       layout
@@ -54,25 +52,27 @@ export default function MenuDesktop({
         >
           {links.slice(0, 4).map(({ href, label }) => {
             return (
-              <Link
+              <NextLink
                 key={href}
                 href={href}
-                className={cn(linkStyles, {
+                className={cn('', {
                   'pointer-events-none opacity-40': !isOpen,
                 })}
                 aria-disabled={!isOpen}
                 tabIndex={isOpen ? 0 : -1}
               >
                 {label}
-              </Link>
+              </NextLink>
             );
           })}
         </motion.div>
 
         <div className="max-[700px]:order-first">
           <Button
+            variant="ghost"
+            size="sm"
             aria-expanded={isOpen}
-            className={cn('bg-gray-200', { 'bg-white': isOpen })}
+            className={cn('cursor-pointer bg-gray-200', { 'bg-white': isOpen })}
             onClick={() => setIsOpen((prevState: boolean) => !prevState)}
           >
             <motion.span
@@ -112,21 +112,21 @@ export default function MenuDesktop({
         >
           {links.slice(4, 8).map(({ href, label }) => {
             return (
-              <Link
+              <NextLink
                 key={href}
                 href={href}
-                className={cn(linkStyles, {
+                className={cn('', {
                   'pointer-events-none opacity-40': !isOpen,
                 })}
                 aria-disabled={!isOpen}
                 tabIndex={isOpen ? 0 : -1}
               >
                 {label}
-              </Link>
+              </NextLink>
             );
           })}
         </motion.div>
       </div>
     </motion.nav>
   );
-}
+};
