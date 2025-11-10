@@ -21,7 +21,7 @@ export const MenuDesktop: FunctionComponent<{
       }}
       transition={{ type: 'spring', stiffness: 100, damping: 30 }}
       className={cn(
-        'relative flex h-min w-min origin-[50%_50%_0px] transform-none flex-row flex-nowrap content-center items-center justify-center overflow-hidden rounded-[8px] p-0.5',
+        'flex flex-row flex-nowrap items-center justify-center overflow-hidden rounded-[8px] p-0',
         {
           'rounded-[8px]': isOpen,
         }
@@ -29,7 +29,7 @@ export const MenuDesktop: FunctionComponent<{
     >
       <div
         className={cn(
-          'relative flex h-min w-min flex-none origin-[50%_50%_0px] transform-none flex-row flex-nowrap content-center items-center justify-center overflow-visible px-4 py-0',
+          'flex flex-none flex-row flex-nowrap items-center justify-center overflow-visible px-4 py-1',
           { 'gap-8': isOpen }
         )}
       >
@@ -46,7 +46,7 @@ export const MenuDesktop: FunctionComponent<{
                 }
           }
           className={cn(
-            'relative flex h-min w-min flex-none origin-[50%_50%_0px] transform-none flex-row flex-nowrap content-center items-center justify-end gap-2 overflow-visible p-0',
+            'flex flex-none flex-row flex-nowrap items-center justify-end gap-2 overflow-visible p-0',
             { 'pointer-events-auto gap-4': isOpen }
           )}
         >
@@ -55,9 +55,7 @@ export const MenuDesktop: FunctionComponent<{
               <NextLink
                 key={href}
                 href={href}
-                className={cn('', {
-                  'pointer-events-none opacity-40': !isOpen,
-                })}
+                className={cn({ 'pointer-events-none opacity-40': !isOpen })}
                 aria-disabled={!isOpen}
                 tabIndex={isOpen ? 0 : -1}
               >
@@ -106,7 +104,7 @@ export const MenuDesktop: FunctionComponent<{
                 }
           }
           className={cn(
-            'relative flex h-min w-min flex-none origin-center transform-none flex-row flex-nowrap content-center items-center justify-start gap-2 overflow-visible p-0',
+            'flex flex-none origin-center transform-none flex-row flex-nowrap items-center justify-start gap-2 overflow-visible p-0',
             { 'pointer-events-auto gap-4': isOpen }
           )}
         >

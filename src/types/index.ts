@@ -15,3 +15,21 @@ export type Project = {
   img: string;
   techStack: Array<TechStackItem>;
 };
+
+export type Experience = {
+  company: string;
+  location: string;
+  period: string;
+  role: string;
+  responsibilities: string[];
+};
+
+export type EducationItem = {
+  id?: string;
+  institution: string;
+  degree: string;
+  location?: string;
+  startDate?: string;
+  endDate?: string;
+  details?: string[];
+};

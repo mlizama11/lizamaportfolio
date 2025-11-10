@@ -10,7 +10,7 @@ export default function Intro() {
   const [copied, setCopied] = useState(false);
 
   return (
-    <section id="home">
+    <section id="home" className="scroll-mt-2">
       <div className="flex items-center justify-between">
         <div className="flex gap-4">
           <Image
@@ -27,10 +27,10 @@ export default function Intro() {
               <h2 className="text-xl">Full Stack Developer</h2>
               <div className="flex items-center gap-1">
                 <PiMapPin className="h-4 w-4 text-gray-500" />
-                <p className="text-sm text-gray-500">Aachen, Germany</p>
+                <p className="text-gray-500">Aachen, Germany</p>
               </div>
             </div>
-            <div className="flex items-center gap-1 text-sm font-medium text-green-700">
+            <div className="flex items-center gap-1 font-medium text-green-700">
               <div className="flex justify-center">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
