@@ -26,7 +26,7 @@ export const MenuDesktop: FunctionComponent<{
     >
       <div
         className={cn(
-          'bg-background flex flex-none flex-row flex-nowrap items-center justify-center overflow-visible px-4 py-1',
+          'flex flex-none flex-row flex-nowrap items-center justify-center overflow-visible bg-transparent px-4 py-1',
           { 'gap-8 bg-gray-200 dark:bg-neutral-300': isOpen }
         )}
       >

@@ -9,12 +9,17 @@ export default function Experience() {
       <div className="flex flex-col gap-12">
         {experiences.map(
           ({ company, location, period, role, responsibilities }) => (
-            <div key={company} className="border-l-2 border-gray-900 pl-4">
-              <h3 className="text-2xl font-semibold">{company}</h3>
-              <p>
-                {location} | {period}
-              </p>
-              <p className="font-medium">{role}</p>
+            <div
+              key={company}
+              className="flex flex-col gap-4 border-l-2 border-gray-900 pl-4"
+            >
+              <div>
+                <h3 className="text-2xl font-semibold">{company}</h3>
+                <p>
+                  {location} | {period}
+                </p>
+                <p className="font-medium">{role}</p>
+              </div>
               <ul className="list-inside list-disc space-y-1">
                 {responsibilities.map((item, index) => (
                   <li key={index}>{item}</li>

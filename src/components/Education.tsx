@@ -20,20 +20,24 @@ export default function Education() {
           }: EducationItem) => (
             <div
               key={id || institution}
-              className="border-l-2 border-gray-900 pl-4"
+              className="flex flex-col gap-2 border-l-2 border-gray-900 pl-4"
             >
-              <h3 className="text-2xl font-semibold">{institution}</h3>
-              <p>
-                {location} | {startDate} - {endDate}
-              </p>
-              <p className="font-medium">{degree}</p>
-              {details && (
-                <ul className="list-inside list-disc space-y-1">
-                  {details.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              )}
+              <div>
+                <h3 className="text-2xl font-semibold">{institution}</h3>
+                <p>
+                  {location} | {startDate} - {endDate}
+                </p>
+              </div>
+              <div>
+                <p className="font-medium">{degree}</p>
+                {details && (
+                  <ul className="list-inside list-disc space-y-1">
+                    {details.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
           )
         )}

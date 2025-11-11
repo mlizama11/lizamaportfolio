@@ -20,7 +20,7 @@ export const links: Link[] = [
 export const projects: Project[] = [
   {
     id: 1,
-    name: 'Planted Green CO2 Reporting Software',
+    name: 'Planted CO2 Software',
     description:
       'I PLANTED GmbH is a startup focused on combating climate change through innovative solutions. As part of their team, I colaborated building a comprehensive CO2 reporting software that enables businesses to accurately track and report their carbon emissions. I worked with React in the frontend and NestJS and Prisma ORM in the backend. Please feel free to click in the more information button and check in their website their free version where you could see the software capabilities.',
     img: '/assets/plantedgreen.jpg',
@@ -35,6 +35,7 @@ export const projects: Project[] = [
       { name: 'Prisma', logo: 'prisma' },
       { name: 'MySQL', logo: 'mysql' },
     ],
+    type: 'web development',
   },
   {
     id: 2,
@@ -51,6 +52,7 @@ export const projects: Project[] = [
       { name: 'Motion', logo: 'framer' },
       { name: 'MDX', logo: 'markdown' },
     ],
+    type: 'web development',
   },
 ];
 // Experience Data

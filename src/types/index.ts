@@ -13,7 +13,8 @@ export type Project = {
   name: string;
   description: string;
   img: string;
-  techStack: Array<TechStackItem>;
+  techStack?: Array<TechStackItem>;
+  type: 'web development' | 'journalism' | 'audiovisual' | 'photography';
 };
 
 export type Experience = {
