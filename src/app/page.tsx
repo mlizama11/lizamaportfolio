@@ -8,7 +8,7 @@ import Stack from '@/components/Stack';
 
 export default function Home() {
   return (
-    <main className="flex grow flex-col gap-20 px-4">
+    <main className="flex grow flex-col gap-15 px-4">
       <Intro />
       <About />
       <Works />

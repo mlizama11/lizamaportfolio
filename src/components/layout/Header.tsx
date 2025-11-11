@@ -10,7 +10,7 @@ export default function Header() {
   const isMobileOrTablet = useMediaQuery({ maxWidth: 700 });
 
   return (
-    <header className="sticky top-0 z-50 flex h-20 w-full items-center justify-center px-4">
+    <header className="relative flex h-20 w-full items-center justify-center">
       {isMobileOrTablet ? (
         <MenuMobileorTablet isOpen={isOpen} setIsOpen={setIsOpen} />
       ) : (

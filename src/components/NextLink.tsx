@@ -4,7 +4,7 @@ import Link, { LinkProps } from 'next/link';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const nextLinkVariants = cva(
-  'focus-visible:underline-blue-400 rounded-md text-black outline-none hover:text-blue-400  focus-visible:underline',
+  'focus-visible:underline-blue-400 rounded-md text-black outline-none hover:text-blue-400 focus-visible:underline',
   {
     variants: {
       variant: {

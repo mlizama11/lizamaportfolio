@@ -16,53 +16,45 @@ export const MenuDesktop: FunctionComponent<{
     <motion.nav
       layout
       initial={false}
-      animate={{
-        backgroundColor: isOpen ? 'rgb(243 244 246)' : 'rgba(0,0,0,0)',
-      }}
       transition={{ type: 'spring', stiffness: 100, damping: 30 }}
       className={cn(
-        'flex flex-row flex-nowrap items-center justify-center overflow-hidden rounded-[8px] p-0',
+        'fixed top-5 z-0 flex flex-row flex-nowrap items-center justify-center overflow-hidden rounded-[8px] p-0',
         {
-          'rounded-[8px]': isOpen,
+          'z-50 rounded-[8px]': isOpen,
         }
       )}
     >
       <div
         className={cn(
-          'flex flex-none flex-row flex-nowrap items-center justify-center overflow-visible px-4 py-1',
-          { 'gap-8': isOpen }
+          'bg-background flex flex-none flex-row flex-nowrap items-center justify-center overflow-visible px-4 py-1',
+          { 'gap-8 bg-gray-200 dark:bg-neutral-300': isOpen }
         )}
       >
         <motion.div
           layout
           initial={false}
-          animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: 0 }}
+          animate={isOpen ? { opacity: 1 } : { opacity: 0 }}
           transition={
             isOpen
               ? { type: 'spring', stiffness: 100, damping: 30 }
-              : {
-                  opacity: { duration: 0.1, ease: 'easeInOut' },
-                  x: { type: 'spring', stiffness: 100, damping: 30 },
-                }
+              : { opacity: { duration: 0.1, ease: 'easeInOut' } }
           }
           className={cn(
             'flex flex-none flex-row flex-nowrap items-center justify-end gap-2 overflow-visible p-0',
             { 'pointer-events-auto gap-4': isOpen }
           )}
         >
-          {links.slice(0, 4).map(({ href, label }) => {
-            return (
-              <NextLink
-                key={href}
-                href={href}
-                className={cn({ 'pointer-events-none opacity-40': !isOpen })}
-                aria-disabled={!isOpen}
-                tabIndex={isOpen ? 0 : -1}
-              >
-                {label}
-              </NextLink>
-            );
-          })}
+          {links.slice(0, 4).map(({ href, label }) => (
+            <NextLink
+              key={href}
+              href={href}
+              className={cn({ 'pointer-events-none opacity-40': !isOpen })}
+              aria-disabled={!isOpen}
+              tabIndex={isOpen ? 0 : -1}
+            >
+              {label}
+            </NextLink>
+          ))}
         </motion.div>
 
         <div className="max-[700px]:order-first">
@@ -70,8 +62,10 @@ export const MenuDesktop: FunctionComponent<{
             variant="ghost"
             size="sm"
             aria-expanded={isOpen}
-            className={cn('cursor-pointer bg-gray-200', { 'bg-white': isOpen })}
-            onClick={() => setIsOpen((prevState: boolean) => !prevState)}
+            className={cn('cursor-pointer bg-neutral-300', {
+              'bg-white': isOpen,
+            })}
+            onClick={() => setIsOpen((prev) => !prev)}
           >
             <motion.span
               layout
@@ -83,14 +77,11 @@ export const MenuDesktop: FunctionComponent<{
               transition={{ type: 'spring', stiffness: 400, damping: 28 }}
               className="inline-flex"
             >
-              <FiPlus
-                className="shrink-0 transition-transform duration-300"
-                size={16}
-                color="black"
-              />
+              <FiPlus size={16} color="black" />
             </motion.span>
           </Button>
         </div>
+
         <motion.div
           layout
           initial={false}
@@ -104,25 +95,21 @@ export const MenuDesktop: FunctionComponent<{
                 }
           }
           className={cn(
-            'flex flex-none origin-center transform-none flex-row flex-nowrap items-center justify-start gap-2 overflow-visible p-0',
+            'flex flex-none flex-row flex-nowrap items-center justify-start gap-2 overflow-visible p-0',
             { 'pointer-events-auto gap-4': isOpen }
           )}
         >
-          {links.slice(4, 8).map(({ href, label }) => {
-            return (
-              <NextLink
-                key={href}
-                href={href}
-                className={cn('', {
-                  'pointer-events-none opacity-40': !isOpen,
-                })}
-                aria-disabled={!isOpen}
-                tabIndex={isOpen ? 0 : -1}
-              >
-                {label}
-              </NextLink>
-            );
-          })}
+          {links.slice(4, 8).map(({ href, label }) => (
+            <NextLink
+              key={href}
+              href={href}
+              className={cn({ 'pointer-events-none opacity-40': !isOpen })}
+              aria-disabled={!isOpen}
+              tabIndex={isOpen ? 0 : -1}
+            >
+              {label}
+            </NextLink>
+          ))}
         </motion.div>
       </div>
     </motion.nav>

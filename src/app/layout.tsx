@@ -1,15 +1,22 @@
 import type { Metadata } from 'next';
-import { Fira_Code } from 'next/font/google';
+import { Fira_Code, Montserrat } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { siteDescription, siteTitle, siteUrl } from '@/constants';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 const firaCode = Fira_Code({
-  weight: ['400', '700'],
   subsets: ['latin'],
+  display: 'swap',
   variable: '--font-fira-code',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
 });
 
 export const metadata: Metadata = {
@@ -48,19 +55,27 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          firaCode.className,
-          'flex items-center justify-center antialiased outline-dashed'
+          firaCode.variable,
+          montserrat.variable,
+          'font-fira-code flex items-center justify-center antialiased'
         )}
       >
-        <div
-          className={cn(
-            'flex min-h-screen w-[1200px] flex-col justify-between gap-8 scroll-smooth'
-          )}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Footer />
-        </div>
+          <div
+            className={cn(
+              'flex min-h-screen w-[1200px] flex-col justify-between gap-8 scroll-smooth'
+            )}
+          >
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
