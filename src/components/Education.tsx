@@ -20,7 +20,7 @@ export default function Education() {
           }: EducationItem) => (
             <div
               key={id || institution}
-              className="flex flex-col gap-2 border-l-2 border-gray-900 pl-4"
+              className="flex flex-col gap-2 border-l-2 border-gray-900 pl-4 dark:border-gray-100"
             >
               <div>
                 <h3 className="text-2xl font-semibold">{institution}</h3>
