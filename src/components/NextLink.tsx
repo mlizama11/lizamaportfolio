@@ -1,7 +1,8 @@
-import { cn } from '@/lib/utils';
-import React, { FunctionComponent } from 'react';
+import { type VariantProps, cva } from 'class-variance-authority';
 import Link, { LinkProps } from 'next/link';
-import { cva, type VariantProps } from 'class-variance-authority';
+import React, { FunctionComponent } from 'react';
+
+import { cn } from '@/lib/utils';
 
 const nextLinkVariants = cva(
   'focus-visible:underline-blue-400 rounded-md text-black outline-none hover:text-blue-400 focus-visible:underline',

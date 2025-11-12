@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
 import { Fira_Code, Montserrat } from 'next/font/google';
-import './globals.css';
+
 import { cn } from '@/lib/utils';
+
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
-import { siteDescription, siteTitle, siteUrl } from '@/constants';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
+
+import './globals.css';
+import { siteDescription, siteTitle, siteUrl } from '@/constants';
 
 const firaCode = Fira_Code({
   subsets: ['latin'],

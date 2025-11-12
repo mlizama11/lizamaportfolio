@@ -1,17 +1,20 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import React, { FunctionComponent } from 'react';
+import { FiPlus } from 'react-icons/fi';
+
+import { cn } from '@/lib/utils';
+
+import { Button } from '@/components/ui/button';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { FiPlus } from 'react-icons/fi';
-import { motion } from 'framer-motion';
-import { links } from '@/constants';
+
 import { NextLink } from './NextLink';
+import { links } from '@/constants';
 
 export const MenuMobileorTablet: FunctionComponent<{
   isOpen: boolean;

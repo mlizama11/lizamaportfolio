@@ -1,8 +1,9 @@
 'use client';
 
+import { useTheme } from 'next-themes';
 import * as React from 'react';
 import { PiMoon, PiSun } from 'react-icons/pi';
-import { useTheme } from 'next-themes';
+
 import { Switch } from '@/components/ui/switch';
 
 export function ModeToggle() {

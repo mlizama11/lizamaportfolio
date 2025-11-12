@@ -1,7 +1,8 @@
 import React from 'react';
-import { EducationItem } from '@/types';
-import { education } from '@/constants';
+
 import { Section, SectionTitle } from './layout/Section';
+import { education } from '@/constants';
+import { EducationItem } from '@/types';
 
 export default function Education() {
   return (

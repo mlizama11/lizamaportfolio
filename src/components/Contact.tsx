@@ -1,9 +1,9 @@
 'use client';
 
-import { FormData } from '@/types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+
 import { Button } from './ui/button';
 import {
   Form,
@@ -15,9 +15,9 @@ import {
 } from './ui/form';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
+import { FormData } from '@/types';
 
 export default function Contact() {
-
   const formSchema = z.object({
     firstName: z.string().min(1, { message: 'El nombre es obligatorio.' }),
     lastName: z.string().min(1, { message: 'El apellido es obligatorio.' }),

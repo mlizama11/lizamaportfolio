@@ -1,6 +1,7 @@
 import React from 'react';
-import { experiences } from '@/constants';
+
 import { Section, SectionTitle } from './layout/Section';
+import { experiences } from '@/constants';
 
 export default function Experience() {
   return (

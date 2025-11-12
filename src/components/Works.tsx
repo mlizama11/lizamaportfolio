@@ -1,9 +1,10 @@
-import React from 'react';
 import Image from 'next/image';
-import { projects } from '@/constants';
+import React from 'react';
+
+import { Card, CardContent, CardHeader } from './Card';
 import { NextLink } from './NextLink';
 import { Section, SectionTitle } from './layout/Section';
-import { Card, CardContent, CardHeader } from './Card';
+import { projects } from '@/constants';
 
 export default function Works() {
   return (

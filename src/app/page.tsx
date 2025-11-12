@@ -1,11 +1,12 @@
 import React from 'react';
-import Intro from '@/components/Intro';
+
 import About from '@/components/About';
-import Works from '@/components/Works';
-import Experience from '@/components/Experience';
-import Education from '@/components/Education';
-import Stack from '@/components/Stack';
 import Contact from '@/components/Contact';
+import Education from '@/components/Education';
+import Experience from '@/components/Experience';
+import Intro from '@/components/Intro';
+import Stack from '@/components/Stack';
+import Works from '@/components/Works';
 
 export default function Home() {
   return (

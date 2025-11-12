@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { MenuDesktop } from '../MenuDesktop';
 import { MenuMobileorTablet } from '../MenuMobileorTablet';
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

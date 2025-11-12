@@ -1,13 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import { PiCopyLight, PiLinkedinLogoThin, PiMapPin } from 'react-icons/pi';
-import { Separator } from '@/components/ui/separator';
 import { useState } from 'react';
-import { Button } from './ui/button';
 import { FiDownload } from 'react-icons/fi';
+import { PiCopyLight, PiLinkedinLogoThin, PiMapPin } from 'react-icons/pi';
+
+import { Separator } from '@/components/ui/separator';
+
 import { Section } from './layout/Section';
 import { ModeToggle } from './theme/ModeToggle';
+import { Button } from './ui/button';
 
 export default function Intro() {
   const [copied, setCopied] = useState(false);
