@@ -34,3 +34,10 @@ export type EducationItem = {
   endDate?: string;
   details?: string[];
 };
+
+export type FormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+};

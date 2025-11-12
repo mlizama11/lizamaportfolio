@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader } from './Card';
 
 export default function Works() {
   return (
-    <Section id="works" className="scroll-mt-2">
+    <Section id="works">
       <SectionTitle>Works</SectionTitle>
       <p>
         Here are some of the projects I have worked on. Each project reflects my

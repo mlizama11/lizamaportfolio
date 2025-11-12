@@ -5,6 +5,7 @@ import Works from '@/components/Works';
 import Experience from '@/components/Experience';
 import Education from '@/components/Education';
 import Stack from '@/components/Stack';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Experience />
       <Education />
       <Stack />
+      <Contact />
     </main>
   );
 }
