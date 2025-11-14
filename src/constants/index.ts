@@ -1,4 +1,11 @@
-import { EducationItem, Experience, Link, Project } from '@/types';
+import {
+  EducationItem,
+  Experience,
+  Link,
+  Project,
+  ProjectType,
+  Works,
+} from '@/types';
 
 // Layout and Site Constants
 export const siteTitle: string = 'Mauricio Lizama - Portfolio';
@@ -17,42 +24,62 @@ export const links: Link[] = [
   { href: '#contact', label: 'Contact' },
 ];
 // Projects Data
-export const projects: Project[] = [
+export const works: Works[] = [
   {
     id: 1,
-    name: 'Planted CO2 Software',
-    description:
-      'I PLANTED GmbH is a startup focused on combating climate change through innovative solutions. As part of their team, I colaborated building a comprehensive CO2 reporting software that enables businesses to accurately track and report their carbon emissions. I worked with React in the frontend and NestJS and Prisma ORM in the backend. Please feel free to click in the more information button and check in their website their free version where you could see the software capabilities.',
-    img: '/assets/plantedgreen.jpg',
-    techStack: [
-      { name: 'TypeScript', logo: 'typescript' },
-      { name: 'Next.js', logo: 'next.js' },
-      { name: 'React', logo: 'react' },
-      { name: 'Tailwind CSS', logo: 'tailwindcss' },
-      { name: 'Shadcn', logo: 'shadcnui' },
-      { name: 'Auth0', logo: 'auth0' },
-      { name: 'NestJS', logo: 'nestjs' },
-      { name: 'Prisma', logo: 'prisma' },
-      { name: 'MySQL', logo: 'mysql' },
+    type: ProjectType.WEBDEV,
+    projects: [
+      {
+        id: 1,
+        title: 'Planted CO2 Software',
+        description:
+          'I PLANTED GmbH is a startup focused on combating climate change through innovative solutions. As part of their team, I colaborated building a comprehensive CO2 reporting software that enables businesses to accurately track and report their carbon emissions. I worked with React in the frontend and NestJS and Prisma ORM in the backend. Please feel free to click in the more information button and check in their website their free version where you could see the software capabilities.',
+        img: '/assets/plantedgreen.jpg',
+        techStack: [
+          { title: 'TypeScript', logo: 'typescript' },
+          { title: 'Next.js', logo: 'next.js' },
+          { title: 'React', logo: 'react' },
+          { title: 'Tailwind CSS', logo: 'tailwindcss' },
+          { title: 'Shadcn', logo: 'shadcnui' },
+          { title: 'Auth0', logo: 'auth0' },
+          { title: 'NestJS', logo: 'nestjs' },
+          { title: 'Prisma', logo: 'prisma' },
+          { title: 'MySQL', logo: 'mysql' },
+        ],
+        link: 'https://planted.green/preise',
+      },
+      {
+        id: 2,
+        title: 'Emilia Prieto',
+        description:
+          'The Emilia Prieto Project is one that aims to promote and keep the memory alive of an artist, educator, singer and scholar of folklore from Costa Rica. The website collects its most important artistic and intellectual work legacy. I created this website initially with bootstrap and recently I updated to NextJS. Visit the website clicking in the more information button to explore the rich cultural heritage of Emilia Prieto through this digital platform.',
+        img: '/assets/emiliaprietoproject.jpg',
+        techStack: [
+          { title: 'TypeScript', logo: 'typescript' },
+          { title: 'Next.js', logo: 'next.js' },
+          { title: 'React', logo: 'react' },
+          { title: 'Tailwind CSS', logo: 'tailwindcss' },
+          { title: 'Shadcn', logo: 'shadcnui' },
+          { title: 'Motion', logo: 'framer' },
+          { title: 'MDX', logo: 'markdown' },
+        ],
+        link: 'https://emiliaprieto.com/',
+      },
     ],
-    type: 'web development',
   },
   {
     id: 2,
-    name: 'Emilia Prieto',
-    description:
-      'The Emilia Prieto Project is one that aims to promote and keep the memory alive of an artist, educator, singer and scholar of folklore from Costa Rica. The website collects its most important artistic and intellectual work legacy. I created this website initially with bootstrap and recently I updated to NextJS. Visit the website clicking in the more information button to explore the rich cultural heritage of Emilia Prieto through this digital platform.',
-    img: '/assets/emiliaprietoproject.jpg',
-    techStack: [
-      { name: 'TypeScript', logo: 'typescript' },
-      { name: 'Next.js', logo: 'next.js' },
-      { name: 'React', logo: 'react' },
-      { name: 'Tailwind CSS', logo: 'tailwindcss' },
-      { name: 'Shadcn', logo: 'shadcnui' },
-      { name: 'Motion', logo: 'framer' },
-      { name: 'MDX', logo: 'markdown' },
+    type: ProjectType.AUDIOVISUAL,
+    projects: [
+      {
+        id: 3,
+        title: 'OAS Official Repository of Inter-American',
+        description:
+          'Treaties. Small video news capsule about the vault that safeguards the main legal instruments of the Americas. The treaties and agreements, either bilateral or multilateral, contained in the safe are key tools in international diplomacy and conflict resolution. They represent the legal memory of the Americas from 1889 until today.',
+        img: '/assets/oasinteramericantreaties.jpg',
+        link: 'https://vimeo.com/247341360',
+      },
     ],
-    type: 'web development',
   },
 ];
 // Experience Data

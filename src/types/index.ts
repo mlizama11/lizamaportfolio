@@ -4,17 +4,30 @@ export type Link = {
 };
 
 export type TechStackItem = {
-  name: string;
+  title: string;
   logo: string;
 };
 
+export enum ProjectType {
+  WEBDEV = 'Web Development',
+  AUDIOVISUAL = 'Audiovisual',
+  COMMUNICATIONS = 'Communications',
+  PHOTOGRAPHY = 'photography',
+}
+
 export type Project = {
   id: number;
-  name: string;
+  title: string;
   description: string;
   img: string;
   techStack?: Array<TechStackItem>;
-  type: 'web development' | 'journalism' | 'audiovisual' | 'photography';
+  link?: string;
+};
+
+export type Works = {
+  id: number;
+  type: ProjectType;
+  projects: Array<Project>;
 };
 
 export type Experience = {

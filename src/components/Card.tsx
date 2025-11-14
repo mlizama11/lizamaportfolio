@@ -34,7 +34,7 @@ function CardHeader({
     <div
       data-slot="card-header"
       role="card-header "
-      className={cn('h-70 w-full', className)}
+      className={cn('h-80 w-full', className)}
     >
       {children}
     </div>

@@ -1,5 +1,5 @@
-import type { NextConfig } from 'next';
 import withBundleAnalyzer from '@next/bundle-analyzer';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
@@ -7,6 +7,12 @@ const nextConfig: NextConfig = {
       {
         pathname: '/assets/**',
         search: '',
+      },
+    ],
+    remotePatterns: [
+      {
+        hostname: 'img.shields.io',
+        pathname: '/**',
       },
     ],
   },
