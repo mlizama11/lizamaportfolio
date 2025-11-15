@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Section, SectionTitle } from './layout/Section';
-import { experiences } from '@/constants';
+import { experiences } from '@/constants/experience';
 
 export default function Experience() {
   return (

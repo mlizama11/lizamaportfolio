@@ -9,8 +9,8 @@ export default function Works() {
       <SectionTitle>Works</SectionTitle>
       <p>
         Here are some of the projects I have worked on. Each project reflects my
-        dedication to quality and my passion for web development, journalism,
-        audiovisual and photography.
+        dedication to quality and my passion for web development, audiovisual,
+        photography and communications.
       </p>
       <ProjectsList />
     </Section>

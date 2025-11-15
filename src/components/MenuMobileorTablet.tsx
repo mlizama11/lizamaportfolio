@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/popover';
 
 import { NextLink } from './NextLink';
-import { links } from '@/constants';
+import { links } from '@/constants/site';
 
 export const MenuMobileorTablet: FunctionComponent<{
   isOpen: boolean;

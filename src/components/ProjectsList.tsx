@@ -15,7 +15,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from './ui/dialog';
-import { works } from '@/constants';
+import { works } from '@/constants/works';
 import { ProjectType } from '@/types';
 
 export function ProjectsList() {
@@ -35,8 +35,8 @@ export function ProjectsList() {
                           src={img}
                           alt={title}
                           className="h-full w-full object-cover"
-                          width={550}
-                          height={640}
+                          width={800}
+                          height={487}
                         />
                       </CardHeader>
                       <CardContent>
@@ -75,12 +75,12 @@ export function ProjectsList() {
                         </div>
 
                         <div className="flex justify-end gap-4">
-                          {type === ProjectType.WEBDEV && (
+                          {type !== ProjectType.AUDIOVISUAL && (
                             <NextLink
                               href={link || '#'}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="underline-none focus-visible:border-ring focus-visible:ring-ring/50 z-30 flex items-center rounded-md border border-black bg-white px-4 py-2 font-medium text-black transition-colors outline-none hover:bg-black hover:text-white focus-visible:ring-[3px] aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-5 dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black"
+                              className="underline-none focus-visible:border-ring focus-visible:ring-ring/50 z-30 flex items-center rounded-md border border-black bg-white px-4 py-2 text-sm font-medium text-black transition-colors outline-none hover:bg-black hover:text-white focus-visible:ring-[3px] aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-5 dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black"
                             >
                               Visit Website
                             </NextLink>
@@ -98,17 +98,17 @@ export function ProjectsList() {
                                 className="flex w-[500px] flex-col items-center justify-center gap-0 overflow-hidden border-0 p-0 dark:bg-white"
                               >
                                 <DialogHeader className="sr-only">
-                                  <DialogTitle>Video</DialogTitle>
+                                  <DialogTitle>{title}</DialogTitle>
                                   <DialogDescription>
-                                    Project created when working as Multimedia
-                                    Officer at the OAS
+                                    {description}
                                   </DialogDescription>
                                 </DialogHeader>
                                 <div className="aspect-video w-full">
                                   <iframe
                                     title="vimeo-player"
                                     className="inset-0 h-full w-full"
-                                    src="https://player.vimeo.com/video/247341360?h=25d69368d5"
+                                    src={link}
+                                    referrerPolicy="strict-origin-when-cross-origin"
                                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                                   />
                                 </div>

@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 import { NextLink } from './NextLink';
-import { links } from '@/constants';
+import { links } from '@/constants/site';
 
 export const MenuDesktop: FunctionComponent<{
   isOpen: boolean;

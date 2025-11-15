@@ -8,7 +8,7 @@ import Header from '@/components/layout/Header';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 import './globals.css';
-import { siteDescription, siteTitle, siteUrl } from '@/constants';
+import { siteDescription, siteTitle, siteUrl } from '@/constants/site';
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
