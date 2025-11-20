@@ -55,19 +55,21 @@ export function ProjectsList() {
                               <h5 className="font-bold">Tech Stack</h5>
                               <div className="flex flex-wrap gap-2">
                                 {techStack.map(({ title, logo }) => (
-                                  <Image
+                                  <div
                                     key={title}
-                                    src={`https://img.shields.io/badge/${encodeURIComponent(
-                                      title
-                                    )}-000000?style=flat&logo=${encodeURIComponent(
-                                      logo
-                                    )}&labelColor=white&color=white&logoColor=black`}
-                                    alt={`${title} badge`}
-                                    className="h-6"
-                                    width={100}
-                                    height={24}
-                                    unoptimized
-                                  />
+                                    className="overflow-hidden rounded-md border border-gray-200 shadow-2xl transition-transform duration-200 ease-out hover:shadow-md dark:border-gray-700 dark:hover:shadow-gray-200"
+                                    aria-label={title}
+                                    role="img"
+                                  >
+                                    <Image
+                                      src={`https://img.shields.io/badge/${title}-000000?logo=${logo}&logoSize=auto&color=white&logoColor=black`}
+                                      alt={`${title} badge`}
+                                      className="block h-auto w-full"
+                                      width={100}
+                                      height={24}
+                                      unoptimized
+                                    />
+                                  </div>
                                 ))}
                               </div>
                             </div>

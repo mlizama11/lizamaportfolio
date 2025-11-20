@@ -18,25 +18,27 @@ import {
 } from './ui/form';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { FormData as ContactFormData } from '@/types';
+import { ContactFormData } from '@/types';
 
 export default function Contact() {
   const formSchema = z.object({
-    firstName: z.string().min(1, { message: 'El nombre es obligatorio.' }),
-    lastName: z.string().min(1, { message: 'El apellido es obligatorio.' }),
-    email: z.string().email({ message: 'Ingrese un correo válido.' }),
-    message: z
-      .string()
-      .min(5, { message: 'El mensaje debe tener al menos 5 caracteres.' }),
+    firstName: z.string().min(1, { message: 'First name is required' }),
+    lastName: z.string().min(1, { message: 'Last name is required' }),
+    companyName: z.string(),
+    email: z.email({ message: 'Please type a valid email address' }),
+    message: z.string().min(10, {
+      message: 'Your message should be at least 10 characters long',
+    }),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: '',
-      message: '',
       firstName: '',
       lastName: '',
+      companyName: '',
+      email: '',
+      message: '',
     },
   });
 
@@ -44,24 +46,10 @@ export default function Contact() {
     const formData: ContactFormData = {
       firstName: values.firstName,
       lastName: values.lastName,
+      companyName: values.companyName,
       email: values.email,
       message: values.message,
     };
-    // setLoading(true);
-    // const response = await sendEmail(token, formData);
-    // setLoading(false);
-    // if (response.success) {
-    //   toast.success(
-    //     response.message ||
-    //       'Mensaje enviado correctamente. ¡Gracias por contactarnos!'
-    //   );
-    //   form.reset();
-    // } else {
-    //   toast.error(
-    //     response.message ||
-    //       'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.'
-    //   );
-    // }
     console.log(formData);
   };
   const [copied, setCopied] = useState(false);
@@ -137,9 +125,9 @@ export default function Contact() {
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Nombre</FormLabel>
+                    <FormLabel>First Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Tu nombre" {...field} />
+                      <Input placeholder="First name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -150,9 +138,9 @@ export default function Contact() {
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Apellido</FormLabel>
+                    <FormLabel>Last Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Tu apellido" {...field} />
+                      <Input placeholder="Last Name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -161,10 +149,25 @@ export default function Contact() {
             </div>
             <FormField
               control={form.control}
+              name="companyName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormItem>
+                    <FormLabel>Company Name (Optional)</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Company name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Correo Electrónico</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input placeholder="Email" {...field} />
                   </FormControl>
@@ -177,10 +180,10 @@ export default function Contact() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Mensaje</FormLabel>
+                  <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Escribe tu mensaje aquí..."
+                      placeholder="Write your message here..."
                       rows={5}
                       {...field}
                     />
@@ -189,6 +192,7 @@ export default function Contact() {
                 </FormItem>
               )}
             />
+
             <Button
               type="submit"
               className="mt-4 w-full cursor-pointer border border-black bg-black text-white hover:border-black hover:bg-white hover:text-black"

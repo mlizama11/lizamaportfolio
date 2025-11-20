@@ -48,9 +48,10 @@ export type EducationItem = {
   details?: string[];
 };
 
-export type FormData = {
+export type ContactFormData = {
   firstName: string;
   lastName: string;
+  companyName?: string;
   email: string;
   message: string;
 };
