@@ -7,6 +7,7 @@ import { PiCopyLight, PiLinkedinLogoThin, PiMapPin } from 'react-icons/pi';
 
 import { Separator } from '@/components/ui/separator';
 
+import { NextLink } from './NextLink';
 import { Section } from './layout/Section';
 import { ModeToggle } from './theme/ModeToggle';
 import { Button } from './ui/button';
@@ -52,16 +53,15 @@ export default function Intro() {
           <div>
             <ModeToggle />
           </div>
-          <Button
-            variant="ghost"
+          <NextLink
             className="z-30 flex cursor-pointer items-center justify-center gap-2 text-sm font-medium text-gray-700 hover:text-blue-400 dark:text-gray-300 dark:hover:text-blue-400"
-            onClick={() => {
-              window.open('/assets/Mauricio_Lizama_CV.pdf', '_blank');
-            }}
+            href="/assets/mlizama-resume.pdf"
+            target="_blank"
+            download
           >
             <FiDownload size={24} className="mb-2 cursor-pointer" />
             <p>Download CV</p>
-          </Button>
+          </NextLink>
         </div>
       </div>
       <div>
