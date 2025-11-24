@@ -54,4 +54,5 @@ export type ContactFormData = {
   companyName?: string;
   email: string;
   message: string;
+  altcha: string;
 };

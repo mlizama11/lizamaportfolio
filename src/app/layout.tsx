@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Fira_Code, Montserrat } from 'next/font/google';
 
 import { cn } from '@/lib/utils';
@@ -47,6 +47,13 @@ export const metadata: Metadata = {
   ],
   manifest: '/favicon/manifest.json',
   metadataBase: new URL(siteUrl),
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
 };
 
 export default function RootLayout({
