@@ -10,7 +10,7 @@ export const works: Works[] = [
         id: 1,
         title: 'Planted CO2 Software',
         description:
-          'I PLANTED GmbH is a startup focused on combating climate change through innovative solutions. As part of their team, I colaborated building a comprehensive CO2 reporting software that enables businesses to accurately track and report their carbon emissions. I worked with React in the frontend and NestJS and Prisma ORM in the backend. Please feel free to click in the more information button and check in their website their free version where you could see the software capabilities.',
+          'I PLANTED GmbH is a startup focused on combating climate change through innovative solutions. As part of their team, I colaborated building a comprehensive CO2 reporting software that enables businesses to accurately track and report their carbon emissions. I worked with React in the frontend and NestJS in the backend. I warmly invite you to visit their website, where you can review the information and even try the free version of the software.',
         img: '/assets/plantedgreen.jpg',
         techStack: [
           { title: 'TypeScript', logo: 'typescript' },
@@ -29,7 +29,7 @@ export const works: Works[] = [
         id: 2,
         title: 'Emilia Prieto',
         description:
-          'The Emilia Prieto Project is one that aims to promote and keep the memory alive of an artist, educator, singer and scholar of folklore from Costa Rica. The website collects its most important artistic and intellectual work legacy. I created this website initially with bootstrap and recently I updated to NextJS. Visit the website clicking in the more information button to explore the rich cultural heritage of Emilia Prieto through this digital platform.',
+          'The Emilia Prieto Project is dedicated to promoting and preserving the memory of this significant Costa Rican figure: an artist, educator, singer, and folklore scholar. The website serves as a digital platform collecting her most important artistic and intellectual work legacy. I originally developed this site using Bootstrap and recently upgraded it to Next.js. Visit the website to explore her contributions',
         img: '/assets/emiliaprietoproject.jpg',
         techStack: [
           { title: 'TypeScript', logo: 'typescript' },
