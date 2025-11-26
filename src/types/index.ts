@@ -56,3 +56,10 @@ export type ContactFormData = {
   message: string;
   altcha: string;
 };
+
+export type SimpleImage = {
+  url: string;
+  alt: string;
+  width: number;
+  height: number;
+};

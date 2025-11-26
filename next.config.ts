@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
         hostname: 'img.shields.io',
         pathname: '/**',
       },
+      {
+        hostname: 'images.ctfassets.net',
+        pathname: '/**',
+      },
     ],
   },
   turbopack: {

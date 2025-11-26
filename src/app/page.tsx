@@ -1,6 +1,7 @@
 import React from 'react';
 
 import About from '@/components/About';
+import Blog from '@/components/Blog';
 import Education from '@/components/Education';
 import Experience from '@/components/Experience';
 import Intro from '@/components/Intro';
@@ -16,6 +17,7 @@ export default function Home() {
       <Experience />
       <Education />
       <Stack />
+      <Blog />
     </main>
   );
 }

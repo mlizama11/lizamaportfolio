@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Fira_Code, Montserrat } from 'next/font/google';
+import { draftMode } from 'next/headers';
 
 import { cn } from '@/lib/utils';
 
@@ -7,6 +8,7 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
+import ExitDraftModeLink from './ExitDraftModeLink';
 import './globals.css';
 import { siteDescription, siteTitle, siteUrl } from '@/constants/site';
 
@@ -56,7 +58,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -81,6 +83,11 @@ export default function RootLayout({
               'flex min-h-screen w-[1200px] flex-col justify-between gap-8 scroll-smooth'
             )}
           >
+            {(await draftMode()).isEnabled && (
+              <p className="bg-orange-200 px-[6vw] py-4">
+                Draft mode is on! <ExitDraftModeLink className="underline" />
+              </p>
+            )}
             <Header />
             {children}
             <Footer />
