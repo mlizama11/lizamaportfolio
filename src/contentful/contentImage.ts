@@ -18,10 +18,15 @@ export function parseContentfulContentImage(
     return null;
   }
 
+  const newUrl = new URL(
+    asset.fields.file?.url || '',
+    'https://images.ctfassets.net'
+  );
+
   return {
-    src: asset.fields.file?.url || '',
+    src: newUrl.toString() || '',
     alt: asset.fields.description || '',
-    width: asset.fields.file?.details.image?.width || 0,
-    height: asset.fields.file?.details.image?.height || 0,
+    width: asset.fields.file?.details?.image?.width || 0,
+    height: asset.fields.file?.details?.image?.height || 0,
   };
 }

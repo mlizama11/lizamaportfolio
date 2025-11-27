@@ -7,8 +7,7 @@ import { NextLink } from './NextLink';
 import { Section, SectionTitle } from './layout/Section';
 
 export default async function Blog() {
-  const blogPosts = await fetchBlogPosts({ preview: false });
-
+  const blogPosts = await fetchBlogPosts({ preview: true });
   return (
     <Section id="blog">
       <SectionTitle>Blog</SectionTitle>
@@ -34,7 +33,7 @@ export default async function Blog() {
                 <CardHeader>
                   <Image
                     alt={alt}
-                    src={new URL(src, 'https:').toString()}
+                    src={src}
                     className="h-full w-full object-cover"
                     width={width}
                     height={height}
