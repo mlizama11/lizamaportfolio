@@ -49,6 +49,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     return notFound();
   }
 
+  const imageUrl = new URL(
+    blogPost.image ? blogPost.image.src : '',
+    'https://images.ctfassets.net'
+  );
+
   return (
     <main className="flex grow flex-col gap-6 px-4">
       <Link href="/">← Posts</Link>
@@ -56,7 +61,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         {blogPost.image && (
           <div className="h-80 w-full">
             <Image
-              src={`https:${blogPost.image.src}`}
+              src={imageUrl.toString()}
               width={blogPost.image.width}
               height={blogPost.image.height}
               className="h-full w-full object-cover"
