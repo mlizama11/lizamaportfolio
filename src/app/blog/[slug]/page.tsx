@@ -7,15 +7,13 @@ import { notFound } from 'next/navigation';
 import RichText from '@/contentful/RichText';
 import { fetchBlogPost, fetchBlogPosts } from '@/contentful/blogPosts';
 
-interface BlogPostPageParams {
-  slug: string;
-}
+type Params = Promise<{ slug: string }>;
 
-interface BlogPostPageProps {
-  params: BlogPostPageParams;
-}
+type BlogPostPageProps = {
+  params: Params;
+};
 
-export async function generateStaticParams(): Promise<BlogPostPageParams[]> {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const blogPosts = await fetchBlogPosts({ preview: false });
 
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -23,10 +21,11 @@ export async function generateStaticParams(): Promise<BlogPostPageParams[]> {
 
 export async function generateMetadata({
   params,
-}: BlogPostPageProps): Promise<Metadata> {
-  const slug = params.slug;
+}: {
+  params: Params;
+}): Promise<Metadata> {
   const blogPost = await fetchBlogPost({
-    slug: slug,
+    slug: (await params).slug,
     preview: (await draftMode()).isEnabled,
   });
 
@@ -40,8 +39,9 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
   const blogPost = await fetchBlogPost({
-    slug: params.slug,
+    slug: slug,
     preview: (await draftMode()).isEnabled,
   });
 
@@ -50,18 +50,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <main className="p-[6vw]">
+    <main className="flex grow flex-col gap-6 px-4">
       <Link href="/">← Posts</Link>
-      <div className="prose mt-8 border-t pt-8">
+      <div className="flex flex-col gap-5">
         {blogPost.image && (
-          <Image
-            src={`https:${blogPost.image.src}`}
-            width={blogPost.image.width}
-            height={blogPost.image.height}
-            alt={blogPost.image.alt}
-          />
+          <div className="h-80 w-full">
+            <Image
+              src={`https:${blogPost.image.src}`}
+              width={blogPost.image.width}
+              height={blogPost.image.height}
+              className="h-full w-full object-cover"
+              alt={blogPost.image.alt}
+              priority
+            />
+          </div>
         )}
-        <h1>{blogPost.title}</h1>
+        <div className="flex flex-col gap-3 px-8">
+          <h2>{blogPost.title}</h2>
+          <ul className="list-disc px-5">
+            <li className="italic">{blogPost.description}</li>
+          </ul>
+        </div>
         <RichText document={blogPost.body} />
       </div>
     </main>

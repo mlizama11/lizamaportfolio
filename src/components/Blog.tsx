@@ -8,7 +8,7 @@ import { Section, SectionTitle } from './layout/Section';
 
 export default async function Blog() {
   const blogPosts = await fetchBlogPosts({ preview: false });
-  console.log('Blog posts:', blogPosts);
+
   return (
     <Section id="blog">
       <SectionTitle>Blog</SectionTitle>
@@ -34,7 +34,7 @@ export default async function Blog() {
                 <CardHeader>
                   <Image
                     alt={alt}
-                    src={`https:${src}`}
+                    src={new URL(src, 'https:').toString()}
                     className="h-full w-full object-cover"
                     width={width}
                     height={height}
