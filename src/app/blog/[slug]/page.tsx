@@ -1,9 +1,9 @@
-import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { Metadata } from 'next';
 import RichText from '@/contentful/RichText';
 import { fetchBlogPost, fetchBlogPosts } from '@/contentful/blogPosts';
 
@@ -56,7 +56,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="flex grow flex-col gap-6 px-4">
-      <Link href="/">← Posts</Link>
+      <Link className='cursor-pointer' href="/">← Posts</Link>
       <div className="flex flex-col gap-5">
         {blogPost.image && (
           <div className="h-80 w-full">
@@ -64,7 +64,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               src={imageUrl.toString()}
               width={blogPost.image.width}
               height={blogPost.image.height}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover rounded"
               alt={blogPost.image.alt}
               priority
             />
@@ -75,8 +75,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <ul className="list-disc px-5">
             <li className="italic">{blogPost.description}</li>
           </ul>
+          <div>
+            <span className="font-semibold">Published on:</span>{' '}
+            {new Date(blogPost.createdAt).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </div>
         </div>
-        <RichText document={blogPost.body} />
+        <article>
+          <RichText document={blogPost.body} />
+        </article>
       </div>
     </main>
   );

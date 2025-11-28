@@ -17,5 +17,12 @@
   },
   "editor.inlineSuggest.enabled": true,
   "editor.wordWrap": "on",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    // This is the built-in VS Code action, which can sometimes interfere
+    // with Prettier's plugin sorting. Try disabling it if the issue persists.
+    "source.organizeImports": "never" 
+  }
 }
