@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 function Card({
   children,
-  className,
+  className
 }: {
   children: React.ReactNode;
   className?: string;
@@ -25,7 +25,7 @@ function Card({
 
 function CardHeader({
   children,
-  className,
+  className
 }: {
   children: React.ReactNode;
   className?: string;
@@ -43,7 +43,7 @@ function CardHeader({
 
 function CardContent({
   children,
-  className,
+  className
 }: {
   children: React.ReactNode;
   className?: string;
@@ -59,4 +59,4 @@ function CardContent({
   );
 }
 
-export { Card, CardHeader, CardContent };
+export { Card, CardContent, CardHeader };

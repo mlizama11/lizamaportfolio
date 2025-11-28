@@ -42,7 +42,7 @@ export function parseContentfulBlogPost(
     slug: blogPostEntry.fields.slug || '',
     date: blogPostEntry.fields.date || '',
     body: blogPostEntry.fields.body || null,
-    image: parseContentfulContentImage(blogPostEntry.fields.image),
+    image: parseContentfulContentImage(blogPostEntry.fields.image)
   };
 }
 
@@ -52,13 +52,13 @@ interface FetchBlogPostsOptions {
   preview: boolean;
 }
 export async function fetchBlogPosts({
-  preview,
+  preview
 }: FetchBlogPostsOptions): Promise<BlogPost[]> {
   const contentful = contentfulClient({ preview });
 
   const blogPostsResult = await contentful.getEntries<TypeBlogPostSkeleton>({
     content_type: 'blogPost',
-    include: 2,
+    include: 2
   });
 
   return blogPostsResult.items.map(
@@ -74,14 +74,14 @@ interface FetchBlogPostOptions {
 }
 export async function fetchBlogPost({
   slug,
-  preview,
+  preview
 }: FetchBlogPostOptions): Promise<BlogPost | null> {
   const contentful = contentfulClient({ preview });
 
   const blogPostsResult = await contentful.getEntries<TypeBlogPostSkeleton>({
     content_type: 'blogPost',
     'fields.slug': slug,
-    include: 2,
+    include: 2
   });
 
   return parseContentfulBlogPost(blogPostsResult.items[0]);

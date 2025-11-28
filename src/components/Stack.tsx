@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   SiAuth0,
   SiBootstrap,
@@ -26,7 +25,7 @@ import {
   SiStyledcomponents,
   SiSwr,
   SiTailwindcss,
-  SiTypescript,
+  SiTypescript
 } from 'react-icons/si';
 
 import { Section, SectionTitle } from './layout/Section';
@@ -44,18 +43,18 @@ export default function Stack() {
     {
       name: 'Styled Components',
       icon: SiStyledcomponents,
-      color: 'text-purple-500',
+      color: 'text-purple-500'
     },
     { name: 'Bootstrap', icon: SiBootstrap, color: 'text-purple-600' },
     {
       name: 'Shadcn UI',
       icon: SiShadcnui,
-      color: 'text-gray-900 dark:text-white',
+      color: 'text-gray-900 dark:text-white'
     },
     {
       name: 'Radix UI',
       icon: SiRadixui,
-      color: 'text-gray-900 dark:text-white',
+      color: 'text-gray-900 dark:text-white'
     },
     { name: 'MUI', icon: SiMui, color: 'text-blue-500' },
     { name: 'Chakra UI', icon: SiChakraui, color: 'text-teal-400' },
@@ -66,7 +65,7 @@ export default function Stack() {
     {
       name: 'React Router',
       icon: SiReactrouter,
-      color: 'text-gray-900 dark:text-white',
+      color: 'text-gray-900 dark:text-white'
     },
     { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-600' },
     { name: 'Auth0', icon: SiAuth0, color: 'text-black dark:text-white' },
@@ -74,7 +73,7 @@ export default function Stack() {
     {
       name: 'Express',
       icon: SiExpress,
-      color: 'text-gray-700 dark:text-white',
+      color: 'text-gray-700 dark:text-white'
     },
     { name: 'NestJS', icon: SiNestjs, color: 'text-red-600' },
     { name: 'Prisma', icon: SiPrisma, color: 'text-gray-900 dark:text-white' },
@@ -83,8 +82,8 @@ export default function Stack() {
     {
       name: 'Git & GitHub',
       icon: SiGithub,
-      color: 'text-gray-900 dark:text-white',
-    },
+      color: 'text-gray-900 dark:text-white'
+    }
   ];
   return (
     <Section id="stack">

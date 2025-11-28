@@ -1,8 +1,6 @@
-import React from 'react';
-
-import { Section, SectionTitle } from './layout/Section';
 import { education } from '@/constants/education';
 import { EducationItem } from '@/types';
+import { Section, SectionTitle } from './layout/Section';
 
 export default function Education() {
   return (
@@ -17,7 +15,7 @@ export default function Education() {
             location,
             startDate,
             endDate,
-            details,
+            details
           }: EducationItem) => (
             <div
               key={id || institution}

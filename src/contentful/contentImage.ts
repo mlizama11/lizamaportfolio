@@ -27,6 +27,6 @@ export function parseContentfulContentImage(
     src: newUrl.toString() || '',
     alt: asset.fields.description || '',
     width: asset.fields.file?.details?.image?.width || 0,
-    height: asset.fields.file?.details?.image?.height || 0,
+    height: asset.fields.file?.details?.image?.height || 0
   };
 }

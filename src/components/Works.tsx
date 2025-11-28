@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ProjectsList } from './ProjectsList';
 import { Section, SectionTitle } from './layout/Section';
 

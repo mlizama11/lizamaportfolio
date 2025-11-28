@@ -12,8 +12,8 @@ export const experiences: Experience[] = [
       'Collaborated with cross-functional teams to enhance project delivery and user experience.',
       'Supported the Webflow main website (planted.green).',
       'Participated in tree-planting initiatives around Cologne.',
-      'Completed the learning certificate "The Joy of React" by Josh W. Comeau.',
-    ],
+      'Completed the learning certificate "The Joy of React" by Josh W. Comeau.'
+    ]
   },
   {
     company: 'Organization of American States (OAS)',
@@ -23,8 +23,8 @@ export const experiences: Experience[] = [
     responsibilities: [
       'Developed strategic, political, and corporate communications for the Press and Communications Department.',
       'Produced multimedia content, including videos and photography, to support OAS initiatives.',
-      'Supported and participated in high-level political events.',
-    ],
+      'Supported and participated in high-level political events.'
+    ]
   },
   {
     company: 'National Theatre of Costa Rica',
@@ -34,7 +34,7 @@ export const experiences: Experience[] = [
     responsibilities: [
       'Handled corporate and strategic communications for the Cultural Promotion Department.',
       'Analyzed audience feedback to refine promotional strategies and improve outreach effectiveness.',
-      'Developed engaging press releases and created marketing materials to boost visibility of events, exhibitions, and activities.',
-    ],
-  },
+      'Developed engaging press releases and created marketing materials to boost visibility of events, exhibitions, and activities.'
+    ]
+  }
 ];

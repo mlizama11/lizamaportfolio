@@ -5,7 +5,7 @@ import {
   useEffect,
   useImperativeHandle,
   useRef,
-  useState,
+  useState
 } from 'react';
 
 interface AltchaWidgetMethods {
@@ -30,7 +30,7 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
       return {
         get value() {
           return value;
-        },
+        }
       };
     }, [value]);
 
@@ -70,7 +70,7 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
         id={id}
         ref={widgetRef}
         style={{
-          '--altcha-max-width': '100%',
+          '--altcha-max-width': '100%'
         }}
         name="altcha"
         challengeurl="/api/challenge"

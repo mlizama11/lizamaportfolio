@@ -1,5 +1,3 @@
-import React from 'react';
-
 import About from '@/components/About';
 import Blog from '@/components/Blog';
 import Education from '@/components/Education';

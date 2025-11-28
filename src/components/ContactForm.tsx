@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { ContactFormData } from '@/types';
 import Altcha from './Altcha';
 import { Button } from './ui/button';
 import {
@@ -13,11 +14,10 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
+  FormMessage
 } from './ui/form';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
-import { ContactFormData } from '@/types';
 
 export function ContactForm() {
   const [serverStatus, setServerStatus] = useState<
@@ -33,8 +33,8 @@ export function ContactForm() {
     companyName: z.string(),
     email: z.email({ message: 'Please type a valid email address' }),
     message: z.string().min(10, {
-      message: 'Your message should be at least 10 characters long',
-    }),
+      message: 'Your message should be at least 10 characters long'
+    })
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -44,8 +44,8 @@ export function ContactForm() {
       lastName: '',
       companyName: '',
       email: '',
-      message: '',
-    },
+      message: ''
+    }
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
@@ -55,14 +55,14 @@ export function ContactForm() {
       companyName: values.companyName,
       email: values.email,
       message: values.message,
-      altcha: altchaRef.current?.value || '',
+      altcha: altchaRef.current?.value || ''
     };
 
     try {
       const res = await fetch('/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData)
       });
 
       if (!res.ok) throw new Error('Failed to submit');

@@ -14,5 +14,5 @@ export const links: Link[] = [
   { href: '#education', label: 'Education' },
   { href: '#stack', label: 'Stack' },
   { href: '#blog', label: 'Blog' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#contact', label: 'Contact' }
 ];

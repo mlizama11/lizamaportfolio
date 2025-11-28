@@ -11,14 +11,14 @@ const nextLinkVariants = cva(
       variant: {
         default: '',
         custom:
-          'underline-none flex items-center rounded-md bg-black px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-50',
+          'underline-none flex items-center rounded-md bg-black px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50',
         secondary:
-          'underline-none flex items-center rounded-md border border-black bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-blue-200 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none aria-[disabled=true]:pointer-events-none aria-[disabled=true]:opacity-50',
-      },
+          'underline-none flex items-center rounded-md border border-black bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-blue-200 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50'
+      }
     },
     defaultVariants: {
-      variant: 'default',
-    },
+      variant: 'default'
+    }
   }
 );
 

@@ -8,20 +8,20 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
+import { siteDescription, siteTitle, siteUrl } from '@/constants/site';
 import ExitDraftModeLink from './ExitDraftModeLink';
 import './globals.css';
-import { siteDescription, siteTitle, siteUrl } from '@/constants/site';
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-fira-code',
+  variable: '--font-fira-code'
 });
 
 const montserrat = Montserrat({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-montserrat',
+  variable: '--font-montserrat'
 });
 
 export const metadata: Metadata = {
@@ -32,34 +32,34 @@ export const metadata: Metadata = {
     {
       rel: 'apple-touch-icon',
       type: 'image/png',
-      url: '/favicon/apple-touch-icon.png',
+      url: '/favicon/apple-touch-icon.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
       url: '/favicon/android-chrome-192x192.png',
-      sizes: '192x192',
+      sizes: '192x192'
     },
     {
       rel: 'icon',
       type: 'image/png',
       sizes: '512x512',
-      url: '/favicon/android-chrome-512x512.png',
-    },
+      url: '/favicon/android-chrome-512x512.png'
+    }
   ],
   manifest: '/favicon/manifest.json',
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl)
 };
 
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+    { media: '(prefers-color-scheme: dark)', color: 'black' }
+  ]
 };
 
 export default async function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {

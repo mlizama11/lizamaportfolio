@@ -5,7 +5,7 @@ export async function GET() {
   try {
     const challenge = await createChallenge({
       hmacKey: process.env.ALTCHA_HMAC_KEY!,
-      maxnumber: 50000,
+      maxnumber: 50000
     });
 
     return NextResponse.json(challenge);

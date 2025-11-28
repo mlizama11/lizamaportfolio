@@ -1,6 +1,5 @@
-import { fetchBlogPosts } from '../contentful/blogPosts';
 import Image from 'next/image';
-import React from 'react';
+import { fetchBlogPosts } from '../contentful/blogPosts';
 
 import { Card, CardContent, CardHeader } from './Card';
 import { NextLink } from './NextLink';
@@ -21,7 +20,7 @@ export default async function Blog() {
             description,
             date,
             slug,
-            image,
+            image
           } = singlePost;
 
           if (!image) return null;
@@ -55,7 +54,7 @@ export default async function Blog() {
                             {
                               year: 'numeric',
                               month: 'long',
-                              day: 'numeric',
+                              day: 'numeric'
                             }
                           )}
                         </span>
@@ -67,7 +66,7 @@ export default async function Blog() {
                           {new Date(updatedAt).toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',
-                            day: 'numeric',
+                            day: 'numeric'
                           })}
                         </span>
                       </div>

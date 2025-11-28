@@ -12,7 +12,7 @@ export enum ProjectType {
   WEBDEV = 'Web Development',
   AUDIOVISUAL = 'Audiovisual',
   COMMUNICATIONS = 'Communications',
-  PHOTOGRAPHY = 'Photography',
+  PHOTOGRAPHY = 'Photography'
 }
 
 export type Project = {

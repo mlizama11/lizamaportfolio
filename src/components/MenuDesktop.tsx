@@ -1,15 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { FiPlus } from 'react-icons/fi';
 
 import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
 
-import { NextLink } from './NextLink';
 import { links } from '@/constants/site';
+import { NextLink } from './NextLink';
 
 export const MenuDesktop: FunctionComponent<{
   isOpen: boolean;
@@ -21,9 +21,9 @@ export const MenuDesktop: FunctionComponent<{
       initial={false}
       transition={{ type: 'spring', stiffness: 100, damping: 30 }}
       className={cn(
-        'fixed top-5 z-0 flex flex-row flex-nowrap items-center justify-center overflow-hidden rounded-[8px] p-0',
+        'fixed top-5 z-0 flex flex-row flex-nowrap items-center justify-center overflow-hidden rounded-xl p-0',
         {
-          'z-50 rounded-[8px]': isOpen,
+          'z-50 rounded-xl': isOpen
         }
       )}
     >
@@ -66,7 +66,7 @@ export const MenuDesktop: FunctionComponent<{
             size="sm"
             aria-expanded={isOpen}
             className={cn('cursor-pointer bg-neutral-300', {
-              'bg-white': isOpen,
+              'bg-white': isOpen
             })}
             onClick={() => setIsOpen((prev) => !prev)}
           >
@@ -75,7 +75,7 @@ export const MenuDesktop: FunctionComponent<{
               initial={false}
               animate={{
                 rotate: isOpen ? 45 : 0,
-                scale: isOpen ? 1.02 : 1,
+                scale: isOpen ? 1.02 : 1
               }}
               transition={{ type: 'spring', stiffness: 400, damping: 28 }}
               className="inline-flex"
@@ -94,7 +94,7 @@ export const MenuDesktop: FunctionComponent<{
               ? { type: 'spring', stiffness: 100, damping: 30 }
               : {
                   opacity: { duration: 0.1, ease: 'easeInOut' },
-                  x: { type: 'spring', stiffness: 100, damping: 30 },
+                  x: { type: 'spring', stiffness: 100, damping: 30 }
                 }
           }
           className={cn(

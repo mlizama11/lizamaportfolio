@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Section, SectionTitle } from './layout/Section';
 
 export default function About() {

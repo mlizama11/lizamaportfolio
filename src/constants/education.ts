@@ -8,7 +8,7 @@ export const education: EducationItem[] = [
     location: 'Germany',
     startDate: '2020',
     endDate: '2021',
-    details: ['Professional training in MERN stack.'],
+    details: ['Professional training in MERN stack.']
   },
   {
     institution: 'Federated University',
@@ -16,7 +16,7 @@ export const education: EducationItem[] = [
     location: 'Costa Rica',
     startDate: '2012',
     endDate: '2013',
-    details: [],
+    details: []
   },
   {
     institution: 'Creativity University',
@@ -24,7 +24,7 @@ export const education: EducationItem[] = [
     location: 'Costa Rica',
     startDate: '2007',
     endDate: '2007',
-    details: [],
+    details: []
   },
   {
     institution: 'Latina University',
@@ -32,6 +32,6 @@ export const education: EducationItem[] = [
     location: 'Costa Rica',
     startDate: '2002',
     endDate: '2005',
-    details: [],
-  },
+    details: []
+  }
 ];

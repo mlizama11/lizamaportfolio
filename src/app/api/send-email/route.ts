@@ -32,7 +32,7 @@ export async function POST(req: Request) {
         lastName,
         companyName,
         email,
-        message,
+        message
       } as ContactFormData)
     );
 
@@ -42,8 +42,8 @@ export async function POST(req: Request) {
       secure: true,
       auth: {
         user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
-      },
+        pass: process.env.PASSWORD
+      }
     });
 
     await transporter.sendMail({
@@ -51,7 +51,7 @@ export async function POST(req: Request) {
       to: 'mlizamaoliger@gmail.com',
       subject: `New message from ${email} at mlizama.eu portfolio.`,
       html: emailHtml,
-      replyTo: email,
+      replyTo: email
     });
 
     return NextResponse.json({ success: true });

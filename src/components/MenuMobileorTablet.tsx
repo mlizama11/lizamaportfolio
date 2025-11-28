@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { FiPlus } from 'react-icons/fi';
 
 import { cn } from '@/lib/utils';
@@ -10,11 +10,11 @@ import { Button } from '@/components/ui/button';
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
+  PopoverTrigger
 } from '@/components/ui/popover';
 
-import { NextLink } from './NextLink';
 import { links } from '@/constants/site';
+import { NextLink } from './NextLink';
 
 export const MenuMobileorTablet: FunctionComponent<{
   isOpen: boolean;
@@ -39,7 +39,7 @@ export const MenuMobileorTablet: FunctionComponent<{
               initial={false}
               animate={{
                 rotate: isOpen ? 45 : 0,
-                scale: isOpen ? 1.02 : 1,
+                scale: isOpen ? 1.02 : 1
               }}
               transition={{ type: 'spring', stiffness: 400, damping: 28 }}
               className="inline-flex"
