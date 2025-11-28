@@ -24,13 +24,13 @@ function RichText({ document }: RichTextProps) {
         const imageUrl = new URL(file.url, 'https://images.ctfassets.net');
 
         return (
-          <figure className="w-fit shrink-0 float-left mr-4 mb-2">
+          <figure className="w-fit shrink-0 float-left mr-4 mb-2 ">
             <Image
               src={imageUrl.toString()}
               width={file.details.image.width}
               height={file.details.image.height}
               alt={title || 'Embedded Asset'}
-              className="w-2xs"
+              className="w-2xs rounded"
               loading="eager"
             />
           </figure>
@@ -39,6 +39,16 @@ function RichText({ document }: RichTextProps) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => {
         return <p className="mb-4 leading-6">{children}</p>;
+      },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      [BLOCKS.QUOTE]: (node: any, children: React.ReactNode) => {
+        return (
+          <div className="mb-4">
+            <blockquote className="p-4 border-none bg-neutral-200/50 dark:bg-neutral-800/50">
+              {children}
+            </blockquote>
+          </div>
+        );
       }
     }
   };

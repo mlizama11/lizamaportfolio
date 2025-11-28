@@ -12,16 +12,8 @@ export default async function Blog() {
       <SectionTitle>Blog</SectionTitle>
       <div className="grid gap-8 md:grid-cols-2">
         {blogPosts.map((singlePost) => {
-          const {
-            id,
-            createdAt,
-            updatedAt,
-            title,
-            description,
-            date,
-            slug,
-            image
-          } = singlePost;
+          const { id, updatedAt, title, description, date, slug, image } =
+            singlePost;
 
           if (!image) return null;
           const { src, alt, width, height } = image;
@@ -49,14 +41,11 @@ export default async function Blog() {
                       </div>
                       <div className="flex items-center justify-end">
                         <span className="text-xs text-gray-500 dark:text-gray-400">
-                          {new Date(date || createdAt).toLocaleDateString(
-                            'en-US',
-                            {
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric'
-                            }
-                          )}
+                          {new Date(date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
                         </span>
                         <span className="mx-2 text-[12px] text-gray-500">
                           |

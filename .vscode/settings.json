@@ -10,14 +10,19 @@
   ],
   "tailwindCSS.classAttributes": [
     "class",
-    "className",
+    "className", 
     "ngClass",
-    "class:list",
-    "cn"
+    "class:list"
   ],
   "tailwindCSS.includeLanguages": {
-    "javascript": "javascript"
+    "javascript": "javascript",
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact",
+    "javascriptreact": "javascriptreact"
   },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.showPixelEquivalents": true,
+  "tailwindCSS.colorDecorators": true,
   "editor.quickSuggestions": {
     "strings": true
   },
@@ -49,5 +54,6 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.linkedEditing": true
 }

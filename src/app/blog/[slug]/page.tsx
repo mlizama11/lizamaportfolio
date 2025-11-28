@@ -77,13 +77,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <ul className="list-disc px-5">
             <li className="italic">{blogPost.description}</li>
           </ul>
-          <div>
-            <span className="font-semibold">Published on:</span>{' '}
-            {new Date(blogPost.createdAt).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })}
+          <div className="flex items-center justify-end">
+            <span className="text-xs text-gray-500 dark:text-gray-400">
+              {new Date(blogPost.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </span>
+            <span className="mx-2 text-[12px] text-gray-500">|</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">
+              Updated on{' '}
+              {new Date(blogPost.updatedAt).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </span>
           </div>
         </div>
         <article>
