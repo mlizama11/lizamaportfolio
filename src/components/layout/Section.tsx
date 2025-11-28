@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 function Section({
   children,
   id,
-  className,
+  className
 }: {
   children: React.ReactNode;
   id?: string;
@@ -22,7 +22,7 @@ function SectionTitle({
   children,
   subtitle,
   className,
-  icon,
+  icon
 }: {
   children: React.ReactNode;
   subtitle?: string;

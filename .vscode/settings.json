@@ -10,10 +10,11 @@
   ],
   "tailwindCSS.classAttributes": [
     "class",
-    "className", 
+    "className",
     "ngClass",
-    "class:list"
+    ".*Classes.*"
   ],
+  "tailwindCSS.classFunctions": ["tw", "clsx", "cn", "cva"],
   "tailwindCSS.includeLanguages": {
     "javascript": "javascript",
     "typescript": "typescript",

@@ -1,4 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 import {
   BLOCKS,
   Document as RichTextDocument
@@ -24,7 +25,7 @@ function RichText({ document }: RichTextProps) {
         const imageUrl = new URL(file.url, 'https://images.ctfassets.net');
 
         return (
-          <figure className="w-fit shrink-0 float-left mr-4 mb-2 ">
+          <figure className="w-fit shrink-0 float-left mr-4 mb-2  ">
             <Image
               src={imageUrl.toString()}
               width={file.details.image.width}
@@ -36,6 +37,7 @@ function RichText({ document }: RichTextProps) {
           </figure>
         );
       },
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => {
         return <p className="mb-4 leading-6">{children}</p>;

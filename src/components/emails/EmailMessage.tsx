@@ -8,9 +8,8 @@ import {
   Link,
   Preview,
   Tailwind,
-  Text,
+  Text
 } from '@react-email/components';
-import * as React from 'react';
 
 import { siteUrl } from '@/constants/site';
 import { ContactFormData } from '@/types';
@@ -20,7 +19,7 @@ function EmailMessage({
   lastName,
   companyName,
   email,
-  message,
+  message
 }: ContactFormData) {
   return (
     <Html>
@@ -28,18 +27,18 @@ function EmailMessage({
       <Preview>Nuevo mensaje email recibido 🎉</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto px-2 font-sans">
-          <Container className="mx-auto my-[40px] max-w-[465px] rounded-lg border border-solid border-[#eaeaea] bg-white p-[32px] shadow-lg">
+          <Container className="mx-auto my-10 max-w-[465px] rounded-lg border border-solid border-[#eaeaea] bg-white p-8 shadow-lg">
             <Heading className="font-montserrat mx-0 my-0 mb-6 p-0 text-center text-[26px] font-bold text-black">
               Nuevo mensaje recibido
             </Heading>
             <Hr className="my-4 border-t border-[#eaeaea]" />
-            <Text className="mb-2 text-[15px] leading-[24px] text-gray-700">
+            <Text className="mb-2 text-[15px] leading-6 text-gray-700">
               <span>Mensaje de</span>{' '}
               <strong>
                 {firstName} {lastName} {companyName ? `| ${companyName}` : ''}
               </strong>
             </Text>
-            <Text className="mb-2 text-[15px] leading-[24px] text-gray-700">
+            <Text className="mb-2 text-[15px] leading-6 text-gray-700">
               <span>Email:</span>{' '}
               <strong>
                 <Link
@@ -76,7 +75,7 @@ EmailMessage.PreviewProps = {
   firstName: 'Alan',
   lastName: 'Turing',
   message:
-    'Cualquier cosa que quieras decir aquí puede ir en este mensaje. mas información sobre el mensaje',
+    'Cualquier cosa que quieras decir aquí puede ir en este mensaje. mas información sobre el mensaje'
 };
 
 export { EmailMessage };
