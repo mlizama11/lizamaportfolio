@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { Metadata } from 'next';
 import RichText from '@/contentful/RichText';
 import { fetchBlogPost, fetchBlogPosts } from '@/contentful/blogPosts';
+import { Metadata } from 'next';
 
 type Params = Promise<{ slug: string }>;
 
@@ -20,13 +20,13 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 }
 
 export async function generateMetadata({
-  params,
+  params
 }: {
   params: Params;
 }): Promise<Metadata> {
   const blogPost = await fetchBlogPost({
     slug: (await params).slug,
-    preview: (await draftMode()).isEnabled,
+    preview: (await draftMode()).isEnabled
   });
 
   if (!blogPost) {
@@ -34,7 +34,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: blogPost.title,
+    title: blogPost.title
   };
 }
 
@@ -42,7 +42,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const blogPost = await fetchBlogPost({
     slug: slug,
-    preview: (await draftMode()).isEnabled,
+    preview: (await draftMode()).isEnabled
   });
 
   if (!blogPost) {
@@ -56,7 +56,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="flex grow flex-col gap-6 px-4">
-      <Link className='cursor-pointer' href="/">← Posts</Link>
+      <Link className="cursor-pointer" href="/">
+        ← Posts
+      </Link>
       <div className="flex flex-col gap-5">
         {blogPost.image && (
           <div className="h-80 w-full">
@@ -80,7 +82,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {new Date(blogPost.createdAt).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
-              day: 'numeric',
+              day: 'numeric'
             })}
           </div>
         </div>

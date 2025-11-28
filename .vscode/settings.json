@@ -1,28 +1,53 @@
 {
-  "typescript.tsserver.enableTracing": true,
   "editor.formatOnSave": true,
-  "editor.tabSize": 2,
-  "editor.accessibilitySupport": "off",
-  "tailwindCSS.includeLanguages": {
-    "javascript": "javascript"
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true,
   "tailwindCSS.experimental.classRegex": [
     ["tw\\(([^)]*)\\)", "(?:')([^']*)(?:')"],
     ["tw\\(([^)]*)\\)", "(?:\")([^\"]*)(?:\")"],
     ["tw\\(([^)]*)\\)", "(?:`)([^`]*)(?:`)"],
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+    "cn"
+  ],
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript"
+  },
   "editor.quickSuggestions": {
     "strings": true
   },
-  "editor.inlineSuggest.enabled": true,
   "editor.wordWrap": "on",
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "notebook.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    // This is the built-in VS Code action, which can sometimes interfere
-    // with Prettier's plugin sorting. Try disabling it if the issue persists.
-    "source.organizeImports": "never" 
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

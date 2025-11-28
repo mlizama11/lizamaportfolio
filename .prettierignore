@@ -1,0 +1,10 @@
+# Next.js build and cache files
+.next/
+out/
+
+# Dependency directories
+node_modules/
+
+# Other common files to ignore
+*.lock
+package.json
