@@ -1,7 +1,9 @@
+import { NextLink } from '@/components/NextLink';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import {
   BLOCKS,
+  INLINES,
   Document as RichTextDocument
 } from '@contentful/rich-text-types';
 import Image from 'next/image';
@@ -25,7 +27,7 @@ function RichText({ document }: RichTextProps) {
         const imageUrl = new URL(file.url, 'https://images.ctfassets.net');
 
         return (
-          <figure className="w-fit shrink-0 float-left mr-4 mb-2  ">
+          <figure className="w-fit odd:float-left mr-4 mb-2 even:float-none">
             <Image
               src={imageUrl.toString()}
               width={file.details.image.width}
@@ -48,6 +50,21 @@ function RichText({ document }: RichTextProps) {
           <blockquote className="p-4 mb-4 bg-gray-100 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-gray-800 [&>p:first-child]:m-0">
             {children}
           </blockquote>
+        );
+      },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => {
+        const url: string = node.data.uri;
+
+        return (
+          <NextLink
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-700 hover:text-blue-800 dark:hover:text-blue-400 font-bold"
+          >
+            {children}
+          </NextLink>
         );
       }
     }

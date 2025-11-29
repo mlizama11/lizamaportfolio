@@ -11,5 +11,21 @@
     "^[./]"
   ],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "importOrderSortSpecifiers": true,
+  "tailwindAttributes": [
+    "className",
+    "class",
+    "/data-.*/"
+  ],
+  "tailwindFunctions": [
+    "cn",
+    "classNames",
+    "twMerge",
+    "clsx",
+    "cva"
+  ],
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports"
+  ]
 }
