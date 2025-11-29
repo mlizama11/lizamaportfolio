@@ -27,13 +27,13 @@ function RichText({ document }: RichTextProps) {
         const imageUrl = new URL(file.url, 'https://images.ctfassets.net');
 
         return (
-          <figure className="w-fit odd:float-left mr-4 mb-2 even:float-none">
+          <figure className="w-fit odd:float-left odd:w-2xs mr-4 mb-2 even:float-none even:w-3/5 max-[700px]:odd:float-none">
             <Image
               src={imageUrl.toString()}
               width={file.details.image.width}
               height={file.details.image.height}
               alt={title || 'Embedded Asset'}
-              className="w-2xs rounded"
+              className="rounded"
               loading="eager"
             />
           </figure>
@@ -61,7 +61,7 @@ function RichText({ document }: RichTextProps) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-green-700 hover:text-blue-800 dark:hover:text-blue-400 font-bold"
+            className="text-green-700 dark:text-green-500 hover:text-blue-800 dark:hover:text-blue-400 font-bold"
           >
             {children}
           </NextLink>

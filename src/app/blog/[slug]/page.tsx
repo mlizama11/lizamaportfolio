@@ -96,7 +96,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </span>
           </div>
         </div>
-        <article>
+        <article className="max-[700px]:flex max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center">
           <RichText document={blogPost.body} />
         </article>
       </div>
