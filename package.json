@@ -11,8 +11,8 @@
     "format": "prettier --write './src/**/*.{ts,tsx,js,jsx}'",
     "types:contentful": "export $(cat .env | awk '!/^\\s*#/' | awk '!/^\\s*$/'); cf-content-types-generator --spaceId $CONTENTFUL_SPACE_ID --token $CONTENTFUL_MANAGEMENT_TOKEN -o src/contentful/types -X"
   },
-  "engine": {
-    "node": ">=22.x"
+  "engines": {
+    "node": "22.21.1"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.6",
@@ -53,6 +53,7 @@
     "@types/nodemailer": "^7.0.4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.8.32",
     "cf-content-types-generator": "^2.16.1",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.5",

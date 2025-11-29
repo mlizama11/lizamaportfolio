@@ -45,11 +45,9 @@ function RichText({ document }: RichTextProps) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       [BLOCKS.QUOTE]: (node: any, children: React.ReactNode) => {
         return (
-          <div className="mb-4">
-            <blockquote className="p-4 border-none bg-neutral-200/50 dark:bg-neutral-800/50">
-              {children}
-            </blockquote>
-          </div>
+          <blockquote className="p-4 mb-4 bg-gray-100 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-gray-800 [&>p:first-child]:m-0">
+            {children}
+          </blockquote>
         );
       }
     }
