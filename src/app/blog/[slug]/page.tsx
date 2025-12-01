@@ -1,8 +1,8 @@
 import { draftMode } from 'next/headers';
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { NextLink } from '@/components/NextLink';
 import RichText from '@/contentful/RichText';
 import { fetchBlogPost, fetchBlogPosts } from '@/contentful/blogPosts';
 import { Metadata } from 'next';
@@ -56,9 +56,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="flex grow flex-col gap-6 px-4">
-      <Link className="cursor-pointer" href="/">
-        ← Posts
-      </Link>
+      <NextLink className="cursor-pointer dark:text-white" href="/">
+        ← Home
+      </NextLink>
       <div className="flex flex-col">
         {blogPost.image && (
           <>
@@ -90,18 +90,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 day: 'numeric'
               })}
             </span>
-            <span className="mx-2 text-[12px] text-gray-500">|</span>
-            <span className="text-xs text-gray-500 dark:text-gray-400">
-              Updated on{' '}
-              {new Date(blogPost.updatedAt).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </span>
           </div>
         </div>
-        <article className="max-[700px]:flex max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-center">
+        <article className="max-[700px]:flex max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-start">
           <RichText document={blogPost.body} />
         </article>
       </div>

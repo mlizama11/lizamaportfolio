@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
       </div>
       <Contact />
       <Separator />
-      <div className="flex w-full flex-1 justify-between">
+      <div className="flex w-full flex-1 justify-between max-[700px]:flex-col max-[700px]:items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
         <p>
           Created by{' '}
           <a target="_blank" href="https://www.linkedin.com/in/mauriciolizama/">

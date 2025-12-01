@@ -89,7 +89,7 @@ export function ContactForm() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="grid w-full gap-4"
         >
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid max-[700px]:grid-cols-1 grid-cols-2 gap-4">
             <FormField
               control={form.control}
               name="firstName"
@@ -170,7 +170,7 @@ export function ContactForm() {
 
           <Button
             type="submit"
-            className="mt-4 flex w-full cursor-pointer items-center justify-center border border-black bg-black text-white hover:border-black hover:bg-white hover:text-black dark:bg-white dark:text-black dark:hover:border-white dark:hover:bg-green-700 dark:hover:text-white"
+            className="mt-4 flex w-full cursor-pointer items-center justify-center border border-black bg-white text-black hover:border-black hover:bg-black hover:text-white dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black"
           >
             Send Message
           </Button>

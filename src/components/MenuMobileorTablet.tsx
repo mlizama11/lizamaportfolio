@@ -21,7 +21,11 @@ export const MenuMobileorTablet: FunctionComponent<{
   setIsOpen: (value: boolean | ((prev: boolean) => boolean)) => void;
 }> = ({ isOpen, setIsOpen }) => {
   return (
-    <nav>
+    <nav
+      className={cn('fixed top-5 z-0', {
+        'z-50 rounded-xl': isOpen
+      })}
+    >
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button

@@ -27,7 +27,7 @@ function RichText({ document }: RichTextProps) {
         const imageUrl = new URL(file.url, 'https://images.ctfassets.net');
 
         return (
-          <figure className="w-fit nth-of-type-[1]:float-left nth-of-type-[1]:w-2xs m-2 nth-of-type-[2]:w-3/5 nth-of-type-[3]:float-right nth-of-type-[3]:w-1/3 max-[700px]:nth-of-type-[1]:float-none max-[700px]:nth-of-type-[3]:float-none max-[700px]:nth-of-type-[3]:w-2/3">
+          <figure className="w-fit nth-of-type-[1]:float-left nth-of-type-[1]:w-2xs m-2 nth-of-type-[2]:w-3/5 nth-of-type-[3]:float-right nth-of-type-[3]:w-1/3 max-[700px]:nth-of-type-[1]:float-none max-[700px]:nth-of-type-[3]:float-none max-[700px]:nth-of-type-[3]:w-2/3 nth-of-type-[4]:w-2/3">
             <Image
               src={imageUrl.toString()}
               width={file.details.image.width}
