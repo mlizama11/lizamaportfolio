@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Fira_Code, Montserrat } from 'next/font/google';
 import { draftMode } from 'next/headers';
+import { Toaster } from 'sonner';
 
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
@@ -89,6 +90,7 @@ export default async function RootLayout({
             )}
             <Header />
             {children}
+            <Toaster richColors />
             <Footer />
           </div>
         </ThemeProvider>

@@ -1,5 +1,3 @@
-import { Toaster } from 'sonner';
-
 import About from '@/components/About';
 import Blog from '@/components/Blog';
 import Education from '@/components/Education';
@@ -18,7 +16,6 @@ export default function Home() {
       <Education />
       <Stack />
       <Blog />
-      <Toaster richColors />
     </main>
   );
 }
