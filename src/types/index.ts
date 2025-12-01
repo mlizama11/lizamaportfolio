@@ -58,8 +58,22 @@ export type ContactFormData = {
 };
 
 export type SimpleImage = {
-  url: string;
+  src: string;
   alt: string;
   width: number;
   height: number;
+};
+
+export type BlogPost = {
+  id: string;
+  updatedAt: string;
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  image: SimpleImage | null;
+};
+
+export type BlogPostsListProps = {
+  blogPosts: BlogPost[];
 };
