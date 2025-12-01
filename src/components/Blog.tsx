@@ -33,7 +33,9 @@ export default async function Blog() {
                 <CardContent>
                   <div>
                     <div className="flex flex-col gap-3">
-                      <h4 className="font-semibold">{title}</h4>
+                      <h4 className="font-semibold dark:text-white dark:hover:text-blue-400">
+                        {title}
+                      </h4>
                       <div className="flex flex-col items-end">
                         <p className="text-sm text-gray-600 dark:text-gray-300">
                           {description}

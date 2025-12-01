@@ -2,7 +2,9 @@ import { NextLink } from '@/components/NextLink';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import {
+  Block,
   BLOCKS,
+  Inline,
   INLINES,
   Document as RichTextDocument
 } from '@contentful/rich-text-types';
@@ -20,14 +22,12 @@ type RichTextProps = {
 function RichText({ document }: RichTextProps) {
   const options = {
     renderNode: {
-      // type any is used because the node type from Contentful is complex and not strictly typed here
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
-        const { file, title } = node.data.target.fields;
+      [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
+        const { file, title, description } = node.data.target.fields;
         const imageUrl = new URL(file.url, 'https://images.ctfassets.net');
 
         return (
-          <figure className="w-fit odd:float-left odd:w-2xs mr-4 mb-2 even:float-none even:w-3/5 max-[700px]:odd:float-none">
+          <figure className="w-fit nth-of-type-[1]:float-left nth-of-type-[1]:w-2xs m-2 nth-of-type-[2]:w-3/5 nth-of-type-[3]:float-right nth-of-type-[3]:w-1/3 max-[700px]:nth-of-type-[1]:float-none max-[700px]:nth-of-type-[3]:float-none max-[700px]:nth-of-type-[3]:w-2/3">
             <Image
               src={imageUrl.toString()}
               width={file.details.image.width}
@@ -36,24 +36,29 @@ function RichText({ document }: RichTextProps) {
               className="rounded"
               loading="eager"
             />
+            {description && (
+              <figcaption className="text-xs text-gray-500 dark:text-gray-400 my-2 leading-5">
+                {description}
+              </figcaption>
+            )}
           </figure>
         );
       },
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => {
+      [BLOCKS.PARAGRAPH]: (node: Block | Inline, children: React.ReactNode) => {
         return <p className="mb-4 leading-6">{children}</p>;
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      [BLOCKS.QUOTE]: (node: any, children: React.ReactNode) => {
+      [BLOCKS.QUOTE]: (node: Block | Inline, children: React.ReactNode) => {
         return (
           <blockquote className="p-4 mb-4 bg-gray-100 border-l-4 border-gray-300 dark:border-gray-500 dark:bg-gray-800 [&>p:first-child]:m-0">
             {children}
           </blockquote>
         );
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => {
+      [INLINES.HYPERLINK]: (
+        node: Block | Inline,
+        children: React.ReactNode
+      ) => {
         const url: string = node.data.uri;
 
         return (

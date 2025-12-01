@@ -1,6 +1,6 @@
+import React from 'react';
 import Contact from '../Contact';
 import { Separator } from '../ui/separator';
-import React from 'react';
 
 const Footer: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
       <Separator />
       <div className="flex w-full flex-1 justify-between">
         <p>
-          Designed by{' '}
+          Created by{' '}
           <a target="_blank" href="https://www.linkedin.com/in/mauriciolizama/">
             Mauricio Lizama
           </a>{' '}

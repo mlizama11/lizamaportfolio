@@ -59,20 +59,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Link className="cursor-pointer" href="/">
         ← Posts
       </Link>
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col">
         {blogPost.image && (
-          <div className="h-80 w-full">
-            <Image
-              src={imageUrl.toString()}
-              width={blogPost.image.width}
-              height={blogPost.image.height}
-              className="h-full w-full object-cover rounded"
-              alt={blogPost.image.alt}
-              priority
-            />
-          </div>
+          <>
+            <div className="h-80 w-full">
+              <Image
+                src={imageUrl.toString()}
+                width={blogPost.image.width}
+                height={blogPost.image.height}
+                className="h-full w-full object-cover rounded"
+                alt={blogPost.image.alt}
+                priority
+              />
+            </div>
+            <div className="h-fit text-xs text-gray-500 dark:text-gray-400 my-2 leading-5">
+              {blogPost.image.alt}
+            </div>
+          </>
         )}
-        <div className="flex flex-col gap-3 px-8">
+        <div className="flex flex-col gap-3 px-8 text-center my-5">
           <h2>{blogPost.title}</h2>
           <ul className="list-disc px-5">
             <li className="italic">{blogPost.description}</li>

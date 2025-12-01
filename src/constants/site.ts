@@ -7,12 +7,12 @@ export const siteDescription: string =
 export const siteUrl: string = 'https://www.mlizama.eu';
 // Navigation Links
 export const links: Link[] = [
-  { href: '#home', label: 'Intro' },
-  { href: '#about', label: 'About' },
-  { href: '#works', label: 'Work' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#education', label: 'Education' },
-  { href: '#stack', label: 'Stack' },
-  { href: '#blog', label: 'Blog' },
+  { href: '/#home', label: 'Intro' },
+  { href: '/#about', label: 'About' },
+  { href: '/#works', label: 'Works' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#education', label: 'Education' },
+  { href: '/#stack', label: 'Stack' },
+  { href: '/#blog', label: 'Blog' },
   { href: '#contact', label: 'Contact' }
 ];
