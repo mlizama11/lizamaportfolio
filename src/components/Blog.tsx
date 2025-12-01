@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { fetchBlogPosts } from '../contentful/blogPosts';
 
+import { fetchBlogPosts } from '../contentful/blogPosts';
 import { Card, CardContent, CardHeader } from './Card';
 import { NextLink } from './NextLink';
 import { Section, SectionTitle } from './layout/Section';
@@ -29,7 +29,7 @@ export default async function Blog() {
                   height={height}
                 />
               </CardHeader>
-              <CardContent className="min-h-70 max-h-90">
+              <CardContent className="max-h-90 min-h-70">
                 <div className="flex flex-col gap-3">
                   <h4 className="font-semibold dark:text-white dark:hover:text-blue-400">
                     {title}

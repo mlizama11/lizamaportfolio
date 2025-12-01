@@ -1,5 +1,6 @@
 import { education } from '@/constants/education';
 import { EducationItem } from '@/types';
+
 import { Section, SectionTitle } from './layout/Section';
 
 export default function Education() {

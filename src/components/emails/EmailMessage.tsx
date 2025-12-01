@@ -28,7 +28,7 @@ function EmailMessage({
       <Tailwind>
         <Body className="mx-auto my-auto px-2 font-sans">
           <Container className="mx-auto my-10 max-w-[465px] rounded-lg border border-solid border-[#eaeaea] bg-white p-8 shadow-lg">
-            <Heading className="font-montserrat mx-0 my-0 mb-6 p-0 text-center text-[26px] font-bold text-black">
+            <Heading className="mx-0 my-0 mb-6 p-0 text-center font-montserrat text-[26px] font-bold text-black">
               Nuevo mensaje recibido
             </Heading>
             <Hr className="my-4 border-t border-[#eaeaea]" />

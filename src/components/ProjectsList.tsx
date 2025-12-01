@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import { works } from '@/constants/works';
 import { ProjectType } from '@/types';
+
 import { Card, CardContent, CardHeader } from './Card';
 import { NextLink } from './NextLink';
 import { Button } from './ui/button';
@@ -89,9 +90,7 @@ export function ProjectsList() {
                           {type === ProjectType.AUDIOVISUAL && (
                             <Dialog>
                               <DialogTrigger asChild>
-                                <Button className="no-underline focus-visible:border-ring focus-visible:ring-ring/50 z-30 flex cursor-pointer items-center rounded-md border border-black bg-white px-4 py-2 font-medium text-black transition-colors outline-none hover:bg-black hover:text-white focus-visible:ring-[3px] aria-disabled:pointer-events-none aria-disabled:opacity-5 dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black">
-                                  Check Video
-                                </Button>
+                                <Button>Check Video</Button>
                               </DialogTrigger>
 
                               <DialogContent
@@ -114,8 +113,8 @@ export function ProjectsList() {
                                   />
                                 </div>
                                 <div className="flex h-16 w-full items-center justify-center">
-                                  <DialogClose className="focus-visible:border-ring focus-visible:ring-ring/50 cursor-pointer rounded-md border border-black bg-white px-4 py-2 font-medium text-black shadow-2xl transition-colors outline-none hover:bg-black hover:text-white focus-visible:ring-[3px]">
-                                    Close
+                                  <DialogClose asChild>
+                                    <Button>Close</Button>
                                   </DialogClose>
                                 </div>
                               </DialogContent>

@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -5,7 +6,6 @@ import { notFound } from 'next/navigation';
 import { NextLink } from '@/components/NextLink';
 import RichText from '@/contentful/RichText';
 import { fetchBlogPost, fetchBlogPosts } from '@/contentful/blogPosts';
-import { Metadata } from 'next';
 
 type Params = Promise<{ slug: string }>;
 
@@ -67,17 +67,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 src={imageUrl.toString()}
                 width={blogPost.image.width}
                 height={blogPost.image.height}
-                className="h-full w-full object-cover rounded"
+                className="h-full w-full rounded object-cover"
                 alt={blogPost.image.alt}
                 priority
               />
             </div>
-            <div className="h-fit text-xs text-gray-500 dark:text-gray-400 my-2 leading-5">
+            <div className="my-2 h-fit text-xs leading-5 text-gray-500 dark:text-gray-400">
               {blogPost.image.alt}
             </div>
           </>
         )}
-        <div className="flex flex-col gap-3 px-8 text-center my-5">
+        <div className="my-5 flex flex-col gap-3 px-8 text-center">
           <h2>{blogPost.title}</h2>
           <ul className="list-disc px-5">
             <li className="italic">{blogPost.description}</li>
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </span>
           </div>
         </div>
-        <article className="max-[700px]:flex max-[700px]:flex-col max-[700px]:justify-center max-[700px]:items-start">
+        <article className="max-[700px]:flex max-[700px]:flex-col max-[700px]:items-start max-[700px]:justify-center">
           <RichText document={blogPost.body} />
         </article>
       </div>

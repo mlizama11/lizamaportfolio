@@ -3,9 +3,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { ContactFormData } from '@/types';
+
 import Altcha from './Altcha';
 import { Button } from './ui/button';
 import {
@@ -20,9 +22,6 @@ import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 
 export function ContactForm() {
-  const [serverStatus, setServerStatus] = useState<
-    'idle' | 'success' | 'error'
-  >('idle');
   const altchaRef = useRef<HTMLInputElement>(null);
   // State to force re-mounting the Altcha component
   const [altchaKey, setAltchaKey] = useState(0);
@@ -67,19 +66,13 @@ export function ContactForm() {
 
       if (!res.ok) throw new Error('Failed to submit');
 
-      setServerStatus('success');
+      toast.success('Message sent successfully!');
       form.reset();
       setAltchaKey((prevKey) => prevKey + 1);
-      setTimeout(() => {
-        setServerStatus('idle');
-      }, 1000);
     } catch (error) {
       console.error(error);
-      setServerStatus('error');
+      toast.error('Something went wrong. Please try again later.');
       setAltchaKey((prevKey) => prevKey + 1);
-      setTimeout(() => {
-        setServerStatus('idle');
-      }, 1000);
     }
   };
   return (
@@ -89,7 +82,7 @@ export function ContactForm() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="grid w-full gap-4"
         >
-          <div className="grid max-[700px]:grid-cols-1 grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 max-[700px]:grid-cols-1">
             <FormField
               control={form.control}
               name="firstName"
@@ -168,24 +161,9 @@ export function ContactForm() {
             <Altcha key={altchaKey} ref={altchaRef} />
           </div>
 
-          <Button
-            type="submit"
-            className="mt-4 flex w-full cursor-pointer items-center justify-center border border-black bg-white text-black hover:border-black hover:bg-black hover:text-white dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black"
-          >
+          <Button type="submit" className="mt-4">
             Send Message
           </Button>
-
-          {/* Status Feedback */}
-          {serverStatus === 'success' && (
-            <p className="mt-4 rounded-md border border-green-200 bg-green-50 p-3 text-center font-medium text-green-600">
-              Message sent successfully!
-            </p>
-          )}
-          {serverStatus === 'error' && (
-            <p className="text-destructive mt-4 rounded-md border border-red-200 bg-red-50 p-3 text-center font-medium">
-              Something went wrong. Please try again.
-            </p>
-          )}
         </form>
       </Form>
     </div>

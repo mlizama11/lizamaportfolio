@@ -2,13 +2,12 @@ import type { Metadata, Viewport } from 'next';
 import { Fira_Code, Montserrat } from 'next/font/google';
 import { draftMode } from 'next/headers';
 
-import { cn } from '@/lib/utils';
-
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
-
 import { siteDescription, siteTitle, siteUrl } from '@/constants/site';
+import { cn } from '@/lib/utils';
+
 import ExitDraftModeLink from './ExitDraftModeLink';
 import './globals.css';
 
@@ -69,7 +68,7 @@ export default async function RootLayout({
         className={cn(
           firaCode.variable,
           montserrat.variable,
-          'font-fira-code flex items-center justify-center antialiased'
+          'flex items-center justify-center font-fira-code antialiased'
         )}
       >
         <ThemeProvider

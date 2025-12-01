@@ -4,7 +4,6 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 import { EmailMessage } from '@/components/emails/EmailMessage';
-
 import { ContactFormData } from '@/types';
 
 export async function POST(req: Request) {

@@ -6,32 +6,32 @@ const nextConfig: NextConfig = {
     localPatterns: [
       {
         pathname: '/assets/**',
-        search: '',
-      },
+        search: ''
+      }
     ],
     remotePatterns: [
       {
         hostname: 'img.shields.io',
-        pathname: '/**',
+        pathname: '/**'
       },
       {
         hostname: 'images.ctfassets.net',
-        pathname: '/**',
-      },
-    ],
+        pathname: '/**'
+      }
+    ]
   },
   turbopack: {
-    resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json'],
+    resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json']
   },
   pageExtensions: ['mdx', 'tsx', 'ts', 'jsx', 'js'],
   outputFileTracingIncludes: {
-    '/*': ['./files/**/*'],
-  },
+    '/*': ['./files/**/*']
+  }
 };
 const analyzeBundleEnabled = process.env.ANALYZE === 'true';
 
 const configWithBundleAnalyzer = withBundleAnalyzer({
-  enabled: analyzeBundleEnabled,
+  enabled: analyzeBundleEnabled
 })(nextConfig);
 
 export default configWithBundleAnalyzer;

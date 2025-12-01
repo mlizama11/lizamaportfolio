@@ -4,16 +4,15 @@ import { motion } from 'framer-motion';
 import { FunctionComponent } from 'react';
 import { FiPlus } from 'react-icons/fi';
 
-import { cn } from '@/lib/utils';
-
 import { Button } from '@/components/ui/button';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger
 } from '@/components/ui/popover';
-
 import { links } from '@/constants/site';
+import { cn } from '@/lib/utils';
+
 import { NextLink } from './NextLink';
 
 export const MenuMobileorTablet: FunctionComponent<{
