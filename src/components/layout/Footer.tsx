@@ -1,6 +1,8 @@
 import React from 'react';
+import { PiCopyright } from 'react-icons/pi';
 
 import Contact from '../Contact';
+import { NextLink } from '../NextLink';
 import { Separator } from '../ui/separator';
 
 const Footer: React.FC = () => {
@@ -14,15 +16,25 @@ const Footer: React.FC = () => {
       </div>
       <Contact />
       <Separator />
-      <div className="flex w-full flex-1 justify-between gap-4 text-sm text-gray-600 max-[700px]:flex-col max-[700px]:items-center dark:text-gray-300">
+      <div className="flex w-full flex-1 justify-between gap-4 text-sm max-[700px]:flex-col max-[700px]:items-center dark:text-gray-300">
         <p>
           Created by{' '}
-          <a target="_blank" href="https://www.linkedin.com/in/mauriciolizama/">
+          <NextLink
+            variant="primary"
+            target="_blank"
+            href="https://www.linkedin.com/in/mauriciolizama/"
+          >
             Mauricio Lizama
-          </a>{' '}
-          using <a href="https://nextjs.org/">Next.js</a>
+          </NextLink>{' '}
+          using{' '}
+          <NextLink variant="primary" href="https://nextjs.org/">
+            Next.js
+          </NextLink>
         </p>
-        <p>© Copyright {new Date().getFullYear()}</p>
+        <div className="flex items-center justify-center gap-2">
+          <PiCopyright className="size-4 shrink-0" />
+          <p>Copyright {new Date().getFullYear()}</p>
+        </div>
       </div>
     </footer>
   );

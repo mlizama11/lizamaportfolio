@@ -2,8 +2,12 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import { FiDownload } from 'react-icons/fi';
-import { PiCopyLight, PiLinkedinLogoThin, PiMapPin } from 'react-icons/pi';
+import {
+  PiCopyLight,
+  PiDownload,
+  PiLinkedinLogoThin,
+  PiMapPin
+} from 'react-icons/pi';
 
 import { Separator } from '@/components/ui/separator';
 
@@ -54,12 +58,13 @@ export default function Intro() {
             <ModeToggle />
           </div>
           <NextLink
-            className="z-30 flex cursor-pointer items-center justify-center gap-2 text-sm font-medium text-gray-700 hover:text-blue-400 dark:text-gray-300 dark:hover:text-blue-400"
+            variant="primary"
+            className="flex items-center justify-center gap-2"
             href="/assets/mlizama-resume.pdf"
             target="_blank"
             download
           >
-            <FiDownload size={24} className="mb-2 cursor-pointer" />
+            <PiDownload className="mb-2 size-6 shrink-0 cursor-pointer" />
             <p>Download CV</p>
           </NextLink>
         </div>
@@ -69,21 +74,17 @@ export default function Intro() {
         <div className="flex items-center justify-between">
           <Button
             variant="ghost"
-            size="icon-lg"
-            className="z-30 w-fit cursor-pointer px-2 hover:bg-none"
             onClick={async () => {
               await navigator.clipboard.writeText('mlizamaoliger@gmail.com');
               setCopied(true);
               setTimeout(() => setCopied(false), 1500);
             }}
           >
-            <PiCopyLight size={14} />
+            <PiCopyLight className="size-6 shrink-0" />
             <p>{copied ? 'Copied!' : 'mlizamaoliger@gmail.com'}</p>
           </Button>
           <Button
             variant="ghost"
-            size="icon-lg"
-            className="z-30 w-fit cursor-pointer px-2 hover:bg-none"
             onClick={() => {
               window.open(
                 'https://www.linkedin.com/in/mauriciolizama/',
@@ -91,7 +92,7 @@ export default function Intro() {
               );
             }}
           >
-            <PiLinkedinLogoThin className="shrink-0" size={24} />{' '}
+            <PiLinkedinLogoThin className="size-6 shrink-0" />{' '}
             <span>LinkedIn</span>
           </Button>
         </div>

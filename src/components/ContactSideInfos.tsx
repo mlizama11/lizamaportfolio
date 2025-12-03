@@ -21,15 +21,13 @@ export function ContactSideInfos() {
         <p className="font-semibold">Email:</p>
         <Button
           variant="ghost"
-          size="icon-lg"
-          className="text-md hover:bg- z-30 w-fit cursor-pointer text-sm font-light"
           onClick={async () => {
             await navigator.clipboard.writeText('mlizamaoliger@gmail.com');
             setCopied(true);
             setTimeout(() => setCopied(false), 1500);
           }}
         >
-          <PiCopyLight size={14} />
+          <PiCopyLight className="size-6 shrink-0" />
           <p>{copied ? 'Copied!' : 'mlizamaoliger@gmail.com'}</p>
         </Button>
       </div>
@@ -38,8 +36,6 @@ export function ContactSideInfos() {
         <div className="flex flex-col gap-1">
           <Button
             variant="ghost"
-            size="icon-lg"
-            className="z-30 w-fit cursor-pointer font-light hover:bg-none"
             onClick={() => {
               window.open(
                 'https://www.linkedin.com/in/mauriciolizama/',
@@ -47,12 +43,11 @@ export function ContactSideInfos() {
               );
             }}
           >
-            <PiLinkedinLogoThin size={20} /> <span>LinkedIn</span>
+            <PiLinkedinLogoThin className="size-6 shrink-0" />{' '}
+            <span>LinkedIn</span>
           </Button>
           <Button
             variant="ghost"
-            size="icon-lg"
-            className="z-30 w-fit cursor-pointer font-light hover:bg-none"
             onClick={() => {
               window.open(
                 'https://www.xing.com/profile/Mauricio_Lizama',
@@ -60,7 +55,7 @@ export function ContactSideInfos() {
               );
             }}
           >
-            <SiXing size={20} /> <span>Xing</span>
+            <SiXing className="size-6 shrink-0" /> <span>Xing</span>
           </Button>
         </div>
       </div>

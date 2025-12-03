@@ -161,7 +161,7 @@ export function ContactForm() {
             <Altcha key={altchaKey} ref={altchaRef} />
           </div>
 
-          <Button type="submit" className="mt-4">
+          <Button variant="secondary" type="submit" className="mt-4">
             Send Message
           </Button>
         </form>

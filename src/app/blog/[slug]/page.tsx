@@ -59,7 +59,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="flex grow flex-col gap-6 px-4">
-      <NextLink className="cursor-pointer dark:text-white" href="/">
+      <NextLink variant="primary" href="/">
         ← Home
       </NextLink>
       <div className="flex flex-col">

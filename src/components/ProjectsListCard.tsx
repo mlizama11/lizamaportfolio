@@ -83,12 +83,12 @@ export function ProjectsListCard({
           {type === ProjectType.AUDIOVISUAL && (
             <Dialog>
               <DialogTrigger asChild>
-                <Button>Check Video</Button>
+                <Button variant="secondary">Check Video</Button>
               </DialogTrigger>
 
               <DialogContent
                 showCloseButton={false}
-                className="flex max-w-3xl flex-col items-center justify-center gap-0 overflow-hidden border-0 p-0 max-[700px]:w-[380px] dark:bg-white"
+                className="flex max-w-3xl flex-col items-center justify-center gap-0 overflow-hidden border-0 p-0 max-[700px]:w-[380px] dark:bg-neutral-900"
               >
                 <DialogHeader className="sr-only">
                   <DialogTitle>{title}</DialogTitle>
@@ -105,7 +105,7 @@ export function ProjectsListCard({
                 </div>
                 <div className="flex h-16 w-full items-center justify-center">
                   <DialogClose asChild>
-                    <Button>Close</Button>
+                    <Button variant="secondary">Close</Button>
                   </DialogClose>
                 </div>
               </DialogContent>
