@@ -7,7 +7,7 @@ import { MenuDesktop } from '../MenuDesktop';
 import { MenuMobileorTablet } from '../MenuMobileorTablet';
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const isMobileOrTablet = useMediaQuery({ maxWidth: 700 });
 
   return (

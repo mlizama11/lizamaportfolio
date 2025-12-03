@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 
 import { NextLink } from '@/components/NextLink';
 import RichText from '@/contentful/RichText';
+import { RichTextCarousel } from '@/contentful/RichTextCarousel';
 import { fetchBlogPost, fetchBlogPosts } from '@/contentful/blogPosts';
 
 type Params = Promise<{ slug: string }>;
@@ -54,6 +55,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     'https://images.ctfassets.net'
   );
 
+  console.log(blogPost.images);
+
   return (
     <main className="flex grow flex-col gap-6 px-4">
       <NextLink className="cursor-pointer dark:text-white" href="/">
@@ -95,6 +98,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <article className="max-[700px]:flex max-[700px]:flex-col max-[700px]:items-start max-[700px]:justify-center">
           <RichText document={blogPost.body} />
         </article>
+        {blogPost.images && (
+          <div className="mt-4 flex flex-col items-center justify-center">
+            <RichTextCarousel document={blogPost.images} />
+          </div>
+        )}
       </div>
     </main>
   );

@@ -17,6 +17,10 @@ const nextConfig: NextConfig = {
       {
         hostname: 'images.ctfassets.net',
         pathname: '/**'
+      },
+      {
+        hostname: 'videos.ctfassets.net',
+        pathname: '/**'
       }
     ]
   },

@@ -12,11 +12,6 @@ import { NextLink } from '@/components/NextLink';
 
 type RichTextProps = {
   document: RichTextDocument | null;
-  imageOptions?: {
-    width: number;
-    height: number;
-    alt?: string;
-  };
 };
 
 function RichText({ document }: RichTextProps) {
@@ -24,18 +19,26 @@ function RichText({ document }: RichTextProps) {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
         const { file, title, description } = node.data.target.fields;
-        const imageUrl = new URL(file.url, 'https://images.ctfassets.net');
+        const isVideo = file.contentType?.includes('video');
+        const baseUrl = isVideo
+          ? 'https://videos.ctfassets.net'
+          : 'https://images.ctfassets.net';
+        const imageUrl = new URL(file.url, baseUrl);
 
         return (
           <figure className="m-2 w-fit nth-of-type-[1]:float-left nth-of-type-[1]:w-2xs nth-of-type-[2]:w-3/5 nth-of-type-[3]:float-right nth-of-type-[3]:w-1/3 nth-of-type-[4]:w-2/3 max-[700px]:nth-of-type-[1]:float-none max-[700px]:nth-of-type-[3]:float-none max-[700px]:nth-of-type-[3]:w-2/3">
-            <Image
-              src={imageUrl.toString()}
-              width={file.details.image.width}
-              height={file.details.image.height}
-              alt={title || 'Embedded Asset'}
-              className="rounded"
-              loading="eager"
-            />
+            {isVideo ? (
+              <video src={imageUrl.toString()} controls className="rounded" />
+            ) : (
+              <Image
+                src={imageUrl.toString()}
+                width={file.details.image.width}
+                height={file.details.image.height}
+                alt={title || 'Embedded Asset'}
+                className="rounded"
+                loading="eager"
+              />
+            )}
             {description && (
               <figcaption className="my-2 text-xs leading-5 text-gray-500 dark:text-gray-400">
                 {description}
@@ -47,6 +50,9 @@ function RichText({ document }: RichTextProps) {
 
       [BLOCKS.PARAGRAPH]: (node: Block | Inline, children: React.ReactNode) => {
         return <p className="mb-4 leading-6">{children}</p>;
+      },
+      [BLOCKS.HEADING_4]: (node: Block | Inline, children: React.ReactNode) => {
+        return <h4 className="mb-4">{children}</h4>;
       },
       [BLOCKS.QUOTE]: (node: Block | Inline, children: React.ReactNode) => {
         return (

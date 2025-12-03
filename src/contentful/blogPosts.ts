@@ -16,6 +16,7 @@ export interface BlogPost extends BlogPostMeta {
   date: string;
   body: RichTextDocument | null;
   image: ContentImage | null;
+  images?: RichTextDocument;
 }
 
 export interface BlogPostMeta {
@@ -42,7 +43,8 @@ export function parseContentfulBlogPost(
     slug: blogPostEntry.fields.slug || '',
     date: blogPostEntry.fields.date || '',
     body: blogPostEntry.fields.body || null,
-    image: parseContentfulContentImage(blogPostEntry.fields.image)
+    image: parseContentfulContentImage(blogPostEntry.fields.image),
+    images: blogPostEntry.fields.images || undefined
   };
 }
 
