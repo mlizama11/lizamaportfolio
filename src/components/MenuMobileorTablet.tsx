@@ -40,7 +40,7 @@ export const MenuMobileorTablet: FunctionComponent = () => {
             size="sm"
             aria-expanded={isOpen}
             className={cn(
-              'cursor-pointer bg-gray-200 max-[700px]:border max-[700px]:border-gray-200',
+              'cursor-pointer bg-gray-200 max-[700px]:border max-[700px]:border-gray-200 dark:bg-white',
               { 'bg-white': isOpen }
             )}
             onClick={() => setIsOpen?.((prevState: boolean) => !prevState)}

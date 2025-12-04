@@ -27,7 +27,7 @@ export const MenuDesktop: FunctionComponent = () => {
       <div
         className={cn(
           'flex flex-none flex-row flex-nowrap items-center justify-center overflow-visible bg-transparent px-4 py-1',
-          { 'gap-8 bg-gray-200 dark:bg-neutral-300': isOpen }
+          { 'gap-8 bg-gray-200 dark:bg-white': isOpen }
         )}
       >
         <motion.div
@@ -62,8 +62,8 @@ export const MenuDesktop: FunctionComponent = () => {
             variant="ghost"
             size="sm"
             aria-expanded={isOpen}
-            className={cn('cursor-pointer bg-neutral-300', {
-              'bg-white': isOpen
+            className={cn('cursor-pointer bg-gray-200 dark:bg-white', {
+              'bg-white dark:bg-gray-200': isOpen
             })}
             onClick={() => setIsOpen((prev) => !prev)}
           >
