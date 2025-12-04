@@ -71,7 +71,6 @@ function RichText({ document }: RichTextProps) {
           <NextLink
             href={url}
             target="_blank"
-            rel="noopener noreferrer"
             className="font-bold text-green-700 hover:text-blue-800 dark:text-green-500 dark:hover:text-blue-400"
           >
             {children}

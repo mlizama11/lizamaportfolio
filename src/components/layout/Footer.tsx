@@ -27,7 +27,11 @@ const Footer: React.FC = () => {
             Mauricio Lizama
           </NextLink>{' '}
           using{' '}
-          <NextLink variant="primary" href="https://nextjs.org/">
+          <NextLink
+            target="_blank"
+            variant="primary"
+            href="https://nextjs.org/"
+          >
             Next.js
           </NextLink>
         </p>

@@ -30,9 +30,10 @@ type NextLinkProps = LinkProps &
 
 export const NextLink: FunctionComponent<
   NextLinkProps & VariantProps<typeof nextLinkVariants>
-> = ({ href, children, className, variant, ...props }) => (
+> = ({ href, children, target = '_parent', className, variant, ...props }) => (
   <Link
     href={href}
+    target={target}
     className={cn(nextLinkVariants({ variant, className }))}
     {...props}
   >

@@ -1,19 +1,14 @@
-'use client';
-
 import Image from 'next/image';
-import { useState } from 'react';
-import { PiCopyLight, PiDownload, PiMapPin } from 'react-icons/pi';
+import { PiDownload, PiMapPin } from 'react-icons/pi';
 
 import { Separator } from '@/components/ui/separator';
 
+import { CopyEmailButton } from './CopyEmailButton';
 import { NextLink } from './NextLink';
 import { Section } from './layout/Section';
 import { ModeToggle } from './theme/ModeToggle';
-import { Button } from './ui/button';
 
 export default function Intro() {
-  const [copied, setCopied] = useState(false);
-
   return (
     <Section>
       <div className="flex w-full flex-1 grow items-end justify-between gap-4 max-[700px]:flex-col max-[700px]:items-center">
@@ -73,22 +68,8 @@ export default function Intro() {
       <div>
         <Separator className="my-6" />
         <div className="flex items-center justify-between max-[500px]:flex-col-reverse max-[500px]:justify-center max-[500px]:gap-4">
-          <div>
-            <Button
-              variant="ghost"
-              onClick={async () => {
-                await navigator.clipboard.writeText('mlizamaoliger@gmail.com');
-                setCopied(true);
-                setTimeout(() => setCopied(false), 1500);
-              }}
-            >
-              <PiCopyLight className="size-6 shrink-0" />
-              <p>{copied ? 'Copied!' : 'mlizamaoliger@gmail.com'}</p>
-            </Button>
-          </div>
-          <div>
-            <ModeToggle />
-          </div>
+          <CopyEmailButton />
+          <ModeToggle />
         </div>
       </div>
     </Section>

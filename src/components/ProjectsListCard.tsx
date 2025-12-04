@@ -72,12 +72,7 @@ export function ProjectsListCard({
 
         <div className="flex justify-end gap-4">
           {type !== ProjectType.AUDIOVISUAL && (
-            <NextLink
-              href={link || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="secondary"
-            >
+            <NextLink href={link || '#'} target="_blank" variant="secondary">
               Visit Website
             </NextLink>
           )}

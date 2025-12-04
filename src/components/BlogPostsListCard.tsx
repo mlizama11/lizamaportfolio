@@ -52,11 +52,7 @@ export function BlogPostsListCard({
           </div>
         </div>
         <div className="flex justify-end gap-4">
-          <NextLink
-            href={`/blog/${slug}`}
-            rel="noopener noreferrer"
-            variant="secondary"
-          >
+          <NextLink href={`/blog/${slug}`} variant="secondary">
             Read More
           </NextLink>
         </div>

@@ -49,8 +49,6 @@ export const MenuDesktop: FunctionComponent = () => {
               key={href}
               href={href}
               className={cn({ 'pointer-events-none opacity-40': !isOpen })}
-              aria-disabled={!isOpen}
-              tabIndex={isOpen ? 0 : -1}
             >
               {label}
             </NextLink>
@@ -104,8 +102,6 @@ export const MenuDesktop: FunctionComponent = () => {
               key={href}
               href={href}
               className={cn({ 'pointer-events-none opacity-40': !isOpen })}
-              aria-disabled={!isOpen}
-              tabIndex={isOpen ? 0 : -1}
             >
               {label}
             </NextLink>
