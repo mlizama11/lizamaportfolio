@@ -2,12 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import {
-  PiCopyLight,
-  PiDownload,
-  PiLinkedinLogoThin,
-  PiMapPin
-} from 'react-icons/pi';
+import { PiCopyLight, PiDownload, PiMapPin } from 'react-icons/pi';
 
 import { Separator } from '@/components/ui/separator';
 
@@ -54,8 +49,14 @@ export default function Intro() {
           </div>
         </div>
         <div className="flex h-36 flex-col items-end justify-between gap-4 max-[700px]:h-fit max-[700px]:flex-col-reverse max-[700px]:items-center max-[700px]:justify-center">
-          <div>
-            <ModeToggle />
+          <div className="bg-white">
+            <Image
+              className="h-20 w-auto"
+              src="/assets/mlizamaqrcode.png"
+              alt="GitHub Logo"
+              width={256}
+              height={256}
+            />
           </div>
           <NextLink
             variant="primary"
@@ -72,29 +73,22 @@ export default function Intro() {
       <div>
         <Separator className="my-6" />
         <div className="flex items-center justify-between max-[500px]:flex-col-reverse max-[500px]:justify-center max-[500px]:gap-4">
-          <Button
-            variant="ghost"
-            onClick={async () => {
-              await navigator.clipboard.writeText('mlizamaoliger@gmail.com');
-              setCopied(true);
-              setTimeout(() => setCopied(false), 1500);
-            }}
-          >
-            <PiCopyLight className="size-6 shrink-0" />
-            <p>{copied ? 'Copied!' : 'mlizamaoliger@gmail.com'}</p>
-          </Button>
-          <Button
-            variant="ghost"
-            onClick={() => {
-              window.open(
-                'https://www.linkedin.com/in/mauriciolizama/',
-                '_blank'
-              );
-            }}
-          >
-            <PiLinkedinLogoThin className="size-6 shrink-0" />{' '}
-            <span>LinkedIn</span>
-          </Button>
+          <div>
+            <Button
+              variant="ghost"
+              onClick={async () => {
+                await navigator.clipboard.writeText('mlizamaoliger@gmail.com');
+                setCopied(true);
+                setTimeout(() => setCopied(false), 1500);
+              }}
+            >
+              <PiCopyLight className="size-6 shrink-0" />
+              <p>{copied ? 'Copied!' : 'mlizamaoliger@gmail.com'}</p>
+            </Button>
+          </div>
+          <div>
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </Section>
