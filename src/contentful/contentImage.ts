@@ -1,11 +1,11 @@
 import { Asset, AssetLink } from 'contentful';
 
-export interface ContentImage {
+export type ContentImage = {
   src: string;
   alt: string;
   width: number;
   height: number;
-}
+};
 
 export function parseContentfulContentImage(
   asset?: Asset<undefined, string> | { sys: AssetLink }

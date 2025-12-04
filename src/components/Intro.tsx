@@ -20,7 +20,7 @@ export default function Intro() {
   const [copied, setCopied] = useState(false);
 
   return (
-    <Section id="home">
+    <Section>
       <div className="flex w-full flex-1 grow items-end justify-between gap-4 max-[700px]:flex-col max-[700px]:items-center">
         <div className="flex h-full gap-4 max-[700px]:flex-col max-[700px]:items-center">
           <Image

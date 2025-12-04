@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
 
 import { Button } from '@/components/ui/button';
@@ -10,17 +10,15 @@ import { cn } from '@/lib/utils';
 
 import { NextLink } from './NextLink';
 
-export const MenuDesktop: FunctionComponent<{
-  isOpen: boolean;
-  setIsOpen: (value: boolean | ((prev: boolean) => boolean)) => void;
-}> = ({ isOpen, setIsOpen }) => {
+export const MenuDesktop: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <motion.nav
       layout
       initial={false}
       transition={{ type: 'spring', stiffness: 100, damping: 30 }}
       className={cn(
-        'fixed top-5 z-0 flex flex-row flex-nowrap items-center justify-center overflow-hidden rounded-xl p-0',
+        'fixed top-5 z-0 flex flex-row flex-nowrap items-center justify-center overflow-hidden rounded-xl p-0 max-[700px]:hidden',
         {
           'z-50 rounded-xl': isOpen
         }

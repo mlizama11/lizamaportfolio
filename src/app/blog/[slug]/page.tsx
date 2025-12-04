@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import { draftMode } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -16,7 +15,7 @@ type BlogPostPageProps = {
 };
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const blogPosts = await fetchBlogPosts({ preview: false });
+  const blogPosts = await fetchBlogPosts();
 
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
@@ -27,8 +26,7 @@ export async function generateMetadata({
   params: Params;
 }): Promise<Metadata> {
   const blogPost = await fetchBlogPost({
-    slug: (await params).slug,
-    preview: (await draftMode()).isEnabled
+    slug: (await params).slug
   });
 
   if (!blogPost) {
@@ -43,8 +41,7 @@ export async function generateMetadata({
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const blogPost = await fetchBlogPost({
-    slug: slug,
-    preview: (await draftMode()).isEnabled
+    slug: slug
   });
 
   if (!blogPost) {

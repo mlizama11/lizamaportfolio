@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import { Fira_Code, Montserrat } from 'next/font/google';
-import { draftMode } from 'next/headers';
 import { Toaster } from 'sonner';
 
 import Footer from '@/components/layout/Footer';
@@ -9,7 +8,6 @@ import { ThemeProvider } from '@/components/theme/ThemeProvider';
 import { siteDescription, siteTitle, siteUrl } from '@/constants/site';
 import { cn } from '@/lib/utils';
 
-import ExitDraftModeLink from './ExitDraftModeLink';
 import './globals.css';
 
 const firaCode = Fira_Code({
@@ -86,11 +84,6 @@ export default async function RootLayout({
               'flex min-h-screen w-[1200px] flex-col justify-between gap-8 scroll-smooth'
             )}
           >
-            {(await draftMode()).isEnabled && (
-              <p className="bg-orange-200 px-[6vw] py-4">
-                Draft mode is on! <ExitDraftModeLink className="underline" />
-              </p>
-            )}
             <Header />
             {children}
             <Toaster richColors />

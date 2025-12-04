@@ -7,9 +7,7 @@ import { TypeBlogPostSkeleton } from './types';
 
 type BlogPostEntry = Entry<TypeBlogPostSkeleton, undefined, string>;
 
-// Our simplified version of a BlogPost.
-// We don't need all the data that Contentful gives us.
-export interface BlogPost extends BlogPostMeta {
+export type BlogPost = BlogPostMeta & {
   title: string;
   description: string;
   slug: string;
@@ -17,16 +15,14 @@ export interface BlogPost extends BlogPostMeta {
   body: RichTextDocument | null;
   image: ContentImage | null;
   images?: RichTextDocument;
-}
+};
 
-export interface BlogPostMeta {
+export type BlogPostMeta = {
   id: string;
   createdAt: string;
   updatedAt: string;
-}
+};
 
-// A function to transform a Contentful blog post
-// into our own BlogPost object.
 export function parseContentfulBlogPost(
   blogPostEntry?: BlogPostEntry
 ): BlogPost | null {
@@ -48,15 +44,8 @@ export function parseContentfulBlogPost(
   };
 }
 
-// A function to fetch all blog posts.
-// Optionally uses the Contentful content preview.
-interface FetchBlogPostsOptions {
-  preview: boolean;
-}
-export async function fetchBlogPosts({
-  preview
-}: FetchBlogPostsOptions): Promise<BlogPost[]> {
-  const contentful = contentfulClient({ preview });
+export async function fetchBlogPosts(): Promise<BlogPost[]> {
+  const contentful = contentfulClient();
 
   const blogPostsResult = await contentful.getEntries<TypeBlogPostSkeleton>({
     content_type: 'blogPost',
@@ -68,17 +57,13 @@ export async function fetchBlogPosts({
   );
 }
 
-// A function to fetch a single blog post by its slug.
-// Optionally uses the Contentful content preview.
-interface FetchBlogPostOptions {
+type FetchBlogPostOptions = {
   slug: string;
-  preview: boolean;
-}
+};
 export async function fetchBlogPost({
-  slug,
-  preview
+  slug
 }: FetchBlogPostOptions): Promise<BlogPost | null> {
-  const contentful = contentfulClient({ preview });
+  const contentful = contentfulClient();
 
   const blogPostsResult = await contentful.getEntries<TypeBlogPostSkeleton>({
     content_type: 'blogPost',

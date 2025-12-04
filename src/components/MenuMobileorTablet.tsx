@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
 
 import { Button } from '@/components/ui/button';
@@ -15,13 +15,21 @@ import { cn } from '@/lib/utils';
 
 import { NextLink } from './NextLink';
 
-export const MenuMobileorTablet: FunctionComponent<{
-  isOpen: boolean;
-  setIsOpen: (value: boolean | ((prev: boolean) => boolean)) => void;
-}> = ({ isOpen, setIsOpen }) => {
+export const MenuMobileorTablet: FunctionComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleResize = () => {
+    if (window.innerWidth >= 700) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   return (
     <nav
-      className={cn('fixed top-5 z-0', {
+      className={cn('fixed top-5 z-0 min-[700px]:hidden', {
         'z-50 rounded-xl': isOpen
       })}
     >
@@ -56,7 +64,12 @@ export const MenuMobileorTablet: FunctionComponent<{
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="center">
-          <div className="flex flex-col items-center justify-center gap-2 rounded-md bg-white p-4">
+          <div
+            className={cn(
+              'flex flex-col items-center justify-center gap-2 rounded-md bg-white p-4',
+              { 'min-[700px]:hidden': isOpen }
+            )}
+          >
             {links.map(({ href, label }) => (
               <NextLink key={href} href={href} onClick={() => setIsOpen(false)}>
                 {label}
