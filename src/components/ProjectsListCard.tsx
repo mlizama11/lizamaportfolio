@@ -89,13 +89,13 @@ export function ProjectsListCard({
 
               <DialogContent
                 showCloseButton={false}
-                className="flex max-w-3xl flex-col items-center justify-center gap-0 overflow-hidden border-0 p-0 max-[700px]:w-[380px] dark:bg-neutral-900"
+                className="flex w-[600px] flex-col items-center justify-center gap-0 overflow-hidden border-0 p-0 max-[700px]:w-[380px] max-[400px]:w-full dark:bg-neutral-900"
               >
                 <DialogHeader className="sr-only">
                   <DialogTitle>{title}</DialogTitle>
                   <DialogDescription>{description}</DialogDescription>
                 </DialogHeader>
-                <div className="aspect-video w-full max-[700px]:w-[380px]">
+                <div className="aspect-video w-full max-[700px]:w-[380px] max-[400px]:w-full">
                   <iframe
                     title="vimeo-player"
                     className="inset-0 h-full w-full"
