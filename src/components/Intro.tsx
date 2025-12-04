@@ -71,7 +71,7 @@ export default function Intro() {
       </div>
       <div>
         <Separator className="my-6" />
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between max-[500px]:flex-col-reverse max-[500px]:justify-center max-[500px]:gap-4">
           <Button
             variant="ghost"
             onClick={async () => {
