@@ -7,6 +7,7 @@ import { NextLink } from '@/components/NextLink';
 import RichText from '@/contentful/RichText';
 import { RichTextCarousel } from '@/contentful/RichTextCarousel';
 import { fetchBlogPost, fetchBlogPosts } from '@/contentful/blogPosts';
+import { formatDate } from '@/lib/dateFormat';
 
 type Params = Promise<{ slug: string }>;
 
@@ -55,7 +56,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     'https://images.ctfassets.net'
   );
 
-  console.log(blogPost.images);
+  const blogPostDate = formatDate(blogPost.date);
 
   return (
     <main className="flex grow flex-col gap-6 px-4">
@@ -87,11 +88,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </ul>
           <div className="flex items-center justify-end">
             <span className="text-xs text-gray-500 dark:text-gray-400">
-              {new Date(blogPost.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
+              {blogPostDate}
             </span>
           </div>
         </div>

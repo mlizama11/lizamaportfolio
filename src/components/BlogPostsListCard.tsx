@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { formatDate } from '@/lib/dateFormat';
 import { BlogPost, SimpleImage } from '@/types';
 
 import { Card, CardContent, CardHeader } from './Card';
@@ -14,6 +15,9 @@ export function BlogPostsListCard({
 }) {
   const { id, updatedAt, title, description, date, slug } = singlePost;
   const { src, alt, width, height } = image;
+  const formattedDate = formatDate(date);
+  const formattedUpdatedAt = formatDate(updatedAt);
+
   return (
     <Card key={id}>
       <CardHeader className="h-50">
@@ -33,22 +37,13 @@ export function BlogPostsListCard({
             </h4>
             <div className="flex items-center gap-1 max-[700px]:flex-col max-[700px]:items-start">
               <span className="text-xs text-gray-500 dark:text-gray-400">
-                {new Date(date).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
+                {formattedDate}
               </span>
               <span className="mx-2 text-[12px] text-gray-500 max-[700px]:hidden">
                 |
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400">
-                Updated on{' '}
-                {new Date(updatedAt).toLocaleDateString('en-US', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}
+                Updated on {formattedUpdatedAt}
               </span>
             </div>
             <p className="text-sm text-gray-600 dark:text-gray-300">

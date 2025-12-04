@@ -8,18 +8,19 @@ import {
   useState
 } from 'react';
 
-interface AltchaWidgetMethods {
+type AltchaWidgetMethods = {
   validate?: () => void;
-}
-interface AltchaWidget extends HTMLElement, AltchaWidgetMethods {
-  challengeurl: string;
-  name: string;
-}
+};
+type AltchaWidget = HTMLElement &
+  AltchaWidgetMethods & {
+    challengeurl: string;
+    name: string;
+  };
 
-interface AltchaProps {
+type AltchaProps = {
   onStateChange?: (ev: Event | CustomEvent) => void;
   id?: string;
-}
+};
 
 const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
   ({ onStateChange, id }, ref) => {

@@ -30,6 +30,7 @@ export function ProjectsListCard({
           className="h-full w-full object-cover"
           width={800}
           height={487}
+          loading="eager"
         />
       </CardHeader>
       <CardContent>
