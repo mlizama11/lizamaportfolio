@@ -63,9 +63,6 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script src="http://localhost:8097" async></script>
-      </head>
       <body
         className={cn(
           firaCode.variable,
