@@ -20,7 +20,9 @@ export function ProjectsListCard({
 }: {
   project: Project & { type: ProjectType };
 }) {
-  const { id, img, title, description, link, techStack, type } = project;
+  const { id, img, title, description, link, techStack, type, sourceCode } =
+    project;
+  console.log(sourceCode);
   return (
     <Card key={id}>
       <CardHeader>
@@ -71,6 +73,15 @@ export function ProjectsListCard({
         </div>
 
         <div className="flex justify-end gap-4">
+          {sourceCode && (
+            <NextLink
+              href={sourceCode}
+              target="_blank"
+              variant="reversedSecondary"
+            >
+              Source code
+            </NextLink>
+          )}
           {type !== ProjectType.AUDIOVISUAL && (
             <NextLink href={link || '#'} target="_blank" variant="secondary">
               Visit Website

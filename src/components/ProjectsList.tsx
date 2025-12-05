@@ -13,7 +13,15 @@ export function ProjectsList() {
             <h4>{type}</h4>
             <div className="grid gap-8 md:grid-cols-2">
               {projects.map(
-                ({ id, img, title, description, link, techStack }) => {
+                ({
+                  id,
+                  img,
+                  title,
+                  description,
+                  link,
+                  techStack,
+                  sourceCode
+                }) => {
                   const project = {
                     id,
                     img,
@@ -21,7 +29,8 @@ export function ProjectsList() {
                     description,
                     link,
                     techStack,
-                    type
+                    type,
+                    sourceCode
                   };
                   return <ProjectsListCard key={id} project={project} />;
                 }
