@@ -22,6 +22,7 @@ export type Project = {
   img: string;
   techStack?: Array<TechStackItem>;
   link?: string;
+  sourceCode?: string;
 };
 
 export type Works = {

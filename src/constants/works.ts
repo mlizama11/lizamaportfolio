@@ -8,6 +8,25 @@ export const works: Works[] = [
     projects: [
       {
         id: 1,
+        title: 'Personal Portfolio Website',
+        description:
+          'This portfolio website is built using Next.js and TypeScript, showcasing my projects, skills, and experience as a developer. It features a clean and modern design with responsive layouts, smooth animations, and easy navigation. The site use Contentful as a headless CMS to manage and update content seamlessly. Feel free to explore my work and get in touch!',
+        img: '/assets/portfolio.jpg',
+        techStack: [
+          { title: 'TypeScript', logo: 'typescript' },
+          { title: 'Next.js', logo: 'next.js' },
+          { title: 'React', logo: 'react' },
+          { title: 'Tailwind CSS', logo: 'tailwindcss' },
+          { title: 'Shadcn', logo: 'shadcnui' },
+          { title: 'Radix UI', logo: 'radixui' },
+          { title: 'Motion', logo: 'framer' },
+          { title: 'Contentful', logo: 'contentful' }
+        ],
+        link: 'https://www.mlizama.eu/',
+        sourceCode: 'https://github.com/mlizama11/lizamaportfolio'
+      },
+      {
+        id: 2,
         title: 'Planted CO2 Software',
         description:
           'I PLANTED GmbH is a startup focused on combating climate change through innovative solutions. As part of their team, I colaborated building a comprehensive CO2 reporting software that enables businesses to accurately track and report their carbon emissions. I worked with React in the frontend and NestJS in the backend. I warmly invite you to visit their website, where you can review the information and even try the free version of the software.',
@@ -18,6 +37,7 @@ export const works: Works[] = [
           { title: 'React', logo: 'react' },
           { title: 'Tailwind CSS', logo: 'tailwindcss' },
           { title: 'Shadcn', logo: 'shadcnui' },
+          { title: 'Radix UI', logo: 'radixui' },
           { title: 'Auth0', logo: 'auth0' },
           { title: 'NestJS', logo: 'nestjs' },
           { title: 'Prisma', logo: 'prisma' },
@@ -26,7 +46,7 @@ export const works: Works[] = [
         link: 'https://planted.green/preise'
       },
       {
-        id: 2,
+        id: 3,
         title: 'Emilia Prieto',
         description:
           'The Emilia Prieto Project is dedicated to promoting and preserving the memory of this significant Costa Rican figure: an artist, educator, singer, and folklore scholar. The website serves as a digital platform collecting her most important artistic and intellectual work legacy. I originally developed this site using Bootstrap and recently upgraded it to Next.js. Visit the website to explore her contributions',
@@ -37,6 +57,7 @@ export const works: Works[] = [
           { title: 'React', logo: 'react' },
           { title: 'Tailwind CSS', logo: 'tailwindcss' },
           { title: 'Shadcn', logo: 'shadcnui' },
+          { title: 'Radix UI', logo: 'radixui' },
           { title: 'Motion', logo: 'framer' },
           { title: 'MDX', logo: 'markdown' }
         ],
