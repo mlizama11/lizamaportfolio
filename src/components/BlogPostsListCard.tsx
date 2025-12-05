@@ -20,11 +20,11 @@ export function BlogPostsListCard({
 
   return (
     <Card key={id}>
-      <CardHeader className="h-50">
+      <CardHeader>
         <Image
           alt={alt}
           src={src}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top"
           width={width}
           height={height}
         />

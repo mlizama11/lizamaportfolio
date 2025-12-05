@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'motion/react';
 import React from 'react';
 
 import { cn } from '@/lib/utils';
@@ -12,9 +15,20 @@ function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={cn('scroll-mt-2', className)}>
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 }
+      }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.2 }}
+      id={id}
+      className={cn('scroll-mt-2', className)}
+    >
       <div className="flex flex-col gap-8">{children}</div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 src={imageUrl.toString()}
                 width={blogPost.image.width}
                 height={blogPost.image.height}
-                className="h-full w-full rounded object-cover"
+                className="h-full w-full rounded object-cover object-[80%_40%]"
                 alt={blogPost.image.alt}
                 priority
               />
