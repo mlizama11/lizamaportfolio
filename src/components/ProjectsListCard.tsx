@@ -22,7 +22,6 @@ export function ProjectsListCard({
 }) {
   const { id, img, title, description, link, techStack, type, sourceCode } =
     project;
-  console.log(sourceCode);
   return (
     <Card key={id}>
       <CardHeader>
