@@ -2,6 +2,7 @@ import {
   SiAuth0,
   SiBootstrap,
   SiChakraui,
+  SiContentful,
   SiCss3,
   SiExpress,
   SiFramer,
@@ -31,7 +32,14 @@ import {
 export const myStack = [
   { name: 'JavaScript', icon: SiJavascript, color: 'text-yellow-500' },
   { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
+  {
+    name: 'Git & GitHub',
+    icon: SiGithub,
+    color: 'text-gray-900 dark:text-white'
+  },
+  { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-600' },
   { name: 'React', icon: SiReact, color: 'text-blue-500' },
+  { name: 'React Native', icon: SiReact, color: 'text-blue-500' },
   { name: 'Next.js', icon: SiNextdotjs, color: 'text-black dark:text-white' },
   { name: 'HTML', icon: SiHtml5, color: 'text-orange-600' },
   { name: 'CSS', icon: SiCss3, color: 'text-blue-500' },
@@ -64,9 +72,13 @@ export const myStack = [
     icon: SiReactrouter,
     color: 'text-gray-900 dark:text-white'
   },
-  { name: 'Node.js', icon: SiNodedotjs, color: 'text-green-600' },
   { name: 'Auth0', icon: SiAuth0, color: 'text-black dark:text-white' },
   { name: 'Postman', icon: SiPostman, color: 'text-orange-500' },
+  {
+    name: 'Contentful',
+    icon: SiContentful,
+    color: 'text-black dark:text-white'
+  },
   {
     name: 'Express',
     icon: SiExpress,
@@ -75,10 +87,5 @@ export const myStack = [
   { name: 'NestJS', icon: SiNestjs, color: 'text-red-600' },
   { name: 'Prisma', icon: SiPrisma, color: 'text-gray-900 dark:text-white' },
   { name: 'MongoDB', icon: SiMongodb, color: 'text-green-700' },
-  { name: 'MySQL', icon: SiMysql, color: 'text-cyan-700' },
-  {
-    name: 'Git & GitHub',
-    icon: SiGithub,
-    color: 'text-gray-900 dark:text-white'
-  }
+  { name: 'MySQL', icon: SiMysql, color: 'text-cyan-700' }
 ];

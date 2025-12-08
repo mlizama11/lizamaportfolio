@@ -3,6 +3,8 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import { NextLink } from '@/components/NextLink';
+import { SocialMediaShare } from '@/components/SocialMediaShare';
+import { siteUrl } from '@/constants/site';
 import RichText from '@/contentful/RichText';
 import { RichTextCarousel } from '@/contentful/RichTextCarousel';
 import { fetchBlogPost, fetchBlogPosts } from '@/contentful/blogPosts';
@@ -54,6 +56,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   );
 
   const blogPostDate = formatDate(blogPost.date);
+  console.log(`${siteUrl}/blog/${blogPost.slug}`);
 
   return (
     <main className="flex grow flex-col gap-6 px-4">
@@ -97,6 +100,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <RichTextCarousel document={blogPost.images} />
           </div>
         )}
+        <div className="my-5 flex flex-col gap-4">
+          <p className="font-bold">Share this post</p>
+          <SocialMediaShare
+            url={`${siteUrl}/blog/${blogPost.slug}`}
+            sharingDefaultTitle={blogPost.title}
+            siteDescription={blogPost.description}
+          />
+        </div>
       </div>
     </main>
   );
