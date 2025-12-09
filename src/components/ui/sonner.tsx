@@ -1,10 +1,16 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { FiCheckCircle, FiInfo, FiLoader, FiOctagon, FiTriangle } from 'react-icons/fi';
+import {
+  FiCheckCircle,
+  FiInfo,
+  FiLoader,
+  FiOctagon,
+  FiTriangle
+} from 'react-icons/fi';
 import { Toaster as Sonner, type ToasterProps } from 'sonner';
 
-const Toaster = ({ ...props }: ToasterProps) => {
+export function Toaster({ ...props }: ToasterProps) {
   const { theme = 'system' } = useTheme();
 
   return (
@@ -29,6 +35,4 @@ const Toaster = ({ ...props }: ToasterProps) => {
       {...props}
     />
   );
-};
-
-export { Toaster };
+}
