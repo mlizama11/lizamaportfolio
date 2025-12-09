@@ -1,7 +1,15 @@
+import { LinkProps } from 'next/link';
+
 export type Link = {
   href: string;
   label: string;
 };
+
+export type NextLinkProps = LinkProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    children: React.ReactNode;
+    className?: string;
+  };
 
 export type TechStackItem = {
   title: string;
@@ -77,4 +85,20 @@ export type BlogPost = {
 
 export type BlogPostsListProps = {
   blogPosts: BlogPost[];
+};
+
+export type AltchaWidget = HTMLElement & {
+  challengeurl: string;
+  name: string;
+};
+
+export type AltchaProps = {
+  onStateChange?: (ev: Event | CustomEvent) => void;
+  id?: string;
+};
+
+export type SocialMediaShareProps = {
+  url: string;
+  siteDescription: string;
+  sharingDefaultTitle: string;
 };

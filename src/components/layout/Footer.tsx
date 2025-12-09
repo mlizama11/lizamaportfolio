@@ -1,11 +1,10 @@
-import React from 'react';
 import { PiCopyright } from 'react-icons/pi';
 
 import Contact from '../Contact';
 import { NextLink } from '../NextLink';
 import { Separator } from '../ui/separator';
 
-const Footer: React.FC = () => {
+function Footer() {
   return (
     <footer
       id="contact"
@@ -42,6 +41,6 @@ const Footer: React.FC = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;

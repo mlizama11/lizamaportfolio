@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { FunctionComponent, useState } from 'react';
+import { motion } from 'motion/react';
+import { useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
 
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 
 import { NextLink } from './NextLink';
 
-export const MenuDesktop: FunctionComponent = () => {
+export function MenuDesktop() {
   const [isOpen, setIsOpen] = useState(true);
   return (
     <motion.nav
@@ -110,4 +110,4 @@ export const MenuDesktop: FunctionComponent = () => {
       </div>
     </motion.nav>
   );
-};
+}

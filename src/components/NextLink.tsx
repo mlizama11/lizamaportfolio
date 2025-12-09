@@ -1,8 +1,8 @@
 import { type VariantProps, cva } from 'class-variance-authority';
-import Link, { LinkProps } from 'next/link';
-import React, { FunctionComponent } from 'react';
+import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
+import { NextLinkProps } from '@/types';
 
 const nextLinkVariants = cva(
   'rounded-md text-black hover:text-blue-400 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
@@ -24,21 +24,22 @@ const nextLinkVariants = cva(
   }
 );
 
-type NextLinkProps = LinkProps &
-  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-    children: React.ReactNode;
-    className?: string;
-  };
-
-export const NextLink: FunctionComponent<
-  NextLinkProps & VariantProps<typeof nextLinkVariants>
-> = ({ href, children, target = '_parent', className, variant, ...props }) => (
-  <Link
-    href={href}
-    target={target}
-    className={cn(nextLinkVariants({ variant, className }))}
-    {...props}
-  >
-    {children}
-  </Link>
-);
+export function NextLink({
+  href,
+  children,
+  target = '_parent',
+  className,
+  variant,
+  ...props
+}: NextLinkProps & VariantProps<typeof nextLinkVariants>) {
+  return (
+    <Link
+      href={href}
+      target={target}
+      className={cn(nextLinkVariants({ variant, className }))}
+      {...props}
+    >
+      {children}
+    </Link>
+  );
+}

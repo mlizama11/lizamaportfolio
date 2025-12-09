@@ -15,17 +15,13 @@ import {
   WhatsappShareButton
 } from 'react-share';
 
-interface SocialMediaShareProps {
-  url: string;
-  siteDescription: string;
-  sharingDefaultTitle: string;
-}
+import { SocialMediaShareProps } from '@/types';
 
-export const SocialMediaShare: React.FC<SocialMediaShareProps> = ({
+export function SocialMediaShare({
   url,
   siteDescription,
   sharingDefaultTitle
-}) => {
+}: SocialMediaShareProps) {
   return (
     <div className="flex flex-wrap gap-8">
       <EmailShareButton
@@ -53,4 +49,4 @@ export const SocialMediaShare: React.FC<SocialMediaShareProps> = ({
       </TelegramShareButton>
     </div>
   );
-};
+}

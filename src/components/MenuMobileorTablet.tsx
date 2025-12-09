@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { FunctionComponent, useEffect, useState } from 'react';
+import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
 
 import { Button } from '@/components/ui/button';
@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils';
 
 import { NextLink } from './NextLink';
 
-export const MenuMobileorTablet: FunctionComponent = () => {
+export function MenuMobileorTablet() {
   const [isOpen, setIsOpen] = useState(false);
   const handleResize = () => {
     if (window.innerWidth >= 700) {
@@ -80,4 +80,4 @@ export const MenuMobileorTablet: FunctionComponent = () => {
       </Popover>
     </nav>
   );
-};
+}

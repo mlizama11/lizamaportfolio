@@ -23,7 +23,6 @@ import { Textarea } from './ui/textarea';
 
 export function ContactForm() {
   const altchaRef = useRef<HTMLInputElement>(null);
-  // State to force re-mounting the Altcha component
   const [altchaKey, setAltchaKey] = useState(0);
 
   const formSchema = z.object({
@@ -156,7 +155,6 @@ export function ContactForm() {
             )}
           />
 
-          {/* ALTCHA Field */}
           <div>
             <Altcha key={altchaKey} ref={altchaRef} />
           </div>

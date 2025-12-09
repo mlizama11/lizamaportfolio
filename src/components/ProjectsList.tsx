@@ -12,29 +12,14 @@ export function ProjectsList() {
           <div key={id} className="flex flex-col gap-3">
             <h4>{type}</h4>
             <div className="grid gap-8 md:grid-cols-2">
-              {projects.map(
-                ({
-                  id,
-                  img,
-                  title,
-                  description,
-                  link,
-                  techStack,
-                  sourceCode
-                }) => {
-                  const project = {
-                    id,
-                    img,
-                    title,
-                    description,
-                    link,
-                    techStack,
-                    type,
-                    sourceCode
-                  };
-                  return <ProjectsListCard key={id} project={project} />;
-                }
-              )}
+              {projects.map((project) => {
+                return (
+                  <ProjectsListCard
+                    key={project.id}
+                    project={{ ...project, type }}
+                  />
+                );
+              })}
             </div>
           </div>
         );
