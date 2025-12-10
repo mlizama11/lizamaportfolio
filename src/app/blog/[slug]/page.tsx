@@ -40,14 +40,14 @@ export async function generateMetadata({
     }
 
     return {
-      title: `${blogPost.title}`,
+      title: blogPost.title,
       description: blogPost.description,
       openGraph: {
-        title: `${blogPost.title}`,
+        title: blogPost.title,
         description: blogPost.description,
         images: blogPost.image
           ? {
-              url: `https://images.ctfassets.net${blogPost.image.src}`,
+              url: blogPost.image.src,
               width: blogPost.image.width,
               height: blogPost.image.height,
               alt: blogPost.image.alt
@@ -58,7 +58,7 @@ export async function generateMetadata({
         card: 'summary_large_image',
         title: blogPost.title,
         description: blogPost.description,
-        images: blogPost.image ? [`${siteUrl}${blogPost.image}`] : undefined
+        images: blogPost.image?.src
       }
     };
   } catch {
@@ -78,14 +78,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!blogPost) {
     return notFound();
   }
-
-  const imageUrl = new URL(
-    blogPost.image ? blogPost.image.src : '',
-    'https://images.ctfassets.net'
-  );
-
+  if (!blogPost.image) return null;
+  const imageUrl = blogPost.image?.src;
   const blogPostDate = formatDate(blogPost.date);
-  console.log(`${siteUrl}/blog/${blogPost.slug}`);
 
   return (
     <main className="flex grow flex-col gap-6 px-4">
