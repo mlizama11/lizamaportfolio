@@ -87,16 +87,6 @@ export type BlogPostsListProps = {
   blogPosts: BlogPost[];
 };
 
-export type AltchaWidget = HTMLElement & {
-  challengeurl: string;
-  name: string;
-};
-
-export type AltchaProps = {
-  onStateChange?: (ev: Event | CustomEvent) => void;
-  id?: string;
-};
-
 export type SocialMediaShareProps = {
   url: string;
   siteDescription: string;

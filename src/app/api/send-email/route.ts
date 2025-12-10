@@ -3,7 +3,8 @@ import { verifySolution } from 'altcha-lib';
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-import { EmailMessage } from '@/components/emails/EmailMessage';
+import EmailMessage from '@/components/emails/EmailMessage';
+import EmailNotification from '@/components/emails/EmailNotification';
 import { ContactFormData } from '@/types';
 
 export async function POST(req: Request) {
@@ -35,6 +36,13 @@ export async function POST(req: Request) {
       } as ContactFormData)
     );
 
+    const notificationEmailHtml = await render(
+      EmailNotification({
+        firstName,
+        lastName
+      } as ContactFormData)
+    );
+
     const transporter = nodemailer.createTransport({
       host: 'ssl0.ovh.net',
       port: 465,
@@ -51,6 +59,14 @@ export async function POST(req: Request) {
       subject: `New message from ${email} at mlizama.eu portfolio.`,
       html: emailHtml,
       replyTo: email
+    });
+
+    await transporter.sendMail({
+      from: process.env.EMAIL,
+      to: email,
+      subject: 'Thank you for contacting me!',
+      html: notificationEmailHtml,
+      replyTo: 'mlizamaoliger@gmail.com'
     });
 
     return NextResponse.json({ success: true });
