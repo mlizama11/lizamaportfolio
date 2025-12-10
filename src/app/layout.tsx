@@ -5,7 +5,12 @@ import { Toaster } from 'sonner';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
-import { siteDescription, siteTitle, siteUrl } from '@/constants/site';
+import {
+  siteDescription,
+  siteImage,
+  siteTitle,
+  siteUrl
+} from '@/constants/site';
 import { cn } from '@/lib/utils';
 
 import './globals.css';
@@ -25,6 +30,29 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
+  metadataBase: new URL(siteUrl),
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    title: siteTitle,
+    description: siteDescription,
+    images: [
+      {
+        url: siteImage,
+        width: 1200,
+        height: 630,
+        alt: siteTitle,
+        type: 'image/png'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+    images: [siteImage]
+  },
   icons: [
     { rel: 'icon', type: 'image/x-icon', url: '/favicon/favicon.ico' },
     {
@@ -45,8 +73,7 @@ export const metadata: Metadata = {
       url: '/favicon/android-chrome-512x512.png'
     }
   ],
-  manifest: '/favicon/manifest.json',
-  metadataBase: new URL(siteUrl)
+  manifest: '/favicon/manifest.json'
 };
 
 export const viewport: Viewport = {
@@ -67,7 +94,7 @@ export default async function RootLayout({
         className={cn(
           firaCode.variable,
           montserrat.variable,
-          'flex items-center justify-center font-fira-code antialiased'
+          'font-fira-code flex items-center justify-center antialiased'
         )}
       >
         <ThemeProvider

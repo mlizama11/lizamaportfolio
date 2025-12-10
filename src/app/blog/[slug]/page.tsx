@@ -27,17 +27,46 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const blogPost = await fetchBlogPost({
-    slug: (await params).slug
-  });
+  try {
+    const blogPost = await fetchBlogPost({
+      slug: (await params).slug
+    });
 
-  if (!blogPost) {
-    return notFound();
+    if (!blogPost) {
+      return {
+        title: 'Blog Post Not Found',
+        description: 'The requested blog post could not be found.'
+      };
+    }
+
+    return {
+      title: `${blogPost.title}`,
+      description: blogPost.description,
+      openGraph: {
+        title: `${blogPost.title}`,
+        description: blogPost.description,
+        images: blogPost.image
+          ? {
+              url: `https://images.ctfassets.net${blogPost.image.src}`,
+              width: blogPost.image.width,
+              height: blogPost.image.height,
+              alt: blogPost.image.alt
+            }
+          : undefined
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: blogPost.title,
+        description: blogPost.description,
+        images: blogPost.image ? [`${siteUrl}${blogPost.image}`] : undefined
+      }
+    };
+  } catch {
+    return {
+      title: 'Blog Post Not Found',
+      description: 'The requested blog post could not be found.'
+    };
   }
-
-  return {
-    title: blogPost.title
-  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
