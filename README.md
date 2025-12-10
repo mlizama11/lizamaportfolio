@@ -1,6 +1,6 @@
 # Mauricio Lizama — Portfolio
 
-A modern, full-stack portfolio website built with Next.js 14, TypeScript, and Contentful CMS. Features server-side rendering, smooth animations, dark mode support, and a responsive design with SEO optimization.
+A modern, full-stack portfolio website built with Next.js, TypeScript, and Contentful CMS. Features server-side rendering, smooth animations, dark mode support, and a responsive design with SEO optimization.
 
 ## 🚀 Features
 
