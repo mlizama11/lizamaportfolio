@@ -3,7 +3,7 @@ import { Link } from '@/types';
 // Layout and Site Constants
 export const siteTitle: string = 'Mauricio Lizama - Portfolio';
 export const siteDescription: string =
-  'Welcome to my portfolio website where I showcase my projects, skills, and experience as a developer.';
+  'Full Stack Developer showcasing projects, skills, and experience. Explore my work in web development and latest blog posts.';
 export const siteUrl: string = 'https://mlizama.netlify.app';
 export const siteImage: string = `${siteUrl}/opengraph-image.jpg`;
 

@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
+    siteName: siteTitle,
     title: siteTitle,
     description: siteDescription,
     images: [
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: siteTitle,
-        type: 'image/png'
+        type: 'image/jpeg'
       }
     ]
   },
