@@ -5,6 +5,7 @@ import { Separator } from '@/components/ui/separator';
 
 import { CopyEmailButton } from './CopyEmailButton';
 import { NextLink } from './NextLink';
+import SocialMediaShareButton from './SocialMediaShareButton';
 import { Section } from './layout/Section';
 import { ModeToggle } from './theme/ModeToggle';
 
@@ -14,7 +15,7 @@ export default function Intro() {
       <div className="flex w-full flex-1 grow items-end justify-between gap-4 max-[700px]:flex-col max-[700px]:items-center">
         <div className="flex h-full gap-4 max-[700px]:flex-col max-[700px]:items-center">
           <Image
-            className="h-36 w-36 rounded-lg border-none object-cover"
+            className="h-36 w-36 rounded-md border-none object-cover"
             src="/assets/mlizama768x512.jpg"
             alt="Next.js logo"
             width={768}
@@ -69,7 +70,10 @@ export default function Intro() {
         <Separator className="my-6" />
         <div className="flex items-center justify-between max-[500px]:flex-col-reverse max-[500px]:justify-center max-[500px]:gap-4">
           <CopyEmailButton />
-          <ModeToggle />
+          <div className="flex items-center gap-4">
+            <SocialMediaShareButton />
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </Section>

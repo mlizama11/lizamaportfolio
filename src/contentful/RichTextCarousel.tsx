@@ -48,22 +48,22 @@ export function RichTextCarousel({ document }: RichTextProps) {
 
   return (
     <Carousel
-      className="w-full max-w-xs rounded-lg sm:max-w-sm md:max-w-md lg:max-w-lg"
+      className="w-full max-w-xs rounded-md sm:max-w-sm md:max-w-md lg:max-w-lg"
       orientation="horizontal"
     >
       <CarouselContent>
         {images.map((image, index) => (
-          <CarouselItem className="rounded-lg" key={index}>
+          <CarouselItem className="rounded-md" key={index}>
             <div>
               <Card className="flex h-full flex-col border-0">
-                <CardHeader className="flex-1 overflow-hidden rounded-lg">
+                <CardHeader className="flex-1 overflow-hidden rounded-md">
                   <figure className="aspect-auto h-full w-full">
                     <Image
                       src={image.url}
                       alt={image.title}
                       width={800}
                       height={600}
-                      className="h-full w-full rounded-lg object-cover"
+                      className="h-full w-full rounded-md object-cover"
                       loading="eager"
                     />
                   </figure>

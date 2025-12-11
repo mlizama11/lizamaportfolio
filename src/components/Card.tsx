@@ -14,7 +14,7 @@ function Card({
       data-slot="card"
       role="card"
       className={cn(
-        'flex flex-1 flex-col overflow-hidden rounded-lg border-2 border-gray-200 dark:border-gray-700',
+        'flex flex-1 flex-col overflow-hidden rounded-md border-2 border-gray-200 dark:border-gray-700',
         className
       )}
     >

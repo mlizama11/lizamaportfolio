@@ -10,7 +10,7 @@ export default function Stack() {
         {myStack.map(({ name, icon: Icon, color }) => (
           <div
             key={name}
-            className="flex items-center gap-4 rounded-lg border border-gray-200 p-3 shadow-sm transition-shadow hover:shadow-md dark:border-white dark:hover:bg-gray-700"
+            className="flex items-center gap-4 rounded-md border border-gray-200 p-3 shadow-sm transition-shadow hover:shadow-md dark:border-white dark:hover:bg-gray-700"
           >
             <div>
               <Icon className={`inline-block text-3xl ${color}`} />

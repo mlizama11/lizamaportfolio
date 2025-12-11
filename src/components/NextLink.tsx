@@ -5,17 +5,17 @@ import { cn } from '@/lib/utils';
 import { NextLinkProps } from '@/types';
 
 const nextLinkVariants = cva(
-  'rounded-md text-black hover:text-blue-400 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+  'rounded-md text-black hover:text-blue-400 outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-200 z-30',
   {
     variants: {
       variant: {
-        default: '',
+        default:
+          'outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-200',
         primary:
-          'z-30 cursor-pointer text-sm font-medium text-black hover:text-blue-400 dark:text-gray-300 dark:hover:text-blue-400',
+          'cursor-pointer text-sm font-medium text-black hover:text-blue-400 dark:text-gray-300 dark:hover:text-blue-400',
         secondary:
-          'focus-visible:no-underline focus-visible:border-ring focus-visible:ring-ring/50 z-30 flex items-center rounded-md border border-black bg-white px-4 py-2 text-sm font-medium text-black transition-colors outline-none hover:bg-black hover:text-white focus-visible:ring-[3px] aria-disabled:pointer-events-none aria-disabled:opacity-5 dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black',
-        reversedSecondary:
-          'focus-visible:no-underline focus-visible:border-ring focus-visible:ring-ring/50 z-30 flex items-center rounded-md border border-black bg-black px-4 py-2 text-sm font-medium text-white transition-colors outline-none hover:bg-white hover:text-black focus-visible:ring-[3px] aria-disabled:pointer-events-none aria-disabled:opacity-5 dark:border-black dark:bg-transparent dark:text-black dark:hover:bg-black dark:hover:text-white'
+          'flex items-center border border-black bg-white px-4 py-2 text-sm font-medium text-black transition-colors hover:bg-black hover:text-white aria-disabled:pointer-events-none aria-disabled:opacity-5 dark:border-white dark:bg-transparent dark:text-white dark:hover:bg-white dark:hover:text-black outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-200',
+        blue: 'flex items-center border border-blue-700 px-4 py-2 text-sm font-medium text-blue-700 transition-colors hover:bg-blue-700 hover:text-white aria-disabled:pointer-events-none aria-disabled:opacity-5 outline-none focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-200 dark:bg-blue-700 dark:text-white dark:hover:bg-white dark:hover:text-black dark:border-white'
       }
     },
     defaultVariants: {

@@ -3,15 +3,27 @@
 import { works } from '@/constants/works';
 
 import { ProjectsListCard } from './ProjectsListCard';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from './ui/accordion';
 
 export function ProjectsList() {
   return (
-    <div className="flex flex-col gap-8">
+    <Accordion
+      type="multiple"
+      defaultValue={['Web Development']}
+      className="flex flex-col gap-8"
+    >
       {works.map(({ id, type, projects }) => {
         return (
-          <div key={id} className="flex flex-col gap-3">
-            <h4>{type}</h4>
-            <div className="grid gap-8 md:grid-cols-2">
+          <AccordionItem value={type} key={id} className="flex flex-col gap-3">
+            <AccordionTrigger>
+              <h4>{type}</h4>
+            </AccordionTrigger>
+            <AccordionContent className="grid gap-8 md:grid-cols-2">
               {projects.map((project) => {
                 return (
                   <ProjectsListCard
@@ -20,10 +32,10 @@ export function ProjectsList() {
                   />
                 );
               })}
-            </div>
-          </div>
+            </AccordionContent>
+          </AccordionItem>
         );
       })}
-    </div>
+    </Accordion>
   );
 }

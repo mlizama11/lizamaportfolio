@@ -74,6 +74,7 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
           '--altcha-max-width': '100%'
         }}
         name="altcha"
+        hidelogo
         challengeurl="/api/challenge"
       />
     );

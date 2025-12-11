@@ -23,12 +23,12 @@ export function ProjectsListCard({
   const { id, img, title, description, link, techStack, type, sourceCode } =
     project;
   return (
-    <Card key={id}>
+    <Card className="min-w-96" key={id}>
       <CardHeader>
         <Image
           src={img}
           alt={title}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-top-left"
           width={800}
           height={487}
           loading="eager"
@@ -73,11 +73,7 @@ export function ProjectsListCard({
 
         <div className="flex justify-end gap-4">
           {sourceCode && (
-            <NextLink
-              href={sourceCode}
-              target="_blank"
-              variant="reversedSecondary"
-            >
+            <NextLink href={sourceCode} target="_blank" variant="blue">
               Source code
             </NextLink>
           )}

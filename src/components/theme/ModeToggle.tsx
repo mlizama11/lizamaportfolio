@@ -36,7 +36,6 @@ export function ModeToggle() {
         checked={isDarkMode}
         onCheckedChange={toggleDarkMode}
         aria-label="Toggle dark mode"
-        className="cursor-pointer"
       />
       <PiMoon className="h-5 w-5 text-gray-500" />
     </div>

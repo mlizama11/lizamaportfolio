@@ -17,7 +17,7 @@ import {
 
 import { SocialMediaShareProps } from '@/types';
 
-export function SocialMediaShare({
+export function SocialMediaShareBlog({
   url,
   siteDescription,
   sharingDefaultTitle

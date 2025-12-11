@@ -159,4 +159,9 @@
     line-height: 1.5rem;
     font-weight: 500;
   }
+  input[type='checkbox'],
+  a,
+  button {
+    @apply rounded-md outline-none hover:text-blue-400 focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-200;
+  }
 }

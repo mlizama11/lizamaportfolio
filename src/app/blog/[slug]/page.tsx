@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 import { NextLink } from '@/components/NextLink';
-import { SocialMediaShare } from '@/components/SocialMediaShare';
+import { SocialMediaShareBlog } from '@/components/SocialMediaShareBlog';
 import { siteUrl } from '@/constants/site';
 import RichText from '@/contentful/RichText';
 import { RichTextCarousel } from '@/contentful/RichTextCarousel';
@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         )}
         <div className="my-5 flex flex-col gap-4">
           <p className="font-bold">Share this post</p>
-          <SocialMediaShare
+          <SocialMediaShareBlog
             url={`${siteUrl}/blog/${blogPost.slug}`}
             sharingDefaultTitle={blogPost.title}
             siteDescription={blogPost.description}
