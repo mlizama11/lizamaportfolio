@@ -4,7 +4,7 @@ import { Link } from '@/types';
 export const siteTitle: string = 'Mauricio Lizama - Portfolio';
 export const siteDescription: string =
   'Full Stack Developer showcasing projects, skills, and experience. Explore my work in web development and latest blog posts.';
-export const siteUrl: string = 'https://mlizama.netlify.app';
+export const siteUrl: string = 'https://www.mlizama.eu';
 export const siteImage: string = `${siteUrl}/opengraph-image.jpg`;
 
 // Navigation Links
