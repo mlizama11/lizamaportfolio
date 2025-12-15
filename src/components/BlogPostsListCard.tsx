@@ -19,7 +19,7 @@ export function BlogPostsListCard({
   const formattedUpdatedAt = formatDate(updatedAt);
 
   return (
-    <Card key={id}>
+    <Card className="min-w-80" key={id}>
       <CardHeader>
         <Image
           alt={alt}

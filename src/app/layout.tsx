@@ -85,8 +85,10 @@ export default async function RootLayout({
             )}
           >
             <Header />
-            {children}
-            <Toaster richColors />
+            <main className="flex grow flex-col items-center justify-center gap-15 px-6">
+              {children}
+              <Toaster richColors />
+            </main>
             <Footer />
           </div>
         </ThemeProvider>

@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer
       id="contact"
-      className="flex h-auto w-full flex-1 scroll-mt-2 flex-col items-center justify-center gap-8 px-4 py-8"
+      className="flex h-auto w-full flex-1 scroll-mt-2 flex-col items-center justify-center gap-8 px-6 py-8"
     >
       <div className="flex w-full items-center">
         <h2 className="text-2xl font-bold">Let&apos;s talk</h2>

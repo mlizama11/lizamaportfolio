@@ -8,7 +8,7 @@ import Works from '@/components/Works';
 
 export default function Home() {
   return (
-    <main className="flex grow flex-col gap-15 px-4">
+    <>
       <Intro />
       <About />
       <Works />
@@ -16,6 +16,6 @@ export default function Home() {
       <Education />
       <Stack />
       <Blog />
-    </main>
+    </>
   );
 }

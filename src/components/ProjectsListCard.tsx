@@ -23,7 +23,7 @@ export function ProjectsListCard({
   const { id, img, title, description, link, techStack, type, sourceCode } =
     project;
   return (
-    <Card className="min-w-96" key={id}>
+    <Card className="min-w-80" key={id}>
       <CardHeader>
         <Image
           src={img}
