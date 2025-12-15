@@ -24,7 +24,7 @@ export default function Education() {
             >
               <div>
                 <h3 className="max-[500px]:text-lg">{institution}</h3>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-500 dark:text-gray-200">
                   {location} | {startDate} - {endDate}
                 </p>
               </div>

@@ -27,6 +27,7 @@ export function BlogPostsListCard({
           className="h-full w-full object-cover object-top"
           width={width}
           height={height}
+          loading="eager"
         />
       </CardHeader>
       <CardContent>

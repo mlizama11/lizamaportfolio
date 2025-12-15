@@ -89,7 +89,11 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>First Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="First name" {...field} />
+                    <Input
+                      placeholder="First name"
+                      autoComplete="given-name"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -102,7 +106,11 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Last Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Last Name" {...field} />
+                    <Input
+                      placeholder="Last Name"
+                      autoComplete="family-name"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -117,7 +125,11 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Company Name (Optional)</FormLabel>
                   <FormControl>
-                    <Input placeholder="Company name" {...field} />
+                    <Input
+                      autoComplete="organization"
+                      placeholder="Company name"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -131,7 +143,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Email" {...field} />
+                  <Input autoComplete="email" placeholder="Email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

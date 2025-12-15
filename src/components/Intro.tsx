@@ -25,7 +25,7 @@ export default function Intro() {
           <div className="flex flex-col justify-between gap-4 max-[700px]:items-center">
             <div className="flex flex-col gap-1 max-[700px]:items-center">
               <h1 className="font-bold">Mauricio Lizama</h1>
-              <h3 className="font-medium">Full Stack Developer</h3>
+              <p className="text-2xl font-medium">Full Stack Developer</p>
               <div className="flex items-center gap-1">
                 <PiMapPin className="h-4 w-4 text-gray-500 dark:text-gray-200" />
                 <p className="text-gray-500 dark:text-gray-200">

@@ -57,6 +57,7 @@ export function MenuDesktop() {
 
         <div className="max-[700px]:order-first">
           <Button
+            aria-label="Menu Button"
             variant="ghost"
             size="sm"
             aria-expanded={isOpen}

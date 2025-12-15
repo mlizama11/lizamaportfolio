@@ -36,6 +36,7 @@ export function MenuMobileorTablet() {
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button
+            aria-label="Menu Button"
             variant="ghost"
             size="sm"
             aria-expanded={isOpen}

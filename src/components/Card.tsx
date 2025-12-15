@@ -12,7 +12,6 @@ function Card({
   return (
     <div
       data-slot="card"
-      role="card"
       className={cn(
         'flex flex-1 flex-col overflow-hidden rounded-md border-2 border-gray-200 dark:border-gray-700',
         className
@@ -31,11 +30,7 @@ function CardHeader({
   className?: string;
 }) {
   return (
-    <div
-      data-slot="card-header"
-      role="card-header "
-      className={cn('h-80 w-full', className)}
-    >
+    <div data-slot="card-header" className={cn('h-80 w-full', className)}>
       {children}
     </div>
   );
@@ -51,7 +46,6 @@ function CardContent({
   return (
     <div
       data-slot="card-content"
-      role="card-content"
       className={cn('flex grow flex-col justify-between gap-8 p-4', className)}
     >
       {children}

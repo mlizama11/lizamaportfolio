@@ -78,7 +78,12 @@ export function ProjectsListCard({
             </NextLink>
           )}
           {type !== ProjectType.AUDIOVISUAL && (
-            <NextLink href={link || '#'} target="_blank" variant="secondary">
+            <NextLink
+              aria-label="visit website link"
+              href={link || '#'}
+              target="_blank"
+              variant="secondary"
+            >
               Visit Website
             </NextLink>
           )}

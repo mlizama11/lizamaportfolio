@@ -1,3 +1,5 @@
+'use client';
+
 import { MenuDesktop } from '../MenuDesktop';
 import { MenuMobileorTablet } from '../MenuMobileorTablet';
 

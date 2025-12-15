@@ -15,9 +15,13 @@ export default function Experience() {
             >
               <div>
                 <h3 className="max-[500px]:text-lg">{company}</h3>
-                <p className="text-gray-500">{location}</p>
-                <h5 className="uppercase max-[500px]:text-sm">{role}</h5>
-                <p className="text-sm text-gray-500">{period}</p>
+                <p className="text-gray-500 dark:text-gray-200">{location}</p>
+                <p className="text-lg font-semibold uppercase max-[500px]:text-sm">
+                  {role}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-200">
+                  {period}
+                </p>
               </div>
               <ul className="list-inside list-disc space-y-1">
                 {responsibilities.map((item, index) => (
