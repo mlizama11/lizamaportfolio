@@ -32,15 +32,10 @@ export function BlogPostsListCard({
       <CardContent>
         <div>
           <div className="flex flex-col gap-3">
-            <h4 className="font-semibold dark:text-white dark:hover:text-blue-400">
-              {title}
-            </h4>
-            <div className="flex items-center gap-1 max-[700px]:flex-col max-[700px]:items-start">
+            <h4>{title}</h4>
+            <div className="flex flex-col items-start gap-1">
               <span className="text-xs text-gray-500 dark:text-gray-400">
-                {formattedDate}
-              </span>
-              <span className="mx-2 text-[12px] text-gray-500 max-[700px]:hidden">
-                |
+                Published on {formattedDate}
               </span>
               <span className="text-xs text-gray-500 dark:text-gray-400">
                 Updated on {formattedUpdatedAt}

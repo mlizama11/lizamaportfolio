@@ -37,7 +37,7 @@ export function ProjectsListCard({
       <CardContent>
         <div>
           <div className="flex flex-col gap-3">
-            <h4 className="font-semibold">{title}</h4>
+            <h4>{title}</h4>
             <div className="flex flex-col items-end">
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 {description}

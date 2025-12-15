@@ -85,7 +85,7 @@ export default async function RootLayout({
             )}
           >
             <Header />
-            <main className="flex grow flex-col items-center justify-center gap-15 px-6">
+            <main className="flex grow flex-col gap-15 px-6">
               {children}
               <Toaster richColors />
             </main>
