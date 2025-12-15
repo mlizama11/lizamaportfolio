@@ -6,7 +6,7 @@ import { PiCopyLight } from 'react-icons/pi';
 import { Button } from './ui/button';
 
 export function CopyEmailButton() {
-  const [copied, setCopied] = useState(false);
+  const [copied, setCopied] = useState<boolean>(false);
 
   return (
     <div>

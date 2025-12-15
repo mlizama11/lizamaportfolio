@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { NextLink } from './NextLink';
 
 export function MenuDesktop() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   return (
     <motion.nav
       layout

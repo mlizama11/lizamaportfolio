@@ -16,7 +16,7 @@ import { cn } from '@/lib/utils';
 import { NextLink } from './NextLink';
 
 export function MenuMobileorTablet() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const handleResize = () => {
     if (window.innerWidth >= 700) {
       setIsOpen(false);

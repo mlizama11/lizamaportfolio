@@ -33,7 +33,7 @@ export function BlogPostsListCard({
       <CardContent>
         <div>
           <div className="flex flex-col gap-3">
-            <h4>{title}</h4>
+            <h3>{title}</h3>
             <div className="flex flex-col items-start gap-1">
               <span className="text-xs text-gray-500 dark:text-gray-400">
                 Published on {formattedDate}

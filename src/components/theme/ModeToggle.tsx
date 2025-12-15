@@ -8,7 +8,7 @@ import { Switch } from '@/components/ui/switch';
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+  const [mounted, setMounted] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     setMounted(true);

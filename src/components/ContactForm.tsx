@@ -23,7 +23,7 @@ import { Textarea } from './ui/textarea';
 
 export function ContactForm() {
   const altchaRef = useRef<HTMLInputElement>(null);
-  const [altchaKey, setAltchaKey] = useState(0);
+  const [altchaKey, setAltchaKey] = useState<number>(0);
 
   const formSchema = z.object({
     firstName: z.string().min(1, { message: 'First name is required' }),

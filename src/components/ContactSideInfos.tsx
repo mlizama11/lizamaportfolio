@@ -1,21 +1,31 @@
 'use client';
 
 import { format, getTime } from 'date-fns';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PiCopyLight, PiLinkedinLogoThin } from 'react-icons/pi';
 import { SiXing } from 'react-icons/si';
 
 import { Button } from './ui/button';
 
 export function ContactSideInfos() {
-  const [copied, setCopied] = useState(false);
-  const currentDate = new Date();
-  const currentTime = format(getTime(currentDate), 'hh:mm b');
+  const [currentTime, setCurrentTime] = useState<string>('');
+  const [copied, setCopied] = useState<boolean>(false);
+
+  useEffect(() => {
+    const update = () => {
+      const now = new Date();
+      setCurrentTime(format(getTime(now), 'hh:mm b'));
+    };
+
+    update();
+    const intervalId = window.setInterval(update, 30_000);
+    return () => window.clearInterval(intervalId);
+  }, []);
   return (
     <div className="flex flex-col gap-4 border-l-2 border-gray-900 pl-4 max-[700px]:w-full">
       <div className="flex gap-2 whitespace-nowrap">
         <p className="font-semibold">Time for me:</p>
-        <p className="text-md font-light">{currentTime}</p>
+        <p className="text-md font-light">{currentTime || '—'}</p>
       </div>
       <div className="flex flex-col">
         <p className="font-semibold">Email:</p>
