@@ -32,26 +32,21 @@ export default function EmailNotification({
               className="mx-auto my-0"
             />
             <Heading className="font-montserrat mx-0 my-0 mb-6 p-0 text-center text-[26px] font-bold text-black">
-              Thank you for your message!
+              Thank you for reaching out
             </Heading>
             <Hr className="my-4 border-t border-gray-200" />
-            <Text className="mb-2 text-center text-[15px] leading-6 text-gray-700">
-              <strong>
-                Thanks for your message, {firstName} {lastName}!
-              </strong>
+            <Text className="mb-4 text-center text-[15px] leading-6 text-gray-700">
+              Dear {firstName} {lastName},
             </Text>
-            <Text className="mb-2 text-center text-[15px] leading-6 text-gray-700">
-              <span>
-                I received it successfully and will get back to you shortly.
-              </span>
+            <Text className="mb-4 text-center text-[15px] leading-6 text-gray-700">
+              Thank you for your message. I appreciate you taking the time to
+              get in touch. I will review your message and respond as soon as
+              possible.
             </Text>
-            <Text className="mb-2 text-center text-[15px] leading-6 text-gray-700">
-              <span>Have a great day!</span>
-            </Text>
-            <Text className="mb-2 text-center text-[15px] leading-6 text-gray-700">
-              <span>Kind regards,</span>
+            <Text className="mb-6 text-center text-[15px] leading-6 text-gray-700">
+              Best regards,
               <br />
-              <span>Mauricio Lizama</span>
+              <span className="font-semibold">Mauricio Lizama</span>
             </Text>
           </Container>
         </Body>
