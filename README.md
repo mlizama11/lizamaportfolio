@@ -67,7 +67,7 @@ A modern, full-stack portfolio website built with Next.js, TypeScript, and Conte
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 22.21.1
 - npm or yarn
 - Contentful account and API keys
 
