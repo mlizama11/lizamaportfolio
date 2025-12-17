@@ -27,8 +27,8 @@ export default function EmailMessage({
       <Head />
       <Preview>New message received 🎉</Preview>
       <Tailwind>
-        <Body className="mx-auto my-auto px-2 font-sans">
-          <Container className="mx-auto my-10 max-w-[400px] rounded-md border border-solid border-[#eaeaea] bg-white p-8 shadow-lg">
+        <Body className="px-2 font-sans">
+          <Container className="my-10 max-w-sm rounded border border-gray-200 bg-white p-6 shadow-lg">
             <Img
               src="https://res.cloudinary.com/dtejbwori/image/upload/v1765357604/android-chrome-512x512_ay41vs.png"
               alt="Logo"
@@ -36,17 +36,18 @@ export default function EmailMessage({
               height={100}
               className="mx-auto my-0"
             />
-            <Heading className="font-montserrat mx-0 my-0 mb-6 p-0 text-center text-[26px] font-bold text-black">
+            <Heading className="mx-0 my-0 mb-6 p-0 text-center text-2xl font-bold text-black">
               New message received
             </Heading>
-            <Hr className="my-4 border-t border-[#eaeaea]" />
-            <Text className="mb-2 text-center text-[15px] leading-6 text-gray-700">
+            <Hr className="my-4 border-t border-gray-300" />
+
+            <Text className="mb-2 text-sm leading-6 text-gray-700">
               <span>Message from</span>{' '}
               <strong>
                 {firstName} {lastName} {companyName ? `| ${companyName}` : ''}
               </strong>
             </Text>
-            <Text className="mb-2 text-center text-[15px] leading-6 text-gray-700">
+            <Text className="mb-2 text-sm leading-6 text-gray-700">
               <span>Email:</span>{' '}
               <strong>
                 <Link
@@ -57,12 +58,10 @@ export default function EmailMessage({
                 </Link>
               </strong>
             </Text>
-            <Hr className="my-6 border-t border-[#eaeaea]" />
-            <Text className="text-md h-auto p-4 text-center text-black">
-              {message}
-            </Text>
-            <Hr className="my-6 border-t border-[#eaeaea]" />
-            <Text className="text-md text-center text-gray-500">
+            <Hr className="my-4 border-t border-gray-300" />
+            <Text className="h-auto text-sm text-black">{message}</Text>
+            <Hr className="my-4 border-t border-gray-300" />
+            <Text className="text-sm text-gray-500">
               This message was sent from{' '}
               <Link
                 href={siteUrl}

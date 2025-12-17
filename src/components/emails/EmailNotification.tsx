@@ -6,11 +6,13 @@ import {
   Hr,
   Html,
   Img,
+  Link,
   Preview,
   Tailwind,
   Text
 } from '@react-email/components';
 
+import { siteUrl } from '@/constants/site';
 import { ContactFormData } from '@/types';
 
 export default function EmailNotification({
@@ -23,7 +25,7 @@ export default function EmailNotification({
       <Preview>Thank you 🎉</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto px-2 font-sans">
-          <Container className="mx-auto my-10 max-w-[400px] rounded-md border border-solid border-gray-200 bg-white p-8 shadow-lg">
+          <Container className="mx-auto my-10 max-w-sm overflow-hidden rounded border border-gray-200 bg-white p-6 shadow-lg">
             <Img
               src="https://res.cloudinary.com/dtejbwori/image/upload/v1765357604/android-chrome-512x512_ay41vs.png"
               alt="Logo"
@@ -31,22 +33,34 @@ export default function EmailNotification({
               height={100}
               className="mx-auto my-0"
             />
-            <Heading className="font-montserrat mx-0 my-0 mb-6 p-0 text-center text-[26px] font-bold text-black">
+            <Heading className="font-montserrat mx-0 my-0 mb-6 p-0 text-center text-2xl font-bold text-black">
               Thank you for reaching out
             </Heading>
             <Hr className="my-4 border-t border-gray-200" />
-            <Text className="mb-4 text-center text-[15px] leading-6 text-gray-700">
+            <Text className="mb-4 text-sm leading-6 text-gray-700">
               Dear {firstName} {lastName},
             </Text>
-            <Text className="mb-4 text-center text-[15px] leading-6 text-gray-700">
+            <Text className="mb-4 text-sm leading-6 text-gray-700">
               Thank you for your message. I appreciate you taking the time to
               get in touch. I will review your message and respond as soon as
               possible.
             </Text>
-            <Text className="mb-6 text-center text-[15px] leading-6 text-gray-700">
+            <Text className="mb-6 text-sm leading-6 text-gray-700">
               Best regards,
               <br />
               <span className="font-semibold">Mauricio Lizama</span>
+            </Text>
+            <Hr className="my-4 border-t border-gray-300" />
+            <Text className="text-xs text-gray-500">
+              This message was sent from{' '}
+              <Link
+                href={siteUrl}
+                className="text-blue-500 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {siteUrl}
+              </Link>
             </Text>
           </Container>
         </Body>
