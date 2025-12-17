@@ -23,7 +23,7 @@ export default function EmailNotification({
       <Preview>Thank you 🎉</Preview>
       <Tailwind>
         <Body className="mx-auto my-auto px-2 font-sans">
-          <Container className="mx-auto my-10 max-w-[465px] rounded-md border border-solid border-gray-200 bg-white p-8 shadow-lg">
+          <Container className="mx-auto my-10 max-w-[400px] rounded-md border border-solid border-gray-200 bg-white p-8 shadow-lg">
             <Img
               src="https://res.cloudinary.com/dtejbwori/image/upload/v1765357604/android-chrome-512x512_ay41vs.png"
               alt="Logo"

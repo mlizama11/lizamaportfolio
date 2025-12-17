@@ -5,6 +5,7 @@ import nodemailer from 'nodemailer';
 
 import EmailMessage from '@/components/emails/EmailMessage';
 import EmailNotification from '@/components/emails/EmailNotification';
+import { siteTitle } from '@/constants/site';
 import { ContactFormData } from '@/types';
 
 export async function POST(req: Request) {
@@ -44,29 +45,29 @@ export async function POST(req: Request) {
     );
 
     const transporter = nodemailer.createTransport({
-      host: 'ssl0.ovh.net',
-      port: 465,
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.EMAIL_PORT),
       secure: true,
       auth: {
-        user: process.env.EMAIL,
+        user: process.env.AUTH_EMAIL,
         pass: process.env.PASSWORD
       }
     });
 
     await transporter.sendMail({
-      from: process.env.EMAIL,
-      to: 'mlizamaoliger@gmail.com',
-      subject: `New message from ${email} at mlizama.eu portfolio.`,
+      from: process.env.AUTH_EMAIL,
+      to: process.env.REPLY_EMAIL,
+      subject: `New message from ${email} at ${siteTitle}.`,
       html: emailHtml,
       replyTo: email
     });
 
     await transporter.sendMail({
-      from: process.env.EMAIL,
+      from: process.env.AUTH_EMAIL,
       to: email,
       subject: 'Thank you for contacting me!',
       html: notificationEmailHtml,
-      replyTo: 'mlizamaoliger@gmail.com'
+      replyTo: process.env.REPLY_EMAIL
     });
 
     return NextResponse.json({ success: true });
