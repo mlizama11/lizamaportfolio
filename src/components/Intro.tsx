@@ -45,7 +45,11 @@ export default function Intro() {
           </div>
         </div>
         <div className="flex h-36 flex-col items-end justify-between gap-4 max-[700px]:h-fit max-[700px]:flex-col-reverse max-[700px]:items-center max-[700px]:justify-center">
-          <div className="bg-white">
+          <a
+            href="https://linko.page/mlizama"
+            target="_blank"
+            className="bg-white"
+          >
             <Image
               className="h-20 w-auto"
               src="/assets/mlizamaqrcode.png"
@@ -53,7 +57,7 @@ export default function Intro() {
               width={256}
               height={256}
             />
-          </div>
+          </a>
           <NextLink
             variant="primary"
             className="flex items-center justify-center gap-2"
