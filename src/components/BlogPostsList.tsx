@@ -1,23 +1,57 @@
-import { BlogPostsListProps } from '@/types';
+import Image from 'next/image';
 
-import { BlogPostsListCard } from './BlogPostsListCard';
+import { fetchBlogPosts } from '@/contentful/blogPosts';
+import { formatDate } from '@/lib/dateFormat';
 
-export function BlogPostsList({ blogPosts }: BlogPostsListProps) {
+import { NextLink } from './NextLink';
+
+export async function BlogPostsList() {
+  const blogPosts = await fetchBlogPosts();
+
   return (
-    <div className="flex flex-col gap-3">
-      <div className="grid gap-8 md:grid-cols-2">
-        {blogPosts.map((singlePost) => {
-          if (!singlePost.image) return null;
-          const { src, alt, width, height } = singlePost.image;
-          return (
-            <BlogPostsListCard
-              key={singlePost.id}
-              singlePost={singlePost}
-              image={{ src, alt, width, height }}
-            />
-          );
-        })}
-      </div>
+    <div className="mt-6 space-y-4">
+      {blogPosts.slice(0, 4).map((post) => {
+        const formattedDate = formatDate(post.date);
+        const formattedUpdatedAt = formatDate(post.updatedAt);
+        return (
+          <div
+            key={post.id}
+            className="flex items-start gap-4 max-[700px]:flex-col"
+          >
+            {post.image && (
+              <Image
+                src={post.image.src}
+                alt={post.image.alt}
+                width={150}
+                height={150}
+                className="shrink-0 rounded"
+                loading="eager"
+              />
+            )}
+            <div className="flex flex-col gap-2">
+              <h3 className="font-semibold">{post.title}</h3>
+              <div className="flex items-center gap-1 max-[700px]:flex-col max-[700px]:items-start">
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  Published on {formattedDate}
+                </span>
+                <span className="max-[700px]:hidden">|</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400">
+                  Updated on {formattedUpdatedAt}
+                </span>
+              </div>
+              <p className="text-sm text-gray-600">{post.description}</p>
+              <div className="flex w-full items-center justify-end">
+                <NextLink
+                  className="text-xs text-gray-600 underline"
+                  href={`/blog/${post.slug}`}
+                >
+                  Read Article
+                </NextLink>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

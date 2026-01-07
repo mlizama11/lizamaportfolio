@@ -1,13 +1,17 @@
-import { fetchBlogPosts } from '../contentful/blogPosts';
 import { BlogPostsList } from './BlogPostsList';
+import { NextLink } from './NextLink';
 import { Section, SectionTitle } from './layout/Section';
 
-export default async function Blog() {
-  const blogPosts = await fetchBlogPosts();
+export default function Blog() {
   return (
     <Section id="blog">
-      <SectionTitle>Blog</SectionTitle>
-      <BlogPostsList blogPosts={blogPosts} />
+      <div className="flex items-center justify-between">
+        <SectionTitle>Blog</SectionTitle>
+        <NextLink variant="primary" href="/blog">
+          All Blog Posts &rarr;
+        </NextLink>
+      </div>
+      <BlogPostsList />
     </Section>
   );
 }

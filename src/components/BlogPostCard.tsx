@@ -6,7 +6,7 @@ import { BlogPost, SimpleImage } from '@/types';
 import { Card, CardContent, CardHeader } from './Card';
 import { NextLink } from './NextLink';
 
-export function BlogPostsListCard({
+export function BlogPostCard({
   singlePost,
   image
 }: {
