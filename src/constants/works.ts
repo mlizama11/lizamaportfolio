@@ -157,5 +157,51 @@ export const works: Works[] = [
         link: 'https://www.flickr.com/photos/cidh/albums/72157661548742789/'
       }
     ]
+  },
+  {
+    id: 4,
+    type: ProjectType.COMMUNICATIONS,
+    projects: [
+      {
+        id: 1,
+        title: 'Carlos Lizama Hernández Blog',
+        description:
+          'A worpress blog website created for my father Carlos Lizama Hernández, an expert in tourism policy. He was the National Director of Tourism of the Republic of Chile (1970-1972), during the government of Salvador Allende, and later, during his exile in Costa Rica, he held the position of Director of Development, Resources and Tourist Services of the Costa Rican Tourism Institute (1974-1988). In this blog, we collected many of his writings that were published in various media.',
+        img: '/assets/carloslizamablog.jpg',
+        link: 'https://www.carloslizama.com/'
+      },
+      {
+        id: 2,
+        title: `“The Theater is like part of our family”`,
+        description:
+          'Investigation and writing of an article about the wooden floor of the Foyer of the National Theater of Costa Rica. Several other articles were published under my supervision in the Proscenio Magazine, a single edition publication in 2010. The objective was to keep alive the historical memory of the Theater and record the visit of Mrs. María del Carmen Sáenz Meza, daughter of the artist in charge of working on the wooden floor of the Foyer, Mr. Humberto Sáenz Matas. He was unable to finish the job due to the Costa Rican Civil War of 1948.',
+        img: '/assets/proscenio.jpg',
+        link: '/assets/proscenio.pdf'
+      },
+      {
+        id: 3,
+        title: `“Body Landscape” by Rodolfo Stanley`,
+        description:
+          'Review for the hand program of the exposition “Body Landscape” of the Costa Rican artist Rodolfo Stanley. The exhibition was held at the Cafe of the National Theater from June to July: “When you enter in the workshop of the painter Rodolfo Stanley (1950), it is like to enter in a world that will inevitably leave you amazed. In his paintings you will discover, the craftiness and cleverness, of an artist who explores with his strokes and colors, the most controversial subjects of the Costa Rican society.”',
+        img: '/assets/paisajecorporal.jpg',
+        link: '/assets/rodolfostanleyprograma.pdf'
+      },
+      {
+        id: 4,
+        title: '“Memory of an Unknown and Faceless Friend”',
+        description:
+          'Supplement made for the Chilean Embassy in Costa Rica, for the celebration of the 195th Anniversary of the National Independence of Chile. Two articles were written for this supplement: The Revolution towards Digital Government and Memory of an Unknown and Faceless Friend. The latter was a cultural piece about the remembrance of the Minister of Culture, Guido Sáenz, on his encounter with the famous Chilean poet Gabriela Mistral in 1946.',
+        img: '/assets/chile.jpg',
+        link: '/assets/gabrielmistralguidosaenz.pdf'
+      },
+      {
+        id: 5,
+        title: '“Discovering the history of the National Theatre”',
+        description:
+          'This was an extensive press release to report on the recovery by the National Theater of two medallion paintings by Italian artist Paolo Serra (1860-1900), which disappeared after 1960. The National Theater administration organized two exhibitions at the Enrique Echandi Gallery: Medallions of Paolo Serra: Il retorno and The secrets of its history: National Theater 1897-2010. ',
+        img: '/assets/medallones.jpg',
+        link: '/assets/exposicionhistoriateatronacional.pdf'
+      }
+    ]
   }
 ];

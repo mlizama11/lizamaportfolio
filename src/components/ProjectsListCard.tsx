@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useState } from 'react';
 
 import { Project, ProjectType } from '@/types';
 
@@ -22,6 +23,19 @@ export function ProjectsListCard({
 }) {
   const { id, img, title, description, link, techStack, type, sourceCode } =
     project;
+  const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
+
+  const isPdfLink = (url: string | undefined): boolean => {
+    if (!url) return false;
+    return url.toLowerCase().endsWith('.pdf');
+  };
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isPdfLink(link)) {
+      e.preventDefault();
+      setIsPdfModalOpen(true);
+    }
+  };
   return (
     <Card className="min-w-80" key={id}>
       <CardHeader>
@@ -78,14 +92,46 @@ export function ProjectsListCard({
             </NextLink>
           )}
           {type !== ProjectType.AUDIOVISUAL && (
-            <NextLink
-              aria-label="visit website link"
-              href={link || '#'}
-              target="_blank"
-              variant="secondary"
-            >
-              Visit Website
-            </NextLink>
+            <>
+              {isPdfLink(link) ? (
+                <Dialog open={isPdfModalOpen} onOpenChange={setIsPdfModalOpen}>
+                  <DialogTrigger asChild>
+                    <Button variant="secondary">View PDF</Button>
+                  </DialogTrigger>
+                  <DialogContent
+                    showCloseButton={false}
+                    className="flex w-[800px] flex-col items-center justify-center gap-0 overflow-hidden border-0 p-0 max-[900px]:w-[600px] max-[600px]:w-[90vw] dark:bg-neutral-900"
+                  >
+                    <DialogHeader className="sr-only">
+                      <DialogTitle>{title}</DialogTitle>
+                      <DialogDescription>{description}</DialogDescription>
+                    </DialogHeader>
+                    <div className="aspect-auto w-full">
+                      <iframe
+                        title="pdf-viewer"
+                        className="inset-0 h-[600px] w-full"
+                        src={link}
+                      />
+                    </div>
+                    <div className="flex h-16 w-full items-center justify-center">
+                      <DialogClose asChild>
+                        <Button variant="secondary">Close</Button>
+                      </DialogClose>
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              ) : (
+                <NextLink
+                  aria-label="visit website link"
+                  href={link || '#'}
+                  target="_blank"
+                  variant="secondary"
+                  onClick={handleLinkClick}
+                >
+                  Visit Website
+                </NextLink>
+              )}
+            </>
           )}
           {type === ProjectType.AUDIOVISUAL && (
             <Dialog>
