@@ -81,7 +81,7 @@ export default async function RootLayout({
         >
           <div
             className={cn(
-              'flex min-h-screen w-[1200px] flex-col justify-between gap-8 scroll-smooth'
+              'flex min-h-screen w-300 flex-col justify-between gap-8 scroll-smooth'
             )}
           >
             <Header />
