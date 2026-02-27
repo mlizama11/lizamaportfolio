@@ -4,7 +4,7 @@ import { EducationItem } from '@/types';
 export const education: EducationItem[] = [
   {
     institution: 'Digital Career Institute GmbH',
-    degree: 'Full-Stack Developer Certificate',
+    degree: 'Full Stack Developer Certificate',
     location: 'Germany',
     startDate: '2020',
     endDate: '2021',
