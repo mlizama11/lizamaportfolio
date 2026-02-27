@@ -15,6 +15,7 @@ import {
   SiNestjs,
   SiNextdotjs,
   SiNodedotjs,
+  SiPhp,
   SiPostman,
   SiPrisma,
   SiRadixui,
@@ -86,6 +87,7 @@ export const myStack = [
   },
   { name: 'NestJS', icon: SiNestjs, color: 'text-red-600' },
   { name: 'Prisma', icon: SiPrisma, color: 'text-gray-900 dark:text-white' },
+  { name: 'PHP', icon: SiPhp, color: 'text-purple-500' },
   { name: 'MongoDB', icon: SiMongodb, color: 'text-green-700' },
   { name: 'MySQL', icon: SiMysql, color: 'text-cyan-700' }
 ];

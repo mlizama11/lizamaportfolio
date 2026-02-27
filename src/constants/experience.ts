@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
     company: 'I Planted GmbH',
     location: 'Cologne, Germany',
     period: 'Nov 2021 — Jun 2025',
-    role: 'Full Stack Web Developer',
+    role: 'Full Stack Developer',
     responsibilities: [
       'Developed a software application using React and Nest with a SQL database.',
       'Collaborated with cross-functional teams to enhance project delivery and user experience.',
