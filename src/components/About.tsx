@@ -5,7 +5,7 @@ export default function About() {
     <Section id="about">
       <SectionTitle className="text-3xl font-bold">About Me</SectionTitle>
       <p>
-        I am a Full Stack Developer skilled in <b>TypeScript</b>,<b>React</b>,
+        I am a Full Stack Developer skilled in <b>TypeScript</b>, <b>React</b>,
         and <b>NestJS</b>. With four years of hands-on experience in software
         development, I understand that effective teamwork and a sense of
         ownership are crucial for creating scalable, high-performance products
