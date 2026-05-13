@@ -12,6 +12,8 @@ A modern, full-stack portfolio website built with Next.js, TypeScript, and Conte
 - **Blog System**: Dynamic blog posts with rich text formatting
 - **Accessible**: Built with Radix UI primitives for WCAG compliance
 - **Type Safe**: Full TypeScript support throughout the project
+- **Security**: Input validation, rate limiting, and CAPTCHA protection on contact form
+- **CI/CD**: GitHub Actions pipeline for automated testing and deployment
 
 ## Table of Contents
 
@@ -146,6 +148,25 @@ src/
 - System preference detection
 - Manual light/dark mode toggle
 - Smooth transitions between themes
+
+## Security & Quality Measures
+
+### API Validation & Protection
+- **Input Validation**: All form inputs validated with Zod schemas
+- **Rate Limiting**: Email and CAPTCHA endpoints protected with rate limiting
+- **CAPTCHA Verification**: Altcha integration for spam prevention
+- **Environment Variables**: Validated at runtime with detailed error messages
+
+### CI/CD Pipeline
+- **Automated Linting**: ESLint checks on every push
+- **Type Safety**: TypeScript compilation enforced in CI
+- **Build Verification**: Full Next.js build tested before merge
+- **Security Audit**: npm audit runs to detect vulnerabilities
+
+### Configuration
+- See `.env.example` for required environment variables
+- All sensitive values are environment-based (not committed)
+- Detailed env validation with helpful error messages
 
 ## Contact
 

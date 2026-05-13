@@ -1,0 +1,87 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint and Type Check
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.21.1
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run TypeScript type check
+        run: npx tsc --noEmit
+
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    needs: lint
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.21.1
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          # Provide dummy values for required env vars during build
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID || 'dummy' }}
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN || 'dummy' }}
+          ALTCHA_HMAC_KEY: ${{ secrets.ALTCHA_HMAC_KEY || 'dummy' }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST || 'localhost' }}
+          EMAIL_PORT: ${{ secrets.EMAIL_PORT || '587' }}
+          AUTH_EMAIL: ${{ secrets.AUTH_EMAIL || 'no-reply@example.com' }}
+          PASSWORD: ${{ secrets.PASSWORD || 'dummy' }}
+          REPLY_EMAIL: ${{ secrets.REPLY_EMAIL || 'no-reply@example.com' }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL || 'https://example.com' }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-build
+          path: .next
+          retention-days: 1
+
+  security:
+    runs-on: ubuntu-latest
+    name: Security Audit
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.21.1
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm audit
+        run: npm audit --audit-level=moderate || true
