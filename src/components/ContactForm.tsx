@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
+import { isLikelySpam } from '@/lib/contactSpam';
 import { ContactFormData } from '@/types';
 
 import Altcha from './Altcha';
@@ -32,7 +33,8 @@ export function ContactForm() {
     email: z.email({ message: 'Please type a valid email address' }),
     message: z.string().min(10, {
       message: 'Your message should be at least 10 characters long'
-    })
+    }),
+    website: z.string().optional()
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -42,18 +44,29 @@ export function ContactForm() {
       lastName: '',
       companyName: '',
       email: '',
-      message: ''
+      message: '',
+      website: ''
     }
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const honeyPot = form.getValues('website') || '';
+
+    if (isLikelySpam({ ...values, honeyPot })) {
+      toast.error(
+        'Your message looks like spam. Please write a clearer message and try again.'
+      );
+      return;
+    }
+
     const formData: ContactFormData = {
       firstName: values.firstName,
       lastName: values.lastName,
       companyName: values.companyName,
       email: values.email,
       message: values.message,
-      altcha: altchaRef.current?.value || ''
+      altcha: altchaRef.current?.value || '',
+      honeyPot
     };
 
     try {
@@ -166,6 +179,15 @@ export function ContactForm() {
               </FormItem>
             )}
           />
+
+          <div className="absolute -left-2499.75 opacity-0" aria-hidden="true">
+            <input
+              {...form.register('website')}
+              tabIndex={-1}
+              autoComplete="off"
+              name="website"
+            />
+          </div>
 
           <div>
             <Altcha key={altchaKey} ref={altchaRef} />

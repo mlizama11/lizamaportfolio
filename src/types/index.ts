@@ -64,6 +64,7 @@ export type ContactFormData = {
   email: string;
   message: string;
   altcha: string;
+  honeyPot?: string;
 };
 
 export type SimpleImage = {

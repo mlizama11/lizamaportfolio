@@ -6,12 +6,43 @@ import nodemailer from 'nodemailer';
 import EmailMessage from '@/components/emails/EmailMessage';
 import EmailNotification from '@/components/emails/EmailNotification';
 import { siteTitle } from '@/constants/site';
+import { isLikelySpam } from '@/lib/contactSpam';
 import { ContactFormData } from '@/types';
 
 export async function POST(req: Request) {
   try {
-    const body: ContactFormData = await req.json();
-    const { firstName, lastName, email, companyName, message, altcha } = body;
+    const body = (await req.json()) as ContactFormData & { honeyPot?: string };
+    const {
+      firstName,
+      lastName,
+      email,
+      companyName,
+      message,
+      altcha,
+      honeyPot
+    } = body;
+
+    if (
+      isLikelySpam({
+        firstName,
+        lastName,
+        companyName,
+        email,
+        message,
+        honeyPot
+      })
+    ) {
+      console.warn('Rejected contact form submission', {
+        firstName,
+        lastName,
+        companyName,
+        email,
+        message,
+        honeyPot
+      });
+
+      return NextResponse.json({ error: 'Message rejected' }, { status: 400 });
+    }
 
     // 1. Verify the Altcha Payload
     if (!altcha) {
