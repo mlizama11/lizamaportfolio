@@ -12,11 +12,15 @@ export default function About() {
         conservation, politics, and ecotourism.
       </p>
       <p>
-        I was born in Costa Rica (🇨🇷), and I also have family roots in Chile
-        (🇨🇱) and France (🇫🇷). In the past few years, from late 2021 to mid-2025,
-        I worked at I Planted GmbH in Cologne. From late 2020 to 2021, I studied
-        and graduated as a full-stack developer (MERN stack) at the Digital
-        Career Institute (DCI) in Germany (🇩🇪).
+        Between late 2020 and 2021, I completed my studies as a Full Stack
+        Developer (MERN stack) at the Digital Career Institute (DCI) in Germany.
+        From late 2021 to mid-2025, I worked at a startup called I Planted GmbH
+        in Cologne. During this period, I applied the skills I acquired at DCI
+        to develop a software application utilizing React and Nest with a SQL
+        database. I collaborated closely with a talented team to implement
+        innovative ideas, enhance the application’s functionality, and
+        contribute to the development of digital tools for CO2 emissions
+        reporting.
       </p>
       <p>
         Currently, I am learning German with the goal of reaching the B2 level
