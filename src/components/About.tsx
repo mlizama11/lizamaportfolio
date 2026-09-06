@@ -24,9 +24,12 @@ export default function About() {
       </p>
       <p>
         Currently, I am learning German with the goal of reaching the B2 level
-        and taking courses on master.dev to improve my frontend and backend
-        skills in topics such as Python, DevOps, PHP, AI, Angular, Vue, among
-        others.
+        and taking courses on{' '}
+        <a target="_blank" href="https://master.dev/">
+          master.dev{' '}
+        </a>{' '}
+        to improve my frontend and backend skills in topics such as Python,
+        DevOps, PHP, AI, Angular, Vue, among others.
       </p>
     </Section>
   );
