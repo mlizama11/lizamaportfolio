@@ -23,13 +23,20 @@ export default function About() {
         reporting.
       </p>
       <p>
-        Currently, I am learning German with the goal of reaching the B2 level
-        and taking courses on{' '}
-        <a target="_blank" href="https://master.dev/">
-          master.dev{' '}
-        </a>{' '}
-        to improve my frontend and backend skills in topics such as Python,
-        DevOps, PHP, AI, Angular, Vue, among others.
+        Currently, I am pursuing German language proficiency with the objective
+        of attaining the B2 level. Concurrently, I am enrolled in courses aimed
+        at enhancing my frontend and backend skills in various domains,
+        including Python, DevOps, PHP, Artificial Intelligence, Angular, and
+        Vue. These courses are on the platform{' '}
+        <a
+          className="underline"
+          target="_blank"
+          rel="noreferrer"
+          href="https://master.dev/"
+        >
+          master.dev
+        </a>
+        .
       </p>
     </Section>
   );
