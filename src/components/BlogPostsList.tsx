@@ -45,10 +45,12 @@ export async function BlogPostsList() {
                     Updated on {formattedUpdatedAt}
                   </span>
                 </div>
-                <p className="text-sm text-gray-600">{post.description}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
+                  {post.description}
+                </p>
                 <div className="flex w-full items-center justify-end">
                   <NextLink
-                    className="text-xs text-gray-600 underline"
+                    className="text-xs text-gray-600 underline dark:text-gray-300"
                     href={`/blog/${post.slug}`}
                   >
                     Read Article

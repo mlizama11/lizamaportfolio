@@ -13,7 +13,7 @@ function Card({
     <div
       data-slot="card"
       className={cn(
-        'flex flex-1 flex-col overflow-hidden rounded-md border-2 border-gray-200 dark:border-gray-700',
+        'flex flex-1 flex-col overflow-hidden rounded-md border-2 border-gray-300 dark:border-gray-400',
         className
       )}
     >

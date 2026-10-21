@@ -29,7 +29,7 @@ export default function Intro() {
               <div className="flex items-center gap-1">
                 <PiMapPin className="h-4 w-4 text-gray-500 dark:text-gray-200" />
                 <p className="text-gray-500 dark:text-gray-200">
-                  Aachen, Germany
+                  European Union
                 </p>
               </div>
             </div>

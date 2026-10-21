@@ -25,7 +25,7 @@ function Section({
       viewport={{ once: true }}
       transition={{ duration: 0.3, ease: 'easeInOut', delay: 0.2 }}
       id={id}
-      className={cn('scroll-mt-2', className)}
+      className={cn('scroll-mt-24', className)}
     >
       <div className="flex flex-col gap-8">{children}</div>
     </motion.section>
