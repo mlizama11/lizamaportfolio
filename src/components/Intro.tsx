@@ -1,10 +1,15 @@
 import Image from 'next/image';
 import { PiDownload, PiMapPin } from 'react-icons/pi';
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu';
 import { Separator } from '@/components/ui/separator';
 
 import { CopyEmailButton } from './CopyEmailButton';
-import { NextLink } from './NextLink';
 import SocialMediaShareButton from './SocialMediaShareButton';
 import { Section } from './layout/Section';
 import { ModeToggle } from './theme/ModeToggle';
@@ -23,24 +28,18 @@ export default function Intro() {
             priority
           />
           <div className="flex flex-col justify-between gap-4 max-[700px]:items-center">
-            <div className="flex flex-col gap-1 max-[700px]:items-center">
+            <div className="flex flex-col gap-3 max-[700px]:items-center">
               <h1 className="font-bold">Mauricio Lizama</h1>
-              <p className="text-2xl font-medium">Full Stack Developer</p>
+              <div>
+                <p className="text-lg font-medium">Full Stack Developer &</p>
+                <p className="text-lg font-medium">Communications Specialist</p>
+              </div>
               <div className="flex items-center gap-1">
                 <PiMapPin className="h-4 w-4 text-gray-500 dark:text-gray-200" />
                 <p className="text-gray-500 dark:text-gray-200">
                   European Union
                 </p>
               </div>
-            </div>
-            <div className="flex items-center gap-1 font-medium text-green-700">
-              <div className="flex justify-center">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                </span>
-              </div>
-              <span>Available to work</span>
             </div>
           </div>
         </div>
@@ -58,16 +57,32 @@ export default function Intro() {
               height={256}
             />
           </a>
-          <NextLink
-            variant="primary"
-            className="flex items-center justify-center gap-2"
-            href="/assets/mlizama-resume.pdf"
-            target="_blank"
-            download
-          >
-            <PiDownload className="mb-2 size-6 shrink-0 cursor-pointer" />
-            <p>Download CV</p>
-          </NextLink>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="z-30 flex cursor-pointer items-center justify-center gap-2 rounded-md text-sm font-medium text-black outline-none hover:text-blue-400 focus-visible:border-blue-500 focus-visible:ring-2 focus-visible:ring-blue-200 dark:text-gray-300 dark:hover:text-blue-400">
+              <PiDownload className="mb-2 size-6 shrink-0" />
+              <span>Download CV</span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem asChild>
+                <a
+                  href="/assets/mlizama-resume-functional.pdf"
+                  target="_blank"
+                  download
+                >
+                  Functional
+                </a>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <a
+                  href="/assets/mlizama-resume-creative.pdf"
+                  target="_blank"
+                  download
+                >
+                  Creative
+                </a>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
       <div>
