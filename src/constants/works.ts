@@ -29,7 +29,7 @@ export const works: Works[] = [
         id: 2,
         title: 'Planted CO2 Software',
         description:
-          'I PLANTED GmbH is a startup focused on combating climate change through innovative solutions. As part of their team, I colaborated building a comprehensive CO2 reporting software that enables businesses to accurately track and report their carbon emissions. I worked with React in the frontend and NestJS in the backend. I warmly invite you to visit their website, where you can review the information and even try the free version of the software.',
+          'I PLANTED GmbH is a startup focused on combating climate change through innovative solutions. As part of their team, I colaborated building a comprehensive CO2 reporting software that enables businesses to accurately track and report their carbon emissions. I worked with React in the frontend and NestJS in the backend. I warmly invite you to visit their website.',
         img: '/assets/plantedgreen.jpg',
         techStack: [
           { title: 'TypeScript', logo: 'typescript' },
